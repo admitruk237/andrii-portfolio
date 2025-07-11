@@ -17,10 +17,7 @@ const links = [
     name: 'home',
     path: '/',
   },
-  {
-    name: 'services',
-    path: '/services',
-  },
+
   {
     name: 'resume',
     path: '/resume',
@@ -46,9 +43,9 @@ const MobileNav = () => {
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle className="mt-20  text-center text-2xl">
+          <SheetTitle className="mt-32  text-center text-2xl">
             <Link href="/" onClick={() => setOpen(false)}>
-              <h1 className="text-4xl text-white font-semibold">
+              <h1 className="text-4xl mb-20 text-white font-semibold">
                 Andrii<span className="text-accent-hover">.</span>
               </h1>
             </Link>
