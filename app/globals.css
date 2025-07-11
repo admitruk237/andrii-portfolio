@@ -4,11 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  /* Контейнер - ваші налаштування */
   --container-center: true;
   --container-padding-x: 15px;
 
-  /* Решта змінних без змін */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: #1c1c22;
@@ -56,7 +54,6 @@
   --color-card: var(--card);
 }
 
-/* Keyframes для анімацій */
 @keyframes accordion-down {
   from {
     height: 0;
@@ -75,7 +72,6 @@
   }
 }
 
-/* CSS змінні */
 :root {
   --radius: 0.625rem;
   --background: #1c1c22;
@@ -146,7 +142,6 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-/* Перевизначення контейнера */
 @layer components {
   .container {
     padding-left: var(--container-padding-x);
@@ -154,7 +149,6 @@
   }
 }
 
-/* Базові стилі */
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -162,9 +156,17 @@
   body {
     @apply bg-background font-primary text-white leading-loose;
   }
+  .h1 {
+    @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
+  }
+  .h2 {
+    @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
+  }
+  .h3 {
+    @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
+  }
 }
 
-/* Кастомні утиліти */
 @layer utilities {
   .font-primary {
     font-family: var(--font-primary);
