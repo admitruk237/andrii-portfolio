@@ -9,7 +9,7 @@ const stats = [
   },
 
   {
-    num: 5,
+    num: 4,
     text: 'completed courses',
   },
   {
