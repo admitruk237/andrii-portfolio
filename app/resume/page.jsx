@@ -21,9 +21,11 @@ import { motion } from 'framer-motion';
 
 const about = {
   title: 'About me',
-  discription: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita ab quasi, 
-    quis ipsum, incidunt quaerat perspiciatis sapiente impedit non repellat quos 
-    assumenda quidem cum. Earum soluta aliquid esse maiores ullam.`,
+  discription: `Motivated junior frontend developer with hands-on experience building modern, responsive applications using React, TypeScript, Redux Toolkit, Next.js, and Tailwind CSS. 
+  I place strong emphasis on clean code, scalable architecture, and adherence to core programming principles such as DRY, SOLID, and KISS. 
+  I’m a fast learner with a growth mindset, strong attention to detail, and a deep passion for web development. 
+  I’m confident in my ability to stand out among junior developers and ready to attend interviews at any time — I have no doubt I’ll surprise you.`,
+
   info: [
     {
       fieldName: 'Name',
@@ -173,7 +175,7 @@ const education = {
   ],
 };
 
-const skils = {
+const skills = {
   title: 'My skills',
   skillList: [
     {
@@ -198,7 +200,7 @@ const skils = {
     },
     {
       icon: <SiRedux />,
-      name: 'redux, redux tool kit',
+      name: 'RTK',
     },
     {
       icon: <SiNextdotjs />,
@@ -253,7 +255,7 @@ const Resume = () => {
                         items-center lg:items-start gap-1"
                         >
                           <span className="text-accent">{item.duration}</span>
-                          <div className="flex gap-2 flex-wrap mb-4">
+                          <div className="flex gap-2 flex-wrap mb-3">
                             {item.projects.map((project, index) => {
                               return (
                                 <h3
@@ -285,13 +287,100 @@ const Resume = () => {
               </div>
             </TabsContent>
             <TabsContent value="education" className="w-full">
-              education
+              <div className="flex flex-col gap-[30px] text-center lg:text-left">
+                <h3 className="text-4xl font-bold">{education.title}</h3>
+
+                <ScrollArea className="h-[480px]">
+                  <ul className="grid grid-cols-1 xl:grid-cols-2 gap-[30px]">
+                    {education.items.map((item, index) => {
+                      return (
+                        <li
+                          key={index}
+                          className="bg-[#232329]  py-6 px-10 rounded-xl flex flex-col justify-center
+                        items-center lg:items-start gap-1"
+                        >
+                          <span className="text-accent">{item.duration}</span>
+                          <h3
+                            key={index}
+                            className="text-xl text-center lg:text-left mb-3"
+                          >
+                            {item.degree}.
+                          </h3>
+
+                          <div className="flex items-center gap-3 ">
+                            <p key={index} className="text-white/60">
+                              {item.istitution}
+                            </p>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </ScrollArea>
+              </div>
             </TabsContent>
             <TabsContent value="skills" className="w-full">
-              skills
+              <div className="flex flex-col gap-[30px]">
+                <div className="flex flex-col gap-[30px] text-center lg:text-left">
+                  <h3 className="text-4xl font-bold">{skills.title}</h3>
+                  <p className="max-w-[600px] text-white/60 mx-auto lg:mx--0">
+                    {skills.description}
+                  </p>
+                </div>
+                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:gap-[30px] gap-4">
+                  {skills.skillList.map((skill, index) => {
+                    return (
+                      <li key={index}>
+                        <TooltipProvider>
+                          <Tooltip>
+                            <TooltipTrigger
+                              className="w-full h-[150px] bg-[#232329] rounded-xl
+                            flex justify-center items-center group"
+                            >
+                              <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                                {skill.icon}
+                              </div>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p className="capitalize">{skill.name}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </TabsContent>
-            <TabsContent value="about" className="w-full">
-              about
+            <TabsContent
+              value="about"
+              className="w-full text-center lg:text-left"
+            >
+              <div className="flex flex-col gap-[30px]">
+                <h3 className="text-4xl font-bold">{about.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto lg:mx-0">
+                  {about.discription}
+                </p>
+                <ul className="grid grid-cols-1 lg:grid-cols-2 gap-y-6  mx-auto lg:mx-0">
+                  {about.info.map((item, index) => {
+                    return (
+                      <li
+                        key={index}
+                        className="flex items-center justify-center lg:justify-start gap-4"
+                      >
+                        <span className="text-white/60">{item.fieldName}</span>
+                        {item.fieldName === 'GitHub' ? (
+                          <a href={item.fieldValue} className="text-xl">
+                            admitruk237
+                          </a>
+                        ) : (
+                          <span className="text-xl">{item.fieldValue}</span>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </TabsContent>
           </div>
         </Tabs>
