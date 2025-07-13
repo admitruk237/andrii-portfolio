@@ -61,23 +61,30 @@ const experience = {
     repositories.`,
   items: [
     {
-      projects: [
-        'GoCorona MyFirstProject',
-        'Finance Site',
-        'Farm Vest',
-        'Home Pro',
-        'INTERIA',
+      projects: ['My Portfolio'],
+      technologies: [
+        'Next.js',
+        'Next.js Router',
+        'Tailwind CSS',
+        'Shadcn UI',
+        'Framer Motion',
       ],
-      technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
-      duration: 'Sep 2023 – Dec 2023',
+      duration: 'Jul 2025 – Present',
     },
     {
-      projects: ['ShoppeStore (Team Project)'],
-      technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
-      duration: 'Dec 2023 – Mar 2024',
+      projects: ['Quotes App'],
+      technologies: [
+        'Next.js',
+        'TypeScript',
+        'Next.js Router',
+        'REST API',
+        'Tailwind CSS',
+        'Shadcn UI',
+      ],
+      duration: 'Jun 2025 – Jul 2025',
     },
     {
-      projects: ['Book Library App', 'News Reactify'],
+      projects: ['Auth with Firebase'],
       technologies: [
         'React.js',
         'Redux Toolkit',
@@ -85,8 +92,11 @@ const experience = {
         'REST API',
         'React Router DOM',
         'TypeScript',
+        'Tailwind CSS',
+        'Firebase',
+        'JWT',
       ],
-      duration: 'May 2024 – Dec 2024',
+      duration: 'Apr 2025',
     },
     {
       projects: ['Get Task Driver'],
@@ -106,7 +116,7 @@ const experience = {
       duration: 'Dec 2024 – Apr 2025',
     },
     {
-      projects: ['Auth with Firebase'],
+      projects: ['Book Library App', 'News Reactify'],
       technologies: [
         'React.js',
         'Redux Toolkit',
@@ -114,34 +124,18 @@ const experience = {
         'REST API',
         'React Router DOM',
         'TypeScript',
-        'Tailwind CSS',
-        'Firebase',
-        'JWT',
       ],
-      duration: 'Apr 2025',
+      duration: 'May 2024 – Dec 2024',
     },
     {
-      projects: ['Quotes App'],
-      technologies: [
-        'Next.js',
-        'TypeScript',
-        'Next.js Router',
-        'REST API',
-        'Tailwind CSS',
-        'Shadcn UI',
-      ],
-      duration: 'Jun 2025 – Jul 2025',
+      projects: ['ShoppeStore (Team Project)'],
+      technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
+      duration: 'Dec 2023 – Mar 2024',
     },
     {
-      projects: ['My Portfolio'],
-      technologies: [
-        'Next.js',
-        'Next.js Router',
-        'Tailwind CSS',
-        'Shadcn UI',
-        'Framer Motion',
-      ],
-      duration: 'Jul 2025 – Present',
+      projects: ['GoCorona', 'Finance', 'Farm Vest', 'Home Pro', 'INTERIA'],
+      technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
+      duration: 'Sep 2023 – Dec 2023',
     },
   ],
 };
@@ -246,25 +240,42 @@ const Resume = () => {
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center lg:text-left">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
-                <p className="max-w-[600px] text-white/80 mx-auto lg:mx-0">
-                  {experience.discription}
+                <p className="text-white/80 mx-auto lg:mx-0">
+                  {experience.description}
                 </p>
-                <ScrollArea className="h-[480px">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                <ScrollArea className="h-[480px]">
+                  <ul className="grid grid-cols-1 xl:grid-cols-2 gap-[30px]">
                     {experience.items.map((item, index) => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center
+                          className="bg-[#232329]  py-6 px-10 rounded-xl flex flex-col justify-center
                         items-center lg:items-start gap-1"
                         >
                           <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
-                            {item.projects}
-                          </h3>
-                          <div className="flex items-center gap-3">
-                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-white/60">{item.technologies}</p>
+                          <div className="flex gap-2 flex-wrap mb-4">
+                            {item.projects.map((project, index) => {
+                              return (
+                                <h3
+                                  key={index}
+                                  className="text-xl   text-center lg:text-left"
+                                >
+                                  {project}.
+                                </h3>
+                              );
+                            })}
+                          </div>
+
+                          <div className="flex items-center gap-3 ">
+                            <div className="flex flex-wrap gap-2">
+                              {item.technologies.map((technologie, index) => {
+                                return (
+                                  <p key={index} className="text-white/60">
+                                    {technologie}
+                                  </p>
+                                );
+                              })}
+                            </div>
                           </div>
                         </li>
                       );
