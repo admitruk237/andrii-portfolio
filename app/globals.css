@@ -180,6 +180,11 @@
     color: var(--color-accent);
   }
 
+  .text-outline {
+    -webkit-text-stroke: 2px white;
+    text-stroke: 2px white;
+  }
+
   .hover\:text-accent-hover:hover {
     color: var(--color-accent-hover);
   }
