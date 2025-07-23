@@ -3,6 +3,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import PageTransition from '@/components/PageTransition';
 import StairTransition from '@/components/StairTransition';
+import { Toaster } from '@/components/ui/sonner';
 
 const jetBrainsMono = JetBrains_Mono({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={jetBrainsMono.variable}>
         <Header />
+        <Toaster />
         <StairTransition />
         <PageTransition>{children}</PageTransition>
       </body>

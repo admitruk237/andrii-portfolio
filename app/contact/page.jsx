@@ -5,8 +5,9 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-
+import emailjs from '@emailjs/browser';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { toast } from 'sonner';
 
 const info = [
   {
@@ -25,6 +26,9 @@ const info = [
     description: '5A/12 Naftowa St, Krosno, Poland',
   },
 ];
+
+const validationErrorStyles =
+  'text-red-500 text-[10px] lg:text-xs mt-1 transition-opacity duration-200 min-h-[1.25rem]';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -92,15 +96,42 @@ const Contact = () => {
   };
 
   const handleSubmit = async () => {
+    console.log('Submit clicked'); // Debug log
+
     if (!validateForm()) {
+      toast.error('Please fill in all required fields correctly');
       return;
     }
 
     setIsSubmitting(true);
+    console.log('Starting email send...'); // Debug log
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // EmailJS configuration
+      const serviceID = 'service_9c1rc86';
+      const templateID = 'template_555f1fw';
+      const userID = 'koLCC8sY2wJnMRMaw';
 
+      const templateParams = {
+        from_name: `${formData.firstname} ${formData.lastname}`,
+        from_email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        current_date: new Date().toLocaleDateString(),
+        current_time: new Date().toLocaleTimeString(),
+      };
+
+      console.log('Sending email with params:', templateParams); // Debug log
+
+      const result = await emailjs.send(
+        serviceID,
+        templateID,
+        templateParams,
+        userID
+      );
+      console.log('Email sent successfully:', result); // Debug log
+
+      // Reset form on success
       setFormData({
         firstname: '',
         lastname: '',
@@ -109,9 +140,14 @@ const Contact = () => {
         message: '',
       });
 
-      alert('Message sent successfully!');
+      toast.success("Message sent successfully! I'll get back to you soon.");
     } catch (error) {
-      alert('Failed to send message. Please try again.');
+      console.error('EmailJS error:', error); // Debug log
+      toast.error(
+        ` Failed to send message: ${
+          error.text || error.message || 'Unknown error'
+        }`
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -124,12 +160,12 @@ const Contact = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: 'easeIn' },
       }}
-      className="py-6"
+      className="sm:py-6 p-2"
     >
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row gap-[30px]">
           <div className="lg:w-[54%] order-2 lg:order-none">
-            <div className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
+            <div className="flex flex-col gap-6 p-2 sm:p-10 bg-[#27272c] rounded-xl">
               <h3 className="text-4xl text-accent">Let's work together</h3>
               <p className="text-white/60">
                 I'm excited to hear about your project! Share some details
@@ -145,13 +181,14 @@ const Contact = () => {
                     onChange={(e) =>
                       handleInputChange('firstname', e.target.value)
                     }
-                    className={errors.firstname ? 'border-red-500' : ''}
                   />
-                  {errors.firstname && (
-                    <p className="text-red-500 text-sm mt-1">
-                      {errors.firstname}
-                    </p>
-                  )}
+                  <p
+                    className={`${validationErrorStyles} ${
+                      errors.firstname ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    {errors.firstname || '\u00A0'}
+                  </p>
                 </div>
                 <div>
                   <Input
@@ -161,13 +198,14 @@ const Contact = () => {
                     onChange={(e) =>
                       handleInputChange('lastname', e.target.value)
                     }
-                    className={errors.lastname ? 'border-red-500' : ''}
                   />
-                  {errors.lastname && (
-                    <p className="text-red-500 text-sm mt-1">
-                      {errors.lastname}
-                    </p>
-                  )}
+                  <p
+                    className={`${validationErrorStyles} ${
+                      errors.lastname ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    {errors.lastname || '\u00A0'}
+                  </p>
                 </div>
                 <div>
                   <Input
@@ -175,11 +213,14 @@ const Contact = () => {
                     placeholder="Email address"
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
-                    className={errors.email ? 'border-red-500' : ''}
                   />
-                  {errors.email && (
-                    <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-                  )}
+                  <p
+                    className={`${validationErrorStyles} ${
+                      errors.email ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    {errors.email || '\u00A0'}
+                  </p>
                 </div>
                 <div>
                   <Input
@@ -187,25 +228,30 @@ const Contact = () => {
                     placeholder="Phone number"
                     value={formData.phone}
                     onChange={(e) => handleInputChange('phone', e.target.value)}
-                    className={errors.phone ? 'border-red-500' : ''}
                   />
-                  {errors.phone && (
-                    <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
-                  )}
+                  <p
+                    className={`${validationErrorStyles} ${
+                      errors.phone ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    {errors.phone || '\u00A0'}
+                  </p>
                 </div>
               </div>
               <div>
                 <Textarea
-                  className={`h-[200px] ${
-                    errors.message ? 'border-red-500' : ''
-                  }`}
+                  className="h-[200px]"
                   placeholder="Type your message here"
                   value={formData.message}
                   onChange={(e) => handleInputChange('message', e.target.value)}
                 />
-                {errors.message && (
-                  <p className="text-red-500 text-sm mt-1">{errors.message}</p>
-                )}
+                <p
+                  className={`${validationErrorStyles} ${
+                    errors.message ? 'opacity-100' : 'opacity-0'
+                  }`}
+                >
+                  {errors.message || '\u00A0'}
+                </p>
               </div>
               <Button
                 size="md"
