@@ -6,26 +6,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { toast } from 'sonner';
-
-const info = [
-  {
-    icon: <FaPhoneAlt />,
-    title: 'Phone',
-    description: '(+48) 516 626 351',
-  },
-  {
-    icon: <FaEnvelope />,
-    title: 'Email',
-    description: 'admitruk237@gmail.com',
-  },
-  {
-    icon: <FaMapMarkerAlt />,
-    title: 'Address',
-    description: '5A/12 Naftowa St, Krosno, Poland',
-  },
-];
+import { info } from '@/const/info';
 
 const validationErrorStyles =
   'text-red-500 text-[10px] lg:text-xs mt-1 transition-opacity duration-200 min-h-[1.25rem]';
