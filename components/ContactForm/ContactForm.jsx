@@ -2,6 +2,8 @@ import { Button } from '@/components/ui/button';
 import { FormField } from '../FormField/FormField';
 import { useContactForm } from '@/app/hooks/useContactForm';
 
+import LoadingDots from '../ui/LoadingDots';
+
 export const ContactForm = () => {
   const { formData, errors, isSubmitting, handleInputChange, submitForm } =
     useContactForm();
@@ -61,7 +63,7 @@ export const ContactForm = () => {
           onClick={submitForm}
           disabled={isSubmitting}
         >
-          {isSubmitting ? 'Sending...' : 'Send message'}
+          {isSubmitting ? <LoadingDots /> : 'Send message'}
         </Button>
       </div>
     </div>
