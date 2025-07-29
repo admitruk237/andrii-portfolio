@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/tooltip';
 import Link from 'next/link';
 import Image from 'next/image';
-import WorkSliderBtns from '@/components/WorkSliderBtns';
+import WorkSliderBtns from '@/components/WorkSliderBtns/WorkSliderBtns';
 import { projects } from '@/const/projects';
 
 const Work = () => {

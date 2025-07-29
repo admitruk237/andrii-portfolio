@@ -1,11 +1,11 @@
 import useDownloadCV from '@/app/hooks/useDownloadCV';
 import React from 'react';
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 
 import { FiCheck, FiDownload } from 'react-icons/fi';
-import Social from './Social';
-import Photo from './Photo';
-import CircularProgress from './CircularProgress';
+import Social from '../Social/Social';
+import Photo from '../Photo/Photo';
+import CircularProgress from '../CircularProgress/CircularProgress';
 
 const AboutMe = () => {
   const { downloadState, progress, handleDownloadCV } = useDownloadCV();

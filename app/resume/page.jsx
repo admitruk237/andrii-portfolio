@@ -10,10 +10,10 @@ import {
 
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { motion } from 'framer-motion';
-import { experience } from '@/const/experience';
-import { about } from '@/const/about';
-import { education } from '@/const/education';
-import { skills } from '@/const/skills';
+import { experience } from '@/const/resume/experience';
+import { about } from '@/const/resume/about';
+import { education } from '@/const/resume/education';
+import { skills } from '@/const/resume/skills';
 
 const Resume = () => {
   return (

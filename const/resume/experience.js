@@ -7,6 +7,13 @@ export const experience = {
     repositories.`,
   items: [
     {
+      projects: ['Frilance'],
+      technologies: [
+        'On freelance, I have so far completed one project – a CRM system for a small business, where I worked as part of a team together with an experienced developer.',
+      ],
+      duration: 'Feb 2025 - Present',
+    },
+    {
       projects: ['My Portfolio'],
       technologies: [
         'Next.js',
