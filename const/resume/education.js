@@ -4,23 +4,14 @@ export const education = {
   items: [
     {
       istitution: 'Online Course Platform',
-      degree: 'The Ultimate React Course 2025: React, Next.js, Redux & More',
+      degree: 'The Ultimate React Course: React, Next.js, Redux & More',
       duration: '2025',
     },
     {
-      istitution: 'Online Course Platform',
-      degree: 'Java script Course',
+      istitution: 'Self-taught Frontend Developer  ',
+      degree:
+        'Independent study – documentation, YouTube tutorials, practice projects, supplemented with mentoring from an experienced developer',
       duration: '2024',
-    },
-    {
-      istitution: 'STEP Computer Academy',
-      degree: 'Front-end Track',
-      duration: '2023-2024',
-    },
-    {
-      istitution: 'Online Course',
-      degree: 'Web Layout Course',
-      duration: '2023',
     },
     {
       istitution:

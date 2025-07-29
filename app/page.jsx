@@ -1,8 +1,8 @@
 'use client';
 
-import AboutMe from '@/components/AboutMe';
+import AboutMe from '@/components/AboutMe/AboutMe';
 
-import Stats from '@/components/Stats';
+import Stats from '@/components/Stats/Stats';
 
 const Home = () => {
   return (

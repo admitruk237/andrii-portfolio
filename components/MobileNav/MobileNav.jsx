@@ -10,7 +10,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from './ui/sheet';
+} from '../ui/sheet';
 
 const links = [
   {
