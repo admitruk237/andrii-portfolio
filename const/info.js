@@ -13,7 +13,7 @@ export const info = [
   },
   {
     icon: <FaMapMarkerAlt />,
-    title: 'Address',
-    description: '5A/12 Naftowa St, Krosno, Poland',
+    title: 'Location',
+    description: 'Krosno 38-400, Poland',
   },
 ];
