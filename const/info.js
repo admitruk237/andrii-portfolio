@@ -5,15 +5,18 @@ export const info = [
     icon: <FaPhoneAlt />,
     title: 'Phone',
     description: '(+48) 516 626 351',
+    type: 'phone',
   },
   {
     icon: <FaEnvelope />,
     title: 'Email',
     description: 'admitruk237@gmail.com',
+    type: 'email',
   },
   {
     icon: <FaMapMarkerAlt />,
     title: 'Location',
-    description: 'Krosno 38-400, Poland',
+    description: '38-400 Krosno, Poland',
+    type: 'location',
   },
 ];
