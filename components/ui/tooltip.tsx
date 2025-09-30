@@ -35,7 +35,17 @@ function TooltipTrigger({ ...props }) {
   return <TooltipPrimitive.Trigger data-slot="tooltip-trigger" {...props} />;
 }
 
-function TooltipContent({ className, sideOffset = 0, children, ...props }) {
+interface PropsTooltipContent
+  extends ComponentPropsWithoutRef<typeof TooltipPrimitive.Content> {
+  className?: string;
+}
+
+function TooltipContent({
+  className,
+  sideOffset = 0,
+  children,
+  ...props
+}: PropsTooltipContent) {
   return (
     <TooltipPrimitive.Portal>
       <TooltipPrimitive.Content
