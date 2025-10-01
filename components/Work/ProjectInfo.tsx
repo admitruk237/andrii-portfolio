@@ -16,7 +16,7 @@ type Props = {
 
 export const ProjectInfo = ({ project }: Props) => {
   return (
-    <div className="flex flex-col gap-[30px] h-[50%]">
+    <div className="flex flex-col gap-[30px] h-[50%] ">
       <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
         {project.num}
       </div>
