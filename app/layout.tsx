@@ -34,6 +34,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <ErrorBoundary>
           <Header />
           <Toaster />
+
           <StairTransition />
           <PageTransition>{children}</PageTransition>
         </ErrorBoundary>

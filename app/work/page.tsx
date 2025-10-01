@@ -30,7 +30,9 @@ const Work = () => {
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row lg:gap-[30px] lg:items-center">
             <div className="w-full lg:w-[50%] flex flex-col lg:justify-between order-2 lg:order-none">
-              <ProjectInfo project={project} />
+              <motion.div layout className="flex flex-col gap-[30px]">
+                <ProjectInfo project={project} />
+              </motion.div>
               <ProjectLinks liveUrl={project.live} githubUrl={project.github} />
             </div>
             <ProjectSlider

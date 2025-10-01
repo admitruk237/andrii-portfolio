@@ -4,9 +4,9 @@ import { useSwiper } from 'swiper/react';
 import { PiCaretLeftBold, PiCaretRightBold } from 'react-icons/pi';
 
 type Props = {
-  containerStylels: string;
-  btnStyles: string;
-  iconsStyles: string;
+  containerStylels?: string;
+  btnStyles?: string;
+  iconsStyles?: string;
 };
 
 const WorkSliderBtns = ({
