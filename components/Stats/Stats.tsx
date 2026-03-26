@@ -1,7 +1,7 @@
-'use client';
+'use client'
 
-import CountUp from 'react-countup';
-import { stats } from '@/constants/stats/stats';
+import CountUp from 'react-countup'
+import { stats } from '@/constants/stats/stats'
 
 const Stats = () => {
   return (
@@ -24,17 +24,17 @@ const Stats = () => {
                 <p
                   className={`${
                     item.text.length < 15 ? 'max-w-[100px]' : 'max-w-[150px]'
-                  } leading-snug text-white/80`}
+                  } leading-snug text-muted-foreground`}
                 >
                   {item.text}
                 </p>
               </div>
-            );
+            )
           })}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Stats;
+export default Stats

@@ -1,12 +1,14 @@
-import { EMAIL_CONFIG } from '@/config/email';
+'use client'
+
+import { EMAIL_CONFIG } from '@/config/email'
 import type {
   ContactFormData,
   ContactFormErrors,
   UseContactFormReturn,
-} from '@/types';
-import emailjs from '@emailjs/browser';
-import { useCallback, useState } from 'react';
-import { toast } from 'sonner';
+} from '@/types'
+import emailjs from '@emailjs/browser'
+import { useCallback, useState } from 'react'
+import { toast } from 'sonner'
 
 const INITIAL_FORM_DATA: ContactFormData = {
   firstname: '',
@@ -14,82 +16,82 @@ const INITIAL_FORM_DATA: ContactFormData = {
   email: '',
   phone: '',
   message: '',
-};
+}
 
 export const useContactForm = (): UseContactFormReturn => {
-  const [formData, setFormData] = useState<ContactFormData>(INITIAL_FORM_DATA);
+  const [formData, setFormData] = useState<ContactFormData>(INITIAL_FORM_DATA)
 
-  const [errors, setErrors] = useState<ContactFormErrors>({});
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [errors, setErrors] = useState<ContactFormErrors>({})
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
 
   const validateFormData = useCallback((): boolean => {
-    const newErrors: ContactFormErrors = {};
+    const newErrors: ContactFormErrors = {}
 
     if (!formData.firstname.trim()) {
-      newErrors.firstname = 'First name is required';
+      newErrors.firstname = 'First name is required'
     } else if (formData.firstname.trim().length < 2) {
-      newErrors.firstname = 'First name must be at least 2 characters';
+      newErrors.firstname = 'First name must be at least 2 characters'
     }
 
     if (!formData.lastname.trim()) {
-      newErrors.lastname = 'Last name is required';
+      newErrors.lastname = 'Last name is required'
     } else if (formData.lastname.trim().length < 2) {
-      newErrors.lastname = 'Last name must be at least 2 characters';
+      newErrors.lastname = 'Last name must be at least 2 characters'
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = 'Email is required'
     } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email address';
+      newErrors.email = 'Please enter a valid email address'
     }
 
-    const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
+    const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/
     if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone number is required';
+      newErrors.phone = 'Phone number is required'
     } else if (!phoneRegex.test(formData.phone)) {
-      newErrors.phone = 'Please enter a valid phone number';
+      newErrors.phone = 'Please enter a valid phone number'
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
+      newErrors.message = 'Message is required'
     } else if (formData.message.trim().length < 10) {
-      newErrors.message = 'Message must be at least 10 characters';
+      newErrors.message = 'Message must be at least 10 characters'
     }
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  }, [formData]);
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }, [formData])
 
   const handleInputChange = useCallback(
     (field: keyof ContactFormData, value: string): void => {
       setFormData((prev: ContactFormData) => ({
         ...prev,
         [field]: value,
-      }));
+      }))
 
       if (errors[field]) {
         setErrors((prev: ContactFormErrors) => ({
           ...prev,
           [field]: undefined,
-        }));
+        }))
       }
     },
-    [errors]
-  );
+    [errors],
+  )
 
   const resetForm = useCallback((): void => {
-    setFormData(INITIAL_FORM_DATA);
-    setErrors({});
-  }, []);
+    setFormData(INITIAL_FORM_DATA)
+    setErrors({})
+  }, [])
 
   const submitForm = useCallback(async (): Promise<void> => {
     if (!validateFormData()) {
-      toast.error('Please fill in all required fields correctly');
-      return;
+      toast.error('Please fill in all required fields correctly')
+      return
     }
 
-    setIsSubmitting(true);
+    setIsSubmitting(true)
 
     try {
       const templateParams = {
@@ -99,28 +101,28 @@ export const useContactForm = (): UseContactFormReturn => {
         message: formData.message,
         current_date: new Date().toLocaleDateString(),
         current_time: new Date().toLocaleTimeString(),
-      };
+      }
 
       await emailjs.send(
         EMAIL_CONFIG.serviceID,
         EMAIL_CONFIG.templateID,
         templateParams,
-        EMAIL_CONFIG.userID
-      );
+        EMAIL_CONFIG.userID,
+      )
 
-      resetForm();
-      toast.success("Message sent successfully! I'll get back to you soon.");
+      resetForm()
+      toast.success("Message sent successfully! I'll get back to you soon.")
     } catch (error) {
-      console.error('EmailJS error:', error);
+      console.error('EmailJS error:', error)
       const errorMessage =
         error instanceof Error
           ? error.message
-          : (error as any)?.text || 'Unknown error';
-      toast.error(`Failed to send message: ${errorMessage}`);
+          : (error as any)?.text || 'Unknown error'
+      toast.error(`Failed to send message: ${errorMessage}`)
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false)
     }
-  }, [formData, validateFormData, resetForm]);
+  }, [formData, validateFormData, resetForm])
 
   return {
     formData,
@@ -128,5 +130,5 @@ export const useContactForm = (): UseContactFormReturn => {
     isSubmitting,
     handleInputChange,
     submitForm,
-  };
-};
+  }
+}
