@@ -1,22 +1,22 @@
-'use client';
+'use client'
 
-import { AnimatePresence, motion } from 'framer-motion';
-import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
-import Stairs from '../Stairs/Stairs';
+import { AnimatePresence, motion } from 'framer-motion'
+import { usePathname } from 'next/navigation'
+import { useState, useEffect } from 'react'
+import Stairs from '../Stairs/Stairs'
 
 const StairTransition = () => {
-  const pathname = usePathname();
-  const [mounted, setMounted] = useState<number>(0);
+  const pathname = usePathname()
+  const [mounted, setMounted] = useState<number>(0)
 
   useEffect(() => {
-    setMounted((prev) => prev + 1);
-  }, [pathname]);
+    setMounted((prev) => prev + 1)
+  }, [pathname])
 
   return (
     <AnimatePresence mode="wait">
       <div key={`${pathname}-${mounted}`}>
-        <div className="h-screen w-screen fixed top-0 left-0 right-0 pointer-events-none z-40 flex">
+        <div className="h-screen w-screen fixed top-0 left-0 right-0 pointer-events-none z-[60] flex">
           <Stairs />
         </div>
         <motion.div
@@ -29,7 +29,7 @@ const StairTransition = () => {
         />
       </div>
     </AnimatePresence>
-  );
-};
+  )
+}
 
-export default StairTransition;
+export default StairTransition

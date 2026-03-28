@@ -1,6 +1,6 @@
-'use client';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
+'use client'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const Photo = () => {
   return (
@@ -14,7 +14,7 @@ const Photo = () => {
       >
         <motion.div
           className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] 
-        mix-blend-lighten absolute  rounded-full overflow-hidden"
+         absolute  rounded-full overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
@@ -59,7 +59,7 @@ const Photo = () => {
         </motion.svg>
       </motion.div>
     </div>
-  );
-};
+  )
+}
 
-export default Photo;
+export default Photo

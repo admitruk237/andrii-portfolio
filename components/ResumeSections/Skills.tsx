@@ -22,7 +22,7 @@ export const Skills = () => {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger
-                    className="w-full h-[150px] bg-[#232329] rounded-xl
+                    className="w-full h-[150px] bg-card rounded-xl
                             flex justify-center items-center group"
                   >
                     <div className="text-6xl group-hover:text-accent transition-all duration-300">

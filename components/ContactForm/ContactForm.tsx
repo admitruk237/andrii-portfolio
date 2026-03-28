@@ -1,72 +1,133 @@
-import { Button } from '@/components/ui/button';
-import { FormField } from '../FormField/FormField';
-import { useContactForm } from '@/hooks'; // Force cache refresh
+'use client'
 
-import LoadingDots from '../ui/LoadingDots';
+import { useContactForm } from '@/hooks'
+import {
+  contactSchema,
+  type ContactFormData,
+} from '@/lib/validation/contactSchema'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import { Button, Input, Textarea, LoadingDots } from '../ui'
 
 export const ContactForm = () => {
-  const { formData, errors, isSubmitting, handleInputChange, submitForm } =
-    useContactForm();
+  const { isSubmitting, submitForm } = useContactForm()
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      firstname: '',
+      lastname: '',
+      email: '',
+      phone: '',
+      message: '',
+    },
+  })
+
+  const onSubmit = async (data: ContactFormData) => {
+    try {
+      await submitForm(data)
+      reset()
+    } catch (error) {}
+  }
 
   return (
     <div className="lg:w-[54%] order-2 lg:order-none">
-      <div className="flex flex-col gap-6 p-2 sm:p-10 bg-[#27272c] rounded-xl">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col gap-6 p-2 sm:p-10 bg-card rounded-xl"
+      >
         <h3 className="text-4xl text-accent">Let&apos;s work together</h3>
-        <p className="text-white/60">
+        <p className="text-muted-foreground">
           I&apos;m excited to hear about your project! Share some details below,
           and let&apos;s start working together to create something amazing.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <FormField
-            placeholder="Firstname"
-            value={formData.firstname}
-            onChange={(e) => handleInputChange('firstname', e.target.value)}
-            error={errors.firstname}
-          />
+          <div className="flex flex-col gap-2">
+            <Input
+              type="text"
+              placeholder="Firstname"
+              {...register('firstname')}
+              className={errors.firstname ? 'border-red-500' : ''}
+            />
+            {errors.firstname && (
+              <span className="text-red-500 text-sm px-1">
+                {errors.firstname.message}
+              </span>
+            )}
+          </div>
 
-          <FormField
-            placeholder="Lastname"
-            value={formData.lastname}
-            onChange={(e) => handleInputChange('lastname', e.target.value)}
-            error={errors.lastname}
-          />
+          <div className="flex flex-col gap-2">
+            <Input
+              type="text"
+              placeholder="Lastname"
+              {...register('lastname')}
+              className={errors.lastname ? 'border-red-500' : ''}
+            />
+            {errors.lastname && (
+              <span className="text-red-500 text-sm px-1">
+                {errors.lastname.message}
+              </span>
+            )}
+          </div>
 
-          <FormField
-            type="email"
-            placeholder="Email address"
-            value={formData.email}
-            onChange={(e) => handleInputChange('email', e.target.value)}
-            error={errors.email}
-          />
+          <div className="flex flex-col gap-2">
+            <Input
+              type="email"
+              placeholder="Email address"
+              {...register('email')}
+              className={errors.email ? 'border-red-500' : ''}
+            />
+            {errors.email && (
+              <span className="text-red-500 text-sm px-1">
+                {errors.email.message}
+              </span>
+            )}
+          </div>
 
-          <FormField
-            type="tel"
-            placeholder="Phone number"
-            value={formData.phone}
-            onChange={(e) => handleInputChange('phone', e.target.value)}
-            error={errors.phone}
-          />
+          <div className="flex flex-col gap-2">
+            <Input
+              type="tel"
+              placeholder="Phone number"
+              {...register('phone')}
+              className={errors.phone ? 'border-red-500' : ''}
+            />
+            {errors.phone && (
+              <span className="text-red-500 text-sm px-1">
+                {errors.phone.message}
+              </span>
+            )}
+          </div>
         </div>
 
-        <FormField
-          placeholder="Type your message here"
-          value={formData.message}
-          onChange={(e) => handleInputChange('message', e.target.value)}
-          error={errors.message}
-          isTextarea
-        />
+        <div className="flex flex-col gap-2">
+          <Textarea
+            placeholder="Type your message here"
+            {...register('message')}
+            className={errors.message ? 'border-red-500' : ''}
+          />
+          {errors.message && (
+            <span className="text-red-500 text-sm px-1">
+              {errors.message.message}
+            </span>
+          )}
+        </div>
 
         <Button
           variant="default"
           size="md"
           className="max-w-40"
-          onClick={submitForm}
+          type="submit"
           disabled={isSubmitting}
         >
           {isSubmitting ? <LoadingDots /> : 'Send message'}
         </Button>
-      </div>
+      </form>
     </div>
-  );
-};
+  )
+}

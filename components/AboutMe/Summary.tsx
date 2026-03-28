@@ -48,7 +48,7 @@ export const Summary = () => {
 
           <div className="mb-8 lg:mb-0">
             <Social
-              containerSyles="flex gap-6"
+              containerStyles="flex gap-6"
               iconStyles="w-9 h-9 border border-accent rounded-full flex justify-center
                   items-center text-accent text-base hover:bg-accent hover:text-primary 
                   hover:transition-all duration-500"

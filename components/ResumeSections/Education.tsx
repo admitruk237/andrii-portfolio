@@ -12,7 +12,7 @@ export const Education = () => {
             return (
               <li
                 key={index}
-                className="bg-[#232329]  py-6 px-10 rounded-xl flex flex-col justify-center
+                className="bg-card  py-6 px-10 rounded-xl flex flex-col justify-center
                         items-center lg:items-start gap-1"
               >
                 <span className="text-accent">{item.duration}</span>
@@ -26,7 +26,7 @@ export const Education = () => {
                 <div className="flex items-center gap-3 ">
                   <p
                     key={index}
-                    className="text-white/60"
+                    className="text-muted-foreground"
                   >
                     {item.istitution}
                   </p>

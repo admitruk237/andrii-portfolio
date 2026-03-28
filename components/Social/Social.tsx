@@ -9,7 +9,7 @@ import {
 } from 'react-icons/fa';
 
 type Props = {
-  containerSyles?: string;
+  containerStyles?: string;
   iconStyles?: string;
 };
 
@@ -27,9 +27,9 @@ const socials = [
   { icon: <FaTelegram />, path: 'https://t.me/Dmytruk_Andrii' },
 ];
 
-const Social = ({ containerSyles, iconStyles }: Props) => {
+const Social = ({ containerStyles, iconStyles }: Props) => {
   return (
-    <div className={containerSyles}>
+    <div className={containerStyles}>
       {socials.map((item, index) => {
         return (
           <Link key={index} href={item.path} className={iconStyles}>

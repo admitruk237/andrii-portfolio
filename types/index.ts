@@ -65,7 +65,7 @@ export interface Stats {
 }
 
 export interface SocialProps {
-  containerSyles?: string;
+  containerStyles?: string;
   iconStyles?: string;
 }
 

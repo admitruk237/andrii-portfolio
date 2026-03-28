@@ -1,8 +1,8 @@
-'use client';
+'use client'
 
-import { ContactForm } from '@/components/ContactForm/ContactForm';
-import { ContactInfo } from '@/components/ContactInfo/ContactInfo';
-import { motion } from 'framer-motion';
+import { ContactForm } from '@/components/ContactForm/ContactForm'
+import { ContactInfo } from '@/components/ContactInfo/ContactInfo'
+import { motion } from 'framer-motion'
 
 const Contact = () => {
   return (
@@ -15,14 +15,14 @@ const Contact = () => {
         }}
       >
         <div className="container mx-auto">
-          <div className="flex flex-col lg:flex-row gap-[30px]">
+          <div className="flex flex-col lg:flex-row gap-[30px] xl:px-20 lg:px-10 px-0">
             <ContactForm />
             <ContactInfo />
           </div>
         </div>
       </motion.div>
     </section>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact
