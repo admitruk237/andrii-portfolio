@@ -69,16 +69,6 @@ export interface SocialProps {
   iconStyles?: string;
 }
 
-export interface FormFieldProps {
-  name: string;
-  placeholder: string;
-  type?: string;
-  component?: 'input' | 'textarea' | 'select';
-  options?: string[];
-  value: string;
-  error?: string;
-  onChange: (value: string) => void;
-}
 
 export interface CircularProgressProps {
   progress: number;
