@@ -1,3 +1,5 @@
+'use client';
+
 export { useContactForm } from './useContactForm';
 export { useContactAction } from './useContactAction';
 export {

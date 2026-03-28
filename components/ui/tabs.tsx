@@ -1,9 +1,9 @@
-'use client';
+'use client'
 
-import * as TabsPrimitive from '@radix-ui/react-tabs';
+import * as TabsPrimitive from '@radix-ui/react-tabs'
 
-import { cn } from '@/lib/utils';
-import { ComponentPropsWithoutRef } from 'react';
+import { cn } from '@/lib/utils'
+import { ComponentPropsWithoutRef } from 'react'
 
 function Tabs({ className, ...props }) {
   return (
@@ -12,7 +12,7 @@ function Tabs({ className, ...props }) {
       className={cn('flex flex-col gap-2', className)}
       {...props}
     />
-  );
+  )
 }
 
 function TabsList({ className, ...props }) {
@@ -21,15 +21,16 @@ function TabsList({ className, ...props }) {
       data-slot="tabs-list"
       className={cn(
         'inline-flex h-auto rounded-md p-1 text-primary',
-        className
+        className,
       )}
       {...props}
     />
-  );
+  )
 }
-interface PropsTabsTrigger
-  extends ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger> {
-  className?: string;
+interface PropsTabsTrigger extends ComponentPropsWithoutRef<
+  typeof TabsPrimitive.Trigger
+> {
+  className?: string
 }
 
 function TabsTrigger({ className, ...props }: PropsTabsTrigger) {
@@ -37,20 +38,21 @@ function TabsTrigger({ className, ...props }: PropsTabsTrigger) {
     <TabsPrimitive.Trigger
       data-slot="tabs-trigger"
       className={cn(
-        `inline-flex items-center w-full bg-[#27272c] justify-center whitespace-nowrap text-white 
+        `inline-flex cursor-pointer items-center w-full bg-card justify-center whitespace-nowrap text-secondary
         rounded-lg p-3 text-base font-medium ring-offset-white transition-all disabled:opacity-50
         data-[state=active]:bg-accent data-[state=active]:text-primary  data-[state=active]:font-bold
         data-[state=active]:shadow-sm`,
-        className
+        className,
       )}
       {...props}
     />
-  );
+  )
 }
 
-interface PropsTabsContent
-  extends ComponentPropsWithoutRef<typeof TabsPrimitive.Content> {
-  className?: string;
+interface PropsTabsContent extends ComponentPropsWithoutRef<
+  typeof TabsPrimitive.Content
+> {
+  className?: string
 }
 
 function TabsContent({ className, ...props }: PropsTabsContent) {
@@ -62,11 +64,11 @@ function TabsContent({ className, ...props }: PropsTabsContent) {
         min-h-[480px] ring-offset-white focus-visible:outline-none focus-visible:right-2 focus-visible:ring-slate-950
         focus-visible:ring-offset-2 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300
         `,
-        className
+        className,
       )}
       {...props}
     />
-  );
+  )
 }
 
-export { Tabs, TabsList, TabsTrigger, TabsContent };
+export { Tabs, TabsList, TabsTrigger, TabsContent }

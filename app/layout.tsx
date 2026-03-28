@@ -1,18 +1,18 @@
-import { JetBrains_Mono } from 'next/font/google';
-import './globals.css';
-import Header from '@/components/Header/Header';
-import PageTransition from '@/components/PageTransition/PageTransition';
-import StairTransition from '@/components/StairTransition/StairTransition';
-import ErrorBoundary from '@/components/common/ErrorBoundary';
-import { Toaster } from '@/components/ui';
-import { APP_CONFIG } from '@/config/email';
-import { ReactNode } from 'react';
+import { JetBrains_Mono } from 'next/font/google'
+import './globals.css'
+import Header from '@/components/Header/Header'
+import PageTransition from '@/components/PageTransition/PageTransition'
+import StairTransition from '@/components/StairTransition/StairTransition'
+import ErrorBoundary from '@/components/common/ErrorBoundary'
+import { Toaster } from '@/components/ui'
+import { APP_CONFIG } from '@/config/email'
+import { ReactNode } from 'react'
 
 const jetBrainsMono = JetBrains_Mono({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
   variable: '--font-jetbrainsMono',
   subsets: ['latin'],
-});
+})
 
 export const metadata = {
   title: APP_CONFIG.name,
@@ -20,25 +20,36 @@ export const metadata = {
   keywords:
     'frontend developer, react, nextjs, typescript, portfolio, web development',
   author: APP_CONFIG.developerName,
-};
+}
 
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
-};
+}
+
+import { ThemeProvider } from '@/components/common/ThemeProvider'
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={jetBrainsMono.variable} suppressHydrationWarning={true}>
-        <ErrorBoundary>
-          <Header />
-          <Toaster />
+      <body
+        className={jetBrainsMono.variable}
+        suppressHydrationWarning={true}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+        >
+          <ErrorBoundary>
+            <Header />
+            <Toaster />
 
-          <StairTransition />
-          <PageTransition>{children}</PageTransition>
-        </ErrorBoundary>
+            <StairTransition />
+            <PageTransition>{children}</PageTransition>
+          </ErrorBoundary>
+        </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }

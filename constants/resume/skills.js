@@ -1,10 +1,12 @@
-import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma } from 'react-icons/fa';
+import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs } from 'react-icons/fa'
 import {
   SiTypescript,
   SiRedux,
   SiTailwindcss,
   SiNextdotjs,
-} from 'react-icons/si';
+  SiExpress,
+  SiSqlite,
+} from 'react-icons/si'
 
 const skills = {
   title: 'My skills',
@@ -45,8 +47,20 @@ const skills = {
       icon: <FaFigma />,
       name: 'figma',
     },
+    {
+      icon: <FaNodeJs />,
+      name: 'node.js',
+    },
+    {
+      icon: <SiExpress />,
+      name: 'express.js',
+    },
+    {
+      icon: <SiSqlite />,
+      name: 'sqlite',
+    },
   ],
-};
+}
 
-export { skills };
-export default skills;
+export { skills }
+export default skills

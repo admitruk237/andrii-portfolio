@@ -1,12 +1,14 @@
-import { Button } from '../ui/button';
-import Social from '../Social/Social';
-import Photo from '../Photo/Photo';
-import { useDownloadCV } from '@/hooks';
-import { APP_CONFIG } from '@/config/email';
-import { getButtonContent } from './DownloadButton';
+'use client'
 
-const AboutMe = () => {
-  const { downloadState, progress, handleDownloadCV } = useDownloadCV();
+import { Button } from '../ui/button'
+import Social from '../Social/Social'
+import Photo from '../Photo/Photo'
+import { useDownloadCV } from '@/hooks'
+import { APP_CONFIG } from '@/config/email'
+import { getButtonContent } from './DownloadButton'
+
+export const Summary = () => {
+  const { downloadState, progress, handleDownloadCV } = useDownloadCV()
   return (
     <div
       className="flex flex-col lg:flex-row items-center justify-between
@@ -18,12 +20,13 @@ const AboutMe = () => {
           Hello I&apos;m <br />{' '}
           <span className="text-accent">{APP_CONFIG.developerName}</span>
         </h1>
-        <p className="max-w-[500px] mb-9 text-white/80">
-          I&apos;m a junior frontend developer focused on building responsive,
+        <p className="max-w-[500px] mb-9 text-muted-foreground">
+          I&apos;m frontend developer focused on building responsive,
           accessible, and modern web interfaces. I work with technologies like
-          HTML, CSS, JavaScript, TypeScript, React, Redux Toolkit, Next.js, and
-          Tailwind CSS. I&apos;m passionate about clean code, good UI/UX, and
-          constantly improving my skills through practice and learning.
+          HTML, CSS, JavaScript, TypeScript, React, Redux Toolkit, Next.js,
+          Node.js, Express.js, Sqlite, and Tailwind CSS. I&apos;m passionate
+          about clean code, good UI/UX, and constantly improving my skills
+          through practice and learning.
         </p>
         <div className="flex flex-col lg:flex-row items-center gap-8">
           <Button
@@ -33,8 +36,8 @@ const AboutMe = () => {
               downloadState === 'success'
                 ? 'border-green-500 text-green-500 hover:bg-green-500'
                 : downloadState === 'error'
-                ? 'border-red-500 text-red-500 hover:bg-red-500'
-                : ''
+                  ? 'border-red-500 text-red-500 hover:bg-red-500'
+                  : ''
             }`}
             onClick={handleDownloadCV}
             disabled={downloadState === 'loading'}
@@ -45,7 +48,7 @@ const AboutMe = () => {
 
           <div className="mb-8 lg:mb-0">
             <Social
-              containerSyles="flex gap-6"
+              containerStyles="flex gap-6"
               iconStyles="w-9 h-9 border border-accent rounded-full flex justify-center
                   items-center text-accent text-base hover:bg-accent hover:text-primary 
                   hover:transition-all duration-500"
@@ -57,7 +60,5 @@ const AboutMe = () => {
         <Photo />
       </div>
     </div>
-  );
-};
-
-export default AboutMe;
+  )
+}
