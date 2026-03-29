@@ -1,8 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { usePathname } from 'next/navigation'
-import { Link } from '@/i18n/routing'
+import { Link, usePathname } from '@/i18n/routing'
 import { CiMenuFries } from 'react-icons/ci'
 import {
   Sheet,

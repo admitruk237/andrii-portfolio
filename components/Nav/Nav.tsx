@@ -1,6 +1,5 @@
 'use client'
-import { Link } from '@/i18n/routing'
-import { usePathname } from 'next/navigation'
+import { Link, usePathname } from '@/i18n/routing'
 import { navLinks } from '@/constants/navLinks'
 import { useTranslations } from 'next-intl'
 

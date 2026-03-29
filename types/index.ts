@@ -85,3 +85,19 @@ export interface StairAnimation {
 }
 
 export type DownloadState = 'idle' | 'loading' | 'success' | 'error'
+
+export interface ProjectStackItem {
+  name: string
+}
+
+export interface Project {
+  num: string
+  category: string
+  title: string
+  description: string
+  stack: ProjectStackItem[]
+  image?: string
+  video?: string
+  github: string
+  live: string
+}
