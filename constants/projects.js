@@ -1,9 +1,9 @@
 const projects = [
   {
     num: '01',
-    categoty: 'Next.js Applications',
+    category: 'Next.js Applications',
     title: 'Andrii Portfolio',
-    discription: `A personal portfolio website designed to showcase my skills, projects, and design approach. 
+    description: `A personal portfolio website designed to showcase my skills, projects, and design approach. 
 It features a modern responsive layout, smooth animations, and an intuitive structure. 
 Built with Next.js, React 19, and TypeScript, styled using Tailwind CSS, Radix UI, and Framer Motion. 
 This project highlights my ability to deliver polished, production-ready applications.`,
@@ -26,9 +26,9 @@ This project highlights my ability to deliver polished, production-ready applica
   },
   {
     num: '02',
-    categoty: 'React Applications',
+    category: 'React Applications',
     title: 'News Reactfy',
-    discription: `A feature-rich news application built with React and TypeScript. 
+    description: `A feature-rich news application built with React and TypeScript. 
 Users can browse articles, filter by category, search, and switch between light and dark modes. 
 The project uses Redux Toolkit for state management, Axios for API calls, and custom hooks for advanced logic. 
 It demonstrates practical experience in scalable and interactive React applications.`,
@@ -48,9 +48,9 @@ It demonstrates practical experience in scalable and interactive React applicati
   },
   {
     num: '03',
-    categoty: 'Next.js Applications',
+    category: 'Next.js Applications',
     title: 'Quotes App',
-    discription: `A quote management application built with Next.js and TypeScript. 
+    description: `A quote management application built with Next.js and TypeScript. 
 Users can search, add, edit, and delete quotes through a REST API. 
 The UI is styled with Tailwind CSS and ShadCN UI, with error handling via React Toastify. 
 Unit tests are implemented using Jest, ensuring reliability and maintainability.`,
@@ -71,9 +71,9 @@ Unit tests are implemented using Jest, ensuring reliability and maintainability.
   },
   {
     num: '04',
-    categoty: 'React Applications',
+    category: 'React Applications',
     title: 'Get Task Driver',
-    discription: `A Trello-like task management app built with React, TypeScript, and Redux. 
+    description: `A Trello-like task management app built with React, TypeScript, and Redux. 
 Users can create lists, add tasks, set deadlines, mark completion, and manage multiple boards. 
 The UI uses Material UI and Framer Motion for smooth interactions. 
 Authentication is handled with JWT, with unit tests and Storybook snapshots for quality assurance.`,
@@ -94,9 +94,9 @@ Authentication is handled with JWT, with unit tests and Storybook snapshots for 
   },
   {
     num: '05',
-    categoty: 'React Applications',
+    category: 'React Applications',
     title: 'Book Library App',
-    discription: `An online book library application with search and filtering functionality. 
+    description: `An online book library application with search and filtering functionality. 
 It was first built with classic Redux and later refactored to Redux Toolkit for better structure. 
 The backend is a simple Express server, with Axios handling data requests and Toastify showing notifications. 
 This project demonstrates both legacy and modern state management approaches.`,
@@ -118,16 +118,16 @@ This project demonstrates both legacy and modern state management approaches.`,
   },
   {
     num: '06',
-    categoty: 'E-commerce & Collaborative',
+    category: 'E-commerce & Collaborative',
     title: 'Shop store',
-    discription: `A collaborative e-commerce jewelry shop built entirely with HTML, CSS, and JavaScript. 
+    description: `A collaborative e-commerce jewelry shop built entirely with HTML, CSS, and JavaScript. 
 The project includes a fully custom shopping cart powered by LocalStorage and responsive UI elements. 
 I contributed to UI implementation, form handling, and planning of app structure. 
 It demonstrates teamwork, GitHub collaboration, and development without frameworks.`,
     stack: [
       { name: 'Html 5' },
       { name: 'Css 3' },
-      { name: 'Javascritp' },
+      { name: 'Javascript' },
       { name: 'LocalStorage' },
       { name: 'Team Project' },
       { name: 'GitHub' },
@@ -141,16 +141,16 @@ It demonstrates teamwork, GitHub collaboration, and development without framewor
   },
   {
     num: '07',
-    categoty: 'Landing Pages & Simple Websites',
+    category: 'Landing Pages & Simple Websites',
     title: 'Home Pro',
-    discription: `A responsive landing page for a home service company designed in Figma. 
+    description: `A responsive landing page for a home service company designed in Figma. 
 It includes scroll-triggered animations, a content slider, and an accordion component. 
 Built with HTML, CSS, and JavaScript, styled using BEM methodology. 
 This project highlights clean responsive layout and interactive UI development.`,
     stack: [
       { name: 'Html 5' },
       { name: 'Css 3' },
-      { name: 'Javascritp' },
+      { name: 'Javascript' },
       { name: 'Responsive Design' },
       { name: 'BEM' },
       { name: 'Figma' },
@@ -163,9 +163,9 @@ This project highlights clean responsive layout and interactive UI development.`
   },
   {
     num: '08',
-    categoty: 'Landing Pages & Simple Websites',
+    category: 'Landing Pages & Simple Websites',
     title: 'Farm Vest',
-    discription: `A responsive landing page showcasing agricultural investment opportunities. 
+    description: `A responsive landing page showcasing agricultural investment opportunities. 
 It features engaging animations, parallax effects, and a modern UI design. 
 Developed with HTML, CSS, Sass, and JavaScript, styled with BEM methodology. 
 The project demonstrates smooth interactions and attention to visual details.`,
@@ -174,7 +174,7 @@ The project demonstrates smooth interactions and attention to visual details.`,
       { name: 'Css 3' },
       { name: 'Sass' },
       { name: 'BEM' },
-      { name: 'Javascritp' },
+      { name: 'Javascript' },
       { name: 'Responsive Design' },
       { name: 'Animations' },
       { name: 'Parallax Effects' },
@@ -186,16 +186,16 @@ The project demonstrates smooth interactions and attention to visual details.`,
   },
   {
     num: '09',
-    categoty: 'Landing Pages & Simple Websites',
+    category: 'Landing Pages & Simple Websites',
     title: 'GoCorona ',
-    discription: `A health awareness landing page with a responsive design and modern layout. 
+    description: `A health awareness landing page with a responsive design and modern layout. 
 It includes animations, smooth navigation, and interactive elements for user engagement. 
 The project was built with HTML, CSS, Sass, and JavaScript, structured with BEM and automated using Gulp. 
 It demonstrates solid knowledge of UI design and frontend fundamentals.`,
     stack: [
       { name: 'Html 5' },
       { name: 'Css 3' },
-      { name: 'Javascritp' },
+      { name: 'Javascript' },
       { name: 'Sass' },
       { name: 'BEM' },
       { name: 'Gulp' },
@@ -208,16 +208,16 @@ It demonstrates solid knowledge of UI design and frontend fundamentals.`,
   },
   {
     num: '10',
-    categoty: 'Landing Pages & Simple Websites',
+    category: 'Landing Pages & Simple Websites',
     title: 'Finance',
-    discription: `A financial services landing page with a professional and minimal UI design. 
+    description: `A financial services landing page with a professional and minimal UI design. 
 It features responsive layout, smooth navigation, and clean visual presentation. 
 Built with HTML, CSS, Sass, and JavaScript, styled using BEM methodology and designed in Figma. 
 The project emphasizes detail-oriented design and polished frontend delivery.`,
     stack: [
       { name: 'Html 5' },
       { name: 'Css 3' },
-      { name: 'Javascritp' },
+      { name: 'Javascript' },
       { name: 'Sass' },
       { name: 'BEM' },
       { name: 'Responsive Design' },
