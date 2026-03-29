@@ -5,17 +5,18 @@ import { useState } from 'react'
 import type { Swiper as SwiperType } from 'swiper'
 import { ProjectInfo, ProjectLinks, ProjectSlider } from '@/components/Work'
 import { projects } from '@/constants/projects'
+import { Project } from '@/types'
 
 export const WorkContent = () => {
-  const [project, setProject] = useState(projects[0])
+  const [project, setProject] = useState<Project>(projects[0] as Project)
 
   const handleSlideChange = (swiper: SwiperType) => {
     const currentIndex = swiper.activeIndex
-    setProject(projects[currentIndex])
+    setProject(projects[currentIndex] as Project)
   }
 
   return (
-    <section className="min-h-[80vh] flex flex-col justify-center py-12">
+    <section className="min-h-[80vh] flex flex-col justify-center py-3">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
@@ -28,8 +29,12 @@ export const WorkContent = () => {
         }}
       >
         <div className="container mx-auto">
-          <div className="flex flex-col lg:flex-row lg:gap-[30px] lg:items-center">
-            <div className="w-full lg:w-[50%] flex flex-col lg:justify-between order-2 lg:order-none">
+          <div className="flex flex-col gap-5 lg:gap-7">
+            <ProjectSlider
+              projects={projects as Project[]}
+              onSlideChange={handleSlideChange}
+            />
+            <div className="w-full flex flex-col justify-between">
               <motion.div
                 layout
                 className="flex flex-col gap-[30px]"
@@ -41,10 +46,6 @@ export const WorkContent = () => {
                 githubUrl={project.github}
               />
             </div>
-            <ProjectSlider
-              projects={projects}
-              onSlideChange={handleSlideChange}
-            />
           </div>
         </div>
       </motion.div>

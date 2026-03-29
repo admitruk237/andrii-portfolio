@@ -65,7 +65,7 @@ export const ContactForm = () => {
     <div className="lg:w-[54%] order-2 lg:order-none">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col gap-6 p-2 sm:p-10 bg-card rounded-xl"
+        className="flex flex-col gap-6 p-6 sm:p-10 bg-card rounded-xl"
       >
         <h3 className="text-4xl text-accent">{t('title')}</h3>
         <p className="text-muted-foreground">{t('description')}</p>
@@ -144,7 +144,7 @@ export const ContactForm = () => {
         <Button
           variant="default"
           size="md"
-          className="max-w-40"
+          className="sm:max-w-40 w-full"
           type="submit"
           disabled={isSubmitting}
         >
