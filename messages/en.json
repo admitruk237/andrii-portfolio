@@ -54,34 +54,70 @@
       "description": "I’m a junior frontend developer actively honing my skills through hands-on projects. My portfolio includes 12+ projects of varying complexity, built with modern technologies. Recently, I’ve also started expanding into backend development using Node.js and Express. You can explore my work in detail in the Work section, including demos and GitHub repositories.",
       "items": {
         "0": {
+          "duration": "Feb 2025 – Feb 2026",
           "projects": ["Freelance (CRM System)"],
-          "technologies": ["Worked on a CRM system for a small business as part of a team"]
+          "technologies": [
+            "Worked on a CRM system for a small business as part of a team"
+          ]
         },
         "1": {
+          "duration": "Feb 2026 – Present",
           "projects": ["To-Do API (Trello-like)"],
           "technologies": ["Backend architecture basics"]
         },
-        "2": { "projects": ["My Portfolio"] },
-        "3": { "projects": ["Quotes App"] },
-        "4": { "projects": ["Auth with Firebase"] },
-        "5": { "projects": ["Get Task Driver"] },
-        "6": { "projects": ["Book Library App", "News Reactify"] },
-        "7": { "projects": ["ShoppeStore (Team Project)"] },
-        "8": { "projects": ["GoCorona", "Finance", "Farm Vest", "Home Pro", "INTERIA"] }
+        "2": {
+          "duration": "Aug 2025 – Present",
+          "projects": ["My Portfolio"]
+        },
+        "3": {
+          "duration": "Jul 2025 – Aug 2025",
+          "projects": ["Quotes App"]
+        },
+        "4": {
+          "duration": "May 2025",
+          "projects": ["Auth with Firebase"]
+        },
+        "5": {
+          "duration": "Jan 2025 – May 2025",
+          "projects": ["Get Task Driver"]
+        },
+        "6": {
+          "duration": "Jun 2024 – Jan 2025",
+          "projects": ["Book Library App", "News Reactify"]
+        },
+        "7": {
+          "duration": "Jan 2024 – Apr 2024",
+          "projects": ["ShoppeStore (Team Project)"]
+        },
+        "8": {
+          "duration": "Sep 2023 – Dec 2023",
+          "projects": [
+            "GoCorona",
+            "Finance",
+            "Farm Vest",
+            "Home Pro",
+            "INTERIA"
+          ]
+        }
       }
     },
     "education": {
       "title": "My education",
+      "certificate": "View certificate",
       "items": {
         "0": {
+          "duration": "2025",
           "institution": "Online Course Platform",
-          "degree": "The Ultimate React Course: React, Next.js, Redux & More"
+          "degree": "The Ultimate React Course: React, Next.js, Redux & More",
+          "certificate": "https://www.udemy.com/certificate/UC-623331d7-fee3-4e0f-99ec-62c8c23a5edb/"
         },
         "1": {
+          "duration": "2024",
           "institution": "Self-taught Frontend Developer",
           "degree": "Independent study – documentation, YouTube tutorials, practice projects, supplemented with mentoring from an experienced developer"
         },
         "2": {
+          "duration": "2011-2017",
           "institution": "Vinnytsia Institute of Trade and Economics of Kyiv National University of Trade and Economics",
           "degree": "Master’s Degree in Management of Trade Organizations"
         }
@@ -121,7 +157,7 @@
       "0": {
         "title": "Andrii Portfolio",
         "category": "Next.js Applications",
-        "description": "A personal portfolio website designed to showcase my skills, projects, and design approach. It features a modern responsive layout, smooth animations, and an intuitive structure. Built with Next.js, React 19, and TypeScript, styled using Tailwind CSS, Radix UI, and Framer Motion. This project highlights my ability to deliver polished, production-ready applications."
+        "description": "A personal portfolio website built with Next.js 16, React 19, and TypeScript 5.9. Styled with Tailwind CSS 4, Radix UI, and Framer Motion. Features include internationalization with next-intl, form validation via Zod and React Hook Form, and toast notifications with Sonner. This project demonstrates my ability to build clean, modern, and production-ready applications."
       },
       "1": {
         "title": "News Reactfy",
@@ -165,6 +201,11 @@
       },
       "9": {
         "title": "Finance",
+        "category": "Landing Pages & Simple Websites",
+        "description": "A financial services landing page with a professional and minimal UI design. It features responsive layout, smooth navigation, and clean visual presentation. Built with HTML, CSS, Sass, and JavaScript, styled using BEM methodology and designed in Figma. The project emphasizes detail-oriented design and polished frontend delivery."
+      },
+      "10": {
+        "title": "INTERIA",
         "category": "Landing Pages & Simple Websites",
         "description": "A financial services landing page with a professional and minimal UI design. It features responsive layout, smooth navigation, and clean visual presentation. Built with HTML, CSS, Sass, and JavaScript, styled using BEM methodology and designed in Figma. The project emphasizes detail-oriented design and polished frontend delivery."
       }

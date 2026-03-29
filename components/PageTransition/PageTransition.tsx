@@ -1,27 +1,27 @@
-'use client';
+'use client'
 
-import { AnimatePresence, motion } from 'framer-motion';
-import { usePathname } from 'next/navigation';
-import { ReactNode, useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion'
+import { usePathname } from 'next/navigation'
+import { ReactNode, useEffect, useState } from 'react'
 
-interface PageTransitionProps {
-  children: ReactNode;
+type Props = {
+  children: ReactNode
 }
 
-const PageTransition = ({ children }: PageTransitionProps) => {
-  const pathname = usePathname();
-  const [isTransitionVisible, setIsTransitionVisible] = useState<boolean>(true);
+const PageTransition = ({ children }: Props) => {
+  const pathname = usePathname()
+  const [isTransitionVisible, setIsTransitionVisible] = useState<boolean>(true)
 
   useEffect(() => {
-    setIsTransitionVisible(true);
+    setIsTransitionVisible(true)
     const hideTimer = setTimeout(() => {
-      setIsTransitionVisible(false);
-    }, 1000);
+      setIsTransitionVisible(false)
+    }, 1000)
 
     return () => {
-      clearTimeout(hideTimer);
-    };
-  }, [pathname]);
+      clearTimeout(hideTimer)
+    }
+  }, [pathname])
 
   return (
     <AnimatePresence mode="wait">
@@ -39,7 +39,7 @@ const PageTransition = ({ children }: PageTransitionProps) => {
       )}
       {children}
     </AnimatePresence>
-  );
-};
+  )
+}
 
-export default PageTransition;
+export default PageTransition

@@ -13,17 +13,14 @@ export const Experience = () => {
 
       <ul className="grid grid-cols-1 xl:grid-cols-2 gap-[30px]">
         {experience.items.map((item, index) => {
-          const hasTranslation = t.has(`items.${index}`)
-          const translatedProjects = hasTranslation
-            ? t.raw(`items.${index}.projects`)
-            : item.projects
-          const translatedTech =
-            hasTranslation && t.has(`items.${index}.technologies`)
-              ? [
-                  ...t.raw(`items.${index}.technologies`),
-                  ...item.technologies.slice(1),
-                ]
-              : item.technologies
+          const translatedProjects = t.raw(`items.${index}.projects`)
+          const hasTechTranslation = t.has(`items.${index}.technologies`)
+          const translatedTechDesc = hasTechTranslation
+            ? t.raw(`items.${index}.technologies`)
+            : []
+          const translatedDuration = t(`items.${index}.duration`)
+
+          const allTech = [...translatedTechDesc, ...item.technologies]
 
           return (
             <li
@@ -31,7 +28,7 @@ export const Experience = () => {
               className="bg-card  py-6 px-10 rounded-xl flex flex-col justify-center
                         items-center lg:items-start gap-1"
             >
-              <span className="text-accent">{item.duration}</span>
+              <span className="text-accent">{translatedDuration}</span>
               <div className="flex gap-2 flex-wrap mb-3">
                 {translatedProjects.map((project: string, pIndex: number) => {
                   return (
@@ -47,7 +44,7 @@ export const Experience = () => {
 
               <div className="flex items-center gap-3 ">
                 <div className="flex flex-wrap gap-2">
-                  {translatedTech.map((tech: string, tIndex: number) => {
+                  {allTech.map((tech: string, tIndex: number) => {
                     return (
                       <p
                         key={tIndex}

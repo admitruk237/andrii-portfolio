@@ -12,7 +12,7 @@ import {
 } from '../ui/sheet'
 import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
-import { navLinks } from '@/constants/navLinks'
+import { ROUTES } from '@/constants/routes'
 
 export const MobileNav = () => {
   const pathname = usePathname()
@@ -43,7 +43,7 @@ export const MobileNav = () => {
           </SheetTitle>
         </SheetHeader>
         <nav className="flex flex-col justify-center items-center gap-8">
-          {navLinks.map((link, index) => {
+          {ROUTES.map((link, index) => {
             const isCurrent =
               pathname === link.path || pathname === `/${link.path}`
 

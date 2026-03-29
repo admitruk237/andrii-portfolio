@@ -1,4 +1,4 @@
-import { Summary } from '@/components/AboutMe/Summary'
+import { Summary } from '@/components/Summary/Summary'
 import { Stats } from '@/components/Stats/Stats'
 
 const Home = () => {

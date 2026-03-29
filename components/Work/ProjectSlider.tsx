@@ -32,15 +32,12 @@ export const ProjectSlider = ({ projects, onSlideChange }: Props) => {
         onSwiper={setSwiper}
       >
         {projects.map((project, index) => {
-          const projectIndex = (parseInt(project.num) - 1).toString()
-          const hasTranslation = t.has(`projects.${projectIndex}`)
-
-          const displayTitle = hasTranslation
-            ? t(`projects.${projectIndex}.title`)
-            : project.title
-          const displayCategory = hasTranslation
-            ? t(`projects.${projectIndex}.category`)
-            : project.category
+          const projectIndex = project.id
+          const displayTitle = t(`projects.${projectIndex}.title`)
+          const displayCategory = t(`projects.${projectIndex}.category`)
+          const displayNum = (parseInt(project.id) + 1)
+            .toString()
+            .padStart(2, '0')
 
           return (
             <SwiperSlide
@@ -56,7 +53,7 @@ export const ProjectSlider = ({ projects, onSlideChange }: Props) => {
                     <p className="text-accent">{displayCategory}</p>
                   </div>
                   <div className="text-3xl lg:text-5xl  leading-none font-extrabold text-transparent text-outline">
-                    {project.num}
+                    {displayNum}
                   </div>
                 </div>
                 <div className="w-full relative group aspect-[1105/500] bg-primary/20 rounded-lg overflow-hidden shadow-xl border border-white/5">
@@ -76,7 +73,7 @@ export const ProjectSlider = ({ projects, onSlideChange }: Props) => {
                       width={1918}
                       height={864}
                       className="w-full h-full object-cover"
-                      alt={`${project.title} project image`}
+                      alt={`${displayTitle} project image`}
                       priority
                     />
                   ) : (
