@@ -1,5 +1,5 @@
 import { Summary } from '@/components/AboutMe/Summary'
-import Stats from '@/components/Stats/Stats'
+import { Stats } from '@/components/Stats/Stats'
 
 const Home = () => {
   return (

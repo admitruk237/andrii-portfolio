@@ -1,16 +1,31 @@
 import { experience } from '@/constants'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import { useTranslations } from 'next-intl'
 
 export const Experience = () => {
+  const t = useTranslations('Resume.experience')
+
   return (
     <div className="flex flex-col gap-[30px] text-center lg:text-left">
-      <h3 className="text-4xl font-bold">{experience.title}</h3>
+      <h3 className="text-4xl font-bold">{t('title')}</h3>
       <p className="text-muted-foreground mx-auto lg:mx-0">
-        {experience.description}
+        {t('description')}
       </p>
       <ScrollArea className="h-[480px]">
         <ul className="grid grid-cols-1 xl:grid-cols-2 gap-[30px]">
           {experience.items.map((item, index) => {
+            const hasTranslation = t.has(`items.${index}`)
+            const translatedProjects = hasTranslation
+              ? t.raw(`items.${index}.projects`)
+              : item.projects
+            const translatedTech =
+              hasTranslation && t.has(`items.${index}.technologies`)
+                ? [
+                    ...t.raw(`items.${index}.technologies`),
+                    ...item.technologies.slice(1),
+                  ]
+                : item.technologies
+
             return (
               <li
                 key={index}
@@ -19,10 +34,10 @@ export const Experience = () => {
               >
                 <span className="text-accent">{item.duration}</span>
                 <div className="flex gap-2 flex-wrap mb-3">
-                  {item.projects.map((project, index) => {
+                  {translatedProjects.map((project: string, pIndex: number) => {
                     return (
                       <h3
-                        key={index}
+                        key={pIndex}
                         className="text-xl   text-center lg:text-left"
                       >
                         {project}.
@@ -33,13 +48,13 @@ export const Experience = () => {
 
                 <div className="flex items-center gap-3 ">
                   <div className="flex flex-wrap gap-2">
-                    {item.technologies.map((technologies, index) => {
+                    {translatedTech.map((tech: string, tIndex: number) => {
                       return (
                         <p
-                          key={index}
+                          key={tIndex}
                           className="text-muted-foreground"
                         >
-                          {technologies}
+                          {tech}
                         </p>
                       )
                     })}

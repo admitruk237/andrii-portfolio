@@ -5,7 +5,7 @@ import type { DownloadState } from '@/types';
 
 const BUTTON_CONTENT_MAP: Record<
   DownloadState,
-  (progress: number) => ReactElement
+  (progress: number, label?: string) => ReactElement
 > = {
   loading: (progress) => (
     <div
@@ -31,9 +31,9 @@ const BUTTON_CONTENT_MAP: Record<
       <FiAlertCircle className="text-xl text-red-500" />
     </div>
   ),
-  idle: () => (
+  idle: (_, label) => (
     <div className="flex items-center gap-2">
-      <span>Download CV</span>
+      <span>{label || 'Download CV'}</span>
       <FiDownload className="text-xl" />
     </div>
   ),
@@ -41,7 +41,8 @@ const BUTTON_CONTENT_MAP: Record<
 
 export const getButtonContent = (
   state: DownloadState,
-  progress: number
+  progress: number,
+  label?: string
 ): ReactElement => {
-  return BUTTON_CONTENT_MAP[state](progress);
+  return BUTTON_CONTENT_MAP[state](progress, label);
 };

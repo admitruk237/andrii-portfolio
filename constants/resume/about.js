@@ -1,6 +1,6 @@
 const about = {
   title: 'About me',
-  discription: `Motivated junior frontend developer with hands-on experience building modern, responsive web applications using React, TypeScript, Redux Toolkit, Next.js, and Tailwind CSS.
+  description: `Motivated junior frontend developer with hands-on experience building modern, responsive web applications using React, TypeScript, Redux Toolkit, Next.js, and Tailwind CSS.
   
   I focus on writing clean, maintainable code and follow core engineering principles such as DRY, SOLID, and KISS. I have experience working both independently and in a team environment, including commercial freelance work on a CRM system.
   

@@ -1,99 +1,87 @@
 export interface ContactFormData {
-  firstname: string;
-  lastname: string;
-  email: string;
-  phone: string;
-  message: string;
+  firstName: string
+  lastName: string
+  email: string
+  phone: string
+  message: string
 }
 
 export interface ContactFormErrors {
-  firstname?: string;
-  lastname?: string;
-  email?: string;
-  phone?: string;
-  message?: string;
-}
-
-export interface Project {
-  num: string;
-  category: string;
-  title: string;
-  description: string;
-  stack: { name: string }[];
-  image: string;
-  live: string;
-  github: string;
+  firstName?: string
+  lastName?: string
+  email?: string
+  phone?: string
+  message?: string
 }
 
 export interface Skill {
-  skillName: string;
-  percentage: number;
+  skillName: string
+  percentage: number
 }
 
 export interface Experience {
-  company: string;
-  position: string;
-  duration: string;
+  company: string
+  position: string
+  duration: string
 }
 
 export interface Education {
-  institution: string;
-  degree: string;
-  duration: string;
+  institution: string
+  degree: string
+  duration: string
 }
 
 export interface NavLink {
-  name: string;
-  path: string;
+  name: string
+  path: string
 }
 
 export interface SocialLink {
-  icon: React.ComponentType;
-  path: string;
+  icon: React.ComponentType
+  path: string
 }
 
 export type ContactItem = {
-  icon: React.ReactElement;
-  title: string;
-  description: string;
-  type: 'phone' | 'email' | 'location';
-};
+  icon: React.ReactElement
+  title: string
+  description: string
+  type: 'phone' | 'email' | 'location'
+}
 
 export interface Stats {
-  num: number;
-  text: string;
+  num: number
+  text: string
 }
 
 export interface SocialProps {
-  containerStyles?: string;
-  iconStyles?: string;
+  containerStyles?: string
+  iconStyles?: string
 }
 
-
 export interface CircularProgressProps {
-  progress: number;
-  size?: number;
-  strokeWidth?: number;
+  progress: number
+  size?: number
+  strokeWidth?: number
 }
 
 export interface UseContactFormReturn {
-  formData: ContactFormData;
-  errors: ContactFormErrors;
-  isSubmitting: boolean;
-  handleInputChange: (field: keyof ContactFormData, value: string) => void;
-  submitForm: () => Promise<void>;
+  formData: ContactFormData
+  errors: ContactFormErrors
+  isSubmitting: boolean
+  handleInputChange: (field: keyof ContactFormData, value: string) => void
+  submitForm: () => Promise<void>
 }
 
 export interface UseDownloadCVReturn {
-  downloadState: 'idle' | 'loading' | 'success' | 'error';
-  progress: number;
-  handleDownloadCV: () => void;
+  downloadState: 'idle' | 'loading' | 'success' | 'error'
+  progress: number
+  handleDownloadCV: () => void
 }
 
 export interface StairAnimation {
-  initial: { top: string };
-  animate: { top: string };
-  exit: { top: string };
+  initial: { top: string }
+  animate: { top: string }
+  exit: { top: string }
 }
 
-export type DownloadState = 'idle' | 'loading' | 'success' | 'error';
+export type DownloadState = 'idle' | 'loading' | 'success' | 'error'

@@ -1,14 +1,25 @@
 import { education } from '@/constants'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import { useTranslations } from 'next-intl'
 
 export const Education = () => {
+  const t = useTranslations('Resume.education')
+
   return (
     <div className="flex flex-col gap-[30px] text-center lg:text-left">
-      <h3 className="text-4xl font-bold">{education.title}</h3>
+      <h3 className="text-4xl font-bold">{t('title')}</h3>
 
       <ScrollArea className="h-[480px]">
         <ul className="grid grid-cols-1 xl:grid-cols-2 gap-[30px]">
           {education.items.map((item, index) => {
+            const hasTranslation = t.has(`items.${index}`)
+            const translatedDegree = hasTranslation
+              ? t(`items.${index}.degree`)
+              : item.degree
+            const translatedInstitution = hasTranslation
+              ? t(`items.${index}.institution`)
+              : item.istitution
+
             return (
               <li
                 key={index}
@@ -20,7 +31,7 @@ export const Education = () => {
                   key={index}
                   className="text-xl text-center lg:text-left mb-3"
                 >
-                  {item.degree}.
+                  {translatedDegree}.
                 </h3>
 
                 <div className="flex items-center gap-3 ">
@@ -28,7 +39,7 @@ export const Education = () => {
                     key={index}
                     className="text-muted-foreground"
                   >
-                    {item.istitution}
+                    {translatedInstitution}
                   </p>
                 </div>
               </li>

@@ -1,79 +1,70 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
-import { CiMenuFries } from 'react-icons/ci';
+import { useState } from 'react'
+import { usePathname } from 'next/navigation'
+import { Link } from '@/i18n/routing'
+import { CiMenuFries } from 'react-icons/ci'
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '../ui/sheet';
-import clsx from 'clsx';
+} from '../ui/sheet'
+import clsx from 'clsx'
+import { useTranslations } from 'next-intl'
+import { navLinks } from '@/constants/navLinks'
 
-const links = [
-  {
-    name: 'home',
-    path: '/',
-  },
-
-  {
-    name: 'resume',
-    path: '/resume',
-  },
-  {
-    name: 'work',
-    path: '/work',
-  },
-  {
-    name: 'contact',
-    path: '/contact',
-  },
-];
-
-const MobileNav = () => {
-  const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+export const MobileNav = () => {
+  const pathname = usePathname()
+  const [open, setOpen] = useState(false)
+  const tNav = useTranslations('Nav')
+  const tHeader = useTranslations('Header')
 
   return (
-    <Sheet open={open} onOpenChange={setOpen}>
+    <Sheet
+      open={open}
+      onOpenChange={setOpen}
+    >
       <SheetTrigger className="flex justify-center items-center">
         <CiMenuFries className="text-[32px] text-accent" />
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
           <SheetTitle className="mt-32  text-center text-2xl">
-            <Link href="/" onClick={() => setOpen(false)}>
-              <h1 className="text-4xl mb-20 text-white font-semibold">
-                Andrii<span className="text-accent-hover">.</span>
+            <Link
+              href="/"
+              onClick={() => setOpen(false)}
+            >
+              <h1 className="text-4xl mb-20 text-foreground font-semibold">
+                {tHeader('name')}
+                <span className="text-accent-hover">.</span>
               </h1>
             </Link>
           </SheetTitle>
         </SheetHeader>
         <nav className="flex flex-col justify-center items-center gap-8">
-          {links.map((link, index) => {
+          {navLinks.map((link, index) => {
+            const isCurrent =
+              pathname === link.path || pathname === `/${link.path}`
+
             return (
               <Link
                 href={link.path}
                 key={index}
                 onClick={() => setOpen(false)}
-                aria-current={link.path === pathname ? 'page' : undefined}
+                aria-current={isCurrent ? 'page' : undefined}
                 className={clsx(
                   'text-xl capitalize hover:text-accent transition-all',
-                  link.path === pathname &&
-                    'text-accent border-b-2 border-accent'
+                  isCurrent && 'text-accent border-b-2 border-accent',
                 )}
               >
-                {link.name}
+                {tNav(link.name)}
               </Link>
-            );
+            )
           })}
         </nav>
       </SheetContent>
     </Sheet>
-  );
-};
-
-export default MobileNav;
+  )
+}

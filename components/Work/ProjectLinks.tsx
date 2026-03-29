@@ -6,6 +6,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
+import { useTranslations } from 'next-intl'
 
 type Props = {
   liveUrl: string
@@ -13,30 +14,46 @@ type Props = {
 }
 
 export const ProjectLinks = ({ liveUrl, githubUrl }: Props) => {
+  const t = useTranslations('Work.links')
+
   return (
     <div className="flex items-center gap-4 mt-1">
       {liveUrl !== '' && (
-        <Link href={liveUrl}>
+        <Link
+          href={liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <TooltipProvider delayDuration={100}>
             <Tooltip>
-              <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-card flex justify-center items-center group">
-                <BsArrowUpRight className="text-foreground text-3xl group-hover:text-accent" />
+              <TooltipTrigger
+                className="w-[70px] h-[70px] rounded-full bg-card flex justify-center items-center group
+                                       hover:bg-accent/10 transition-all duration-300"
+              >
+                <BsArrowUpRight className="text-foreground text-3xl group-hover:text-accent transition-all duration-300" />
               </TooltipTrigger>
-              <TooltipContent className="">
-                <p>Live project</p>
+              <TooltipContent>
+                <p>{t('live')}</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
         </Link>
       )}
-      <Link href={githubUrl}>
+      <Link
+        href={githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <TooltipProvider delayDuration={100}>
           <Tooltip>
-            <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-card flex justify-center items-center group">
-              <BsGithub className="text-foreground text-3xl group-hover:text-accent" />
+            <TooltipTrigger
+              className="w-[70px] h-[70px] rounded-full bg-card flex justify-center items-center group
+                                     hover:bg-accent/10 transition-all duration-300"
+            >
+              <BsGithub className="text-foreground text-3xl group-hover:text-accent transition-all duration-300" />
             </TooltipTrigger>
-            <TooltipContent className="">
-              <p>Github repository</p>
+            <TooltipContent>
+              <p>{t('github')}</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>

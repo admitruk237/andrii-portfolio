@@ -5,14 +5,17 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '../ui/tooltip'
+import { useTranslations } from 'next-intl'
 
 export const Skills = () => {
+  const t = useTranslations('Resume.skills')
+
   return (
     <div className="flex flex-col gap-[30px]">
       <div className="flex flex-col gap-[30px] text-center lg:text-left">
-        <h3 className="text-4xl font-bold">{skills.title}</h3>
+        <h3 className="text-4xl font-bold">{t('title')}</h3>
         <p className="max-w-[600px] text-white/60 mx-auto lg:mx--0">
-          {skills.description}
+          {t('description')}
         </p>
       </div>
       <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:gap-[30px] gap-4">

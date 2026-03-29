@@ -1,0 +1,173 @@
+{
+  "Header": {
+    "name": "Andrzej",
+    "hireMe": "Zatrudnij mnie"
+  },
+  "Nav": {
+    "home": "główna",
+    "resume": "życiorys",
+    "work": "projekty",
+    "contact": "kontakt"
+  },
+  "Summary": {
+    "role": "Frontend deweloper",
+    "hello": "Cześć, jestem ",
+    "description": "Jestem programistą frontendowym skoncentrowним na budowaniu responsywnych, dostępnych i nowoczesnych interfejsów internetowych. Pracuję z technologiami takimi як HTML, CSS, JavaScript, TypeScript, React, Redux Toolkit, Next.js, Node.js, Express.js, Sqlite i Tailwind CSS. Pasjonuję się czystym kodem, dobrym UI/UX i ciągłym doskonaleniem swoich umiejętności poprzez praktykę i naukę.",
+    "downloadCV": "Pobierz CV"
+  },
+  "Stats": {
+    "projects": "Projektów ukończonych",
+    "courses": "Ukończonych kursów",
+    "commits": "Commitów kodu",
+    "hours": "Godzin nauki"
+  },
+  "Contact": {
+    "title": "Pracujмо разом",
+    "description": "Cieszę się, że mogę usłyszeć o Twoim projekcie! Podziel się szczegółami poniżej i zacznijmy współpracę, aby stworzyć coś niesamowitego.",
+    "firstname": "Imię",
+    "lastname": "Nazwisko",
+    "email": "Adres e-mail",
+    "phone": "Numer telefonu",
+    "message": "Wpisz swoją wiadomość tutaj",
+    "send": "Wyślij wiadтmość",
+    "copy": "Kopiuj",
+    "phone_label": "Telefon",
+    "email_label": "Email",
+    "location_label": "Lokalizacja",
+    "errors": {
+      "firstname": "Imię musi mieć co najmniej 2 znaki",
+      "lastname": "Nazwisko musi mieć co najmniej 2 znaki",
+      "email": "Wprowadź poprawny adres e-mail",
+      "phone": "Wprowadź poprawny numer telefonu",
+      "message": "Wiadomość musi mieć co najmniej 10 znaków"
+    }
+  },
+  "Resume": {
+    "tabs": {
+      "experience": "Doświadczenie",
+      "education": "Edukacja",
+      "skills": "Umiejętności",
+      "about": "O mnie"
+    },
+    "experience": {
+      "title": "Moje doświadczenie",
+      "description": "Jestem początkującym programistą frontendowym, który aktywnie doskonali swoje umiejętności poprzez praktyczne projekty. Moje portfolio obejmuje 12+ projektów o różnym stopniu złożoności, zbudowanych przy użyciu nowoczesnych technologii. Ostatnio zacząłem również zgłębiać backend w Node.js i Express. Możesz szczegółowo zapoznać się z moimi pracami w sekcji Portfolio, w tym z wersjami demo i repozytoriami GitHub.",
+      "items": {
+        "0": {
+          "projects": ["Freelance (System CRM)"],
+          "technologies": ["Praca nad systemem CRM dla małej firmy w ramach zespołu"]
+        },
+        "1": {
+          "projects": ["To-Do API (typu Trello)"],
+          "technologies": ["Podstawy architektury backendu"]
+        },
+        "2": { "projects": ["Moje Portfolio"] },
+        "3": { "projects": ["Aplikacja z cytatami"] },
+        "4": { "projects": ["Autoryzacja z Firebase"] },
+        "5": { "projects": ["Get Task Driver"] },
+        "6": { "projects": ["Aplikacja biblioteka książek", "News Reactify"] },
+        "7": { "projects": ["ShoppeStore (Projekt zespołowy)"] },
+        "8": { "projects": ["GoCorona", "Finance", "Farm Vest", "Home Pro", "INTERIA"] }
+      }
+    },
+    "education": {
+      "title": "Moja edukacja",
+      "items": {
+        "0": {
+          "institution": "Platforma kursów online",
+          "degree": "The Ultimate React Course: React, Next.js, Redux i więcej"
+        },
+        "1": {
+          "institution": "Frontend deweloper samouk",
+          "degree": "Samodzielna nauka – dokumentacja, tutoriale na YouTube, projekty praktyczne, uzupełnione mentoringiem od doświadczonego dewelopera"
+        },
+        "2": {
+          "institution": "Winnycki Instytut Handlowo-Ekonomiczny Kijowskiego Narodowego Uniwersytetu Handlu i Ekonomii",
+          "degree": "Magister Zarządzania Organizacjami Handlowymi"
+        }
+      }
+    },
+    "about": {
+      "title": "O mnie",
+      "description": "Zmotywowany junior frontend developer z praktycznym doświadczeniem w budowaniu nowoczesnych, responsywnych aplikacji internetowych przy użyciu React, TypeScript, Redux Toolkit, Next.js i Tailwind CSS.\n\nSkupiam się na pisaniu czystego, łatwego w utrzymaniu kodu i przestrzegam podstawowych zasad inżynieryjnych, takich jak DRY, SOLID i KISS. Mam doświadczenie w pracy zarówno samodzielnej, jak i w zespole, w tym komercyjną pracę freelancerską nad systemem CRM.\n\nNiedawno zacząłem rozwijać się w kierunku backendu przy użyciu Node.js i Express, gdzie zbudowałem REST API dla systemu zarządzania zadaniami typu Trello (tablice, kolumny, karty) z wykorzystaniem SQLite.\n\nSzybko się uczę, przywiązuję dużą wagę do szczegółów i mam nastawienie na rozwój, dążąc do zostania full-stack deweloperem.",
+      "info": {
+        "name": "Imię",
+        "phone": "Telefon",
+        "nationality": "Narodowość",
+        "email": "Email",
+        "github": "GitHub",
+        "languages": "Języki",
+        "nationality_val": "Ukrainiec",
+        "languages_val": "Ukraiński, Polski (B2), Angielski (B1/B2)"
+      }
+    },
+    "skills": {
+      "title": "Moje umiejętności",
+      "description": "Oto technologie, których używam do budowania nowoczesnych aplikacji internetowych."
+    }
+  },
+  "Work": {
+    "categories": {
+      "next": "Aplikacje Next.js",
+      "react": "Aplikacje React",
+      "ecommerce": "E-commerce i projekty wspólne",
+      "landing": "Landing Pages i proste strony"
+    },
+    "links": {
+      "live": "Projekt na żywo",
+      "github": "Repozytorium Github"
+    },
+    "projects": {
+      "0": {
+        "title": "Portfolio Andrzeja",
+        "category": "Aplikacje Next.js",
+        "description": "Osobista witryna portfolio zaprojektowana, aby zaprezentować moje umiejętności, projekty i podejście do projektowania. Posiada nowoczesny, responsywny układ, płynne animacje i intuicyjną strukturę. Zbudowana z użyciem Next.js, React 19 i TypeScript, stylizowana za pomocą Tailwind CSS, Radix UI i Framer Motion. Ten projekt podkreśla moją zdolność do dostarczania dopracowanych, gotowych do wydania aplikacji."
+      },
+      "1": {
+        "title": "News Reactfy",
+        "category": "Aplikacje React",
+        "description": "Bogata w funkcje aplikacja informacyjna zbudowana z React i TypeScript. Użytkownicy mogą przeglądać artykuły, filtrować według kategorii, szukać i przełączać się między trybem jasnym a ciemnym. Projekt wykorzystuje Redux Toolkit do zarządzania stanem, Axios do połączeń z API i niestandardowe haki do zaawansowanej logiki. Demonstruje praktyczne doświadczenie w tworzeniu skalowalnych i interaktywnych aplikacji React."
+      },
+      "2": {
+        "title": "Quotes App",
+        "category": "Aplikacje Next.js",
+        "description": "Aplikacja do zarządzania cytatami zbudowana z Next.js i TypeScript. Użytkownicy mogą wyszukiwać, dodawać, edytować i usuwać cytaty za pośrednictwem interfejsu REST API. Interfejs jest stylizowany za pomocą Tailwind CSS i ShadCN UI, z obsługą błędów przez React Toastify. Testy jednostkowe są zaimplementowane przy użyciu Jest, co zapewnia niezawodność i łatwość konserwacji."
+      },
+      "3": {
+        "title": "Get Task Driver",
+        "category": "Aplikacje React",
+        "description": "Aplikacja do zarządzania zadaniami typu Trello zbudowana z React, TypeScript i Redux. Użytkownicy mogą tworzyć listy, dodawać zadania, ustawiać terminy, oznaczać ukończenie i zarządzać wieloma tablicami. Interfejs wykorzystuje Material UI i Framer Motion dla płynnych interakcji. Autoryzacja jest obsługiwana za pomocą JWT, wraz z testami jednostkowymi i migawkami Storybook dla zapewnienia jakości."
+      },
+      "4": {
+        "title": "Book Library App",
+        "category": "Aplikacje React",
+        "description": "Aplikacja biblioteka książek online z funkcjonalnością wyszukiwania i filtrowania. Została najpierw zbudowana z klasycznym Redux, а później zrefaktoryzowana do Redux Toolkit dla lepszej struktury. Backend to prosty serwer Express, z Axios obsługującym żądania danych i Toastify pokazującym powiadomienia. Ten projekt demonstruje zarówno starsze, jak i nowoczesne podejścia do zarządzania stanem."
+      },
+      "5": {
+        "title": "Shop store",
+        "category": "E-commerce i projekty wspólne",
+        "description": "Wspólny projekt sklepu jubilerskiego e-commerce zbudowany całkowicie w HTML, CSS i JavaScript. Projekt zawiera w pełni niestandardowy koszyk napędzany przez LocalStorage i responsywne elementy interfejsu użytkownika. Przyczyniłem się do wdrożenia interfejsu użytkownika, obsługi formularzy i planowania struktury aplikacji. Demonstruje pracę zespołową, współpracę na GitHub i rozwój bez frameworków."
+      },
+      "6": {
+        "title": "Home Pro",
+        "category": "Landing Pages i proste strony",
+        "description": "Responsywna strona docelowa dla firmy świadczącej usługi domowe zaprojektowana w Figma. Zawiera animacje wyzwalane przewijaniem, suwak treści i komponent akordeon. Zbudowana z HTML, CSS i JavaScript, stylizowana przy użyciu metodologii BEM. Ten projekt podkreśla czysty responsywny układ i interaktywny rozwój interfejsu użytkownika."
+      },
+      "7": {
+        "title": "Farm Vest",
+        "category": "Landing Pages i proste strony",
+        "description": "Responsywna strona docelowa prezentująca możliwości inwestycji rolniczych. Zawiera angażujące animacje, efekty paralaksy i nowoczesny design interfejsu użytkownika. Opracowana przy użyciu HTML, CSS, Sass i JavaScript, stylizowana zgodnie z metodologią BEM. Projekt demonstruje płynne interakcje i dbałość o wizualne szczegóły."
+      },
+      "8": {
+        "title": "GoCorona",
+        "category": "Landing Pages i proste strony",
+        "description": "Strona docelowa dotycząca świadomości zdrowotnej z responsywnym designem i nowoczesnym układem. Zawiera animacje, płynną nawigację i interaktywne elementy angażujące użytkownika. Projekt został zbudowany z HTML, CSS, Sass i JavaScript, ustrukturyzowany za pomocą BEM i zautomatyzowany przy użyciu Gulp. Demonstruje solidną wiedzę na temat projektowania interfejsu użytkownika i podstaw frontend."
+      },
+      "9": {
+        "title": "Finance",
+        "category": "Landing Pages i proste strony",
+        "description": "Strona docelowa usług finansowych z profesjonalnym i minimalistycznym projektem interfejsu użytkownika. Posiada responsywny układ, płynną nawigację i czystą prezentację wizualną. Zbudowana z HTML, CSS, Sass i JavaScript, stylizowana przy użyciu metodologii BEM i zaprojektowana w Figma. Projekt kładzie nacisk na dbający o szczegóły design i dopracowaną realizację frontend."
+      }
+    }
+  }
+}
