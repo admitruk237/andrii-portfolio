@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils'
 
 import { motion, AnimatePresence } from 'framer-motion'
 
-function Switch({ className, ...props }) {
+function Switch({ className = '', ...props }) {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
 

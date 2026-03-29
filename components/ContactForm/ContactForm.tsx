@@ -1,16 +1,42 @@
 'use client'
 
 import { useContactForm } from '@/hooks'
-import {
-  contactSchema,
-  type ContactFormData,
-} from '@/lib/validation/contactSchema'
+import { type ContactFormData } from '@/lib/validation/contactSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { Button, Input, Textarea, LoadingDots } from '../ui'
+import { useTranslations } from 'next-intl'
+import { z } from 'zod'
 
 export const ContactForm = () => {
+  const t = useTranslations('Contact')
   const { isSubmitting, submitForm } = useContactForm()
+
+  const dynamicSchema = z.object({
+    firstname: z
+      .string()
+      .min(2, { message: t('errors.firstname') })
+      .trim(),
+    lastname: z
+      .string()
+      .min(2, { message: t('errors.lastname') })
+      .trim(),
+    email: z
+      .string()
+      .email({ message: t('errors.email') })
+      .trim(),
+    phone: z
+      .string()
+      .min(10, { message: t('errors.phone') })
+      .regex(/^[\+]?[0-9\s\-\(\)]{10,}$/, {
+        message: t('errors.phone'),
+      })
+      .trim(),
+    message: z
+      .string()
+      .min(10, { message: t('errors.message') })
+      .trim(),
+  })
 
   const {
     register,
@@ -18,7 +44,7 @@ export const ContactForm = () => {
     reset,
     formState: { errors },
   } = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema),
+    resolver: zodResolver(dynamicSchema),
     defaultValues: {
       firstname: '',
       lastname: '',
@@ -41,17 +67,14 @@ export const ContactForm = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-6 p-2 sm:p-10 bg-card rounded-xl"
       >
-        <h3 className="text-4xl text-accent">Let&apos;s work together</h3>
-        <p className="text-muted-foreground">
-          I&apos;m excited to hear about your project! Share some details below,
-          and let&apos;s start working together to create something amazing.
-        </p>
+        <h3 className="text-4xl text-accent">{t('title')}</h3>
+        <p className="text-muted-foreground">{t('description')}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="flex flex-col gap-2">
             <Input
               type="text"
-              placeholder="Firstname"
+              placeholder={t('firstname')}
               {...register('firstname')}
               className={errors.firstname ? 'border-red-500' : ''}
             />
@@ -65,7 +88,7 @@ export const ContactForm = () => {
           <div className="flex flex-col gap-2">
             <Input
               type="text"
-              placeholder="Lastname"
+              placeholder={t('lastname')}
               {...register('lastname')}
               className={errors.lastname ? 'border-red-500' : ''}
             />
@@ -79,7 +102,7 @@ export const ContactForm = () => {
           <div className="flex flex-col gap-2">
             <Input
               type="email"
-              placeholder="Email address"
+              placeholder={t('email')}
               {...register('email')}
               className={errors.email ? 'border-red-500' : ''}
             />
@@ -93,7 +116,7 @@ export const ContactForm = () => {
           <div className="flex flex-col gap-2">
             <Input
               type="tel"
-              placeholder="Phone number"
+              placeholder={t('phone')}
               {...register('phone')}
               className={errors.phone ? 'border-red-500' : ''}
             />
@@ -107,7 +130,7 @@ export const ContactForm = () => {
 
         <div className="flex flex-col gap-2">
           <Textarea
-            placeholder="Type your message here"
+            placeholder={t('message')}
             {...register('message')}
             className={errors.message ? 'border-red-500' : ''}
           />
@@ -125,7 +148,7 @@ export const ContactForm = () => {
           type="submit"
           disabled={isSubmitting}
         >
-          {isSubmitting ? <LoadingDots /> : 'Send message'}
+          {isSubmitting ? <LoadingDots /> : t('send')}
         </Button>
       </form>
     </div>

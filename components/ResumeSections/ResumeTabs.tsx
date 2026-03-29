@@ -8,8 +8,11 @@ import {
   Experience,
   Skills,
 } from '@/components/ResumeSections'
+import { useTranslations } from 'next-intl'
 
 export const ResumeTabs = () => {
+  const t = useTranslations('Resume.tabs')
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -25,10 +28,10 @@ export const ResumeTabs = () => {
           className="flex flex-col lg:flex-row gap-[60px]"
         >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto lg:mx-0 gap-6">
-            <TabsTrigger value="experience">Experience</TabsTrigger>
-            <TabsTrigger value="education">Education</TabsTrigger>
-            <TabsTrigger value="skills">Skills</TabsTrigger>
-            <TabsTrigger value="about">About me</TabsTrigger>
+            <TabsTrigger value="experience">{t('experience')}</TabsTrigger>
+            <TabsTrigger value="education">{t('education')}</TabsTrigger>
+            <TabsTrigger value="skills">{t('skills')}</TabsTrigger>
+            <TabsTrigger value="about">{t('about')}</TabsTrigger>
           </TabsList>
           <div className="min-h-[70vh] w-full">
             <TabsContent

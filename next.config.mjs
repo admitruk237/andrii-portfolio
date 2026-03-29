@@ -1,3 +1,7 @@
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin();
+
 if (typeof globalThis !== 'undefined') {
   Object.defineProperty(globalThis, 'localStorage', {
     get: function() {
@@ -14,4 +18,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

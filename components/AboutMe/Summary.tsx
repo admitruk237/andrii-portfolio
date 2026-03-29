@@ -4,29 +4,27 @@ import { Button } from '../ui/button'
 import Social from '../Social/Social'
 import Photo from '../Photo/Photo'
 import { useDownloadCV } from '@/hooks'
-import { APP_CONFIG } from '@/config/email'
 import { getButtonContent } from './DownloadButton'
+import { useTranslations } from 'next-intl'
 
 export const Summary = () => {
   const { downloadState, progress, handleDownloadCV } = useDownloadCV()
+  const t = useTranslations('Summary')
+  const tHeader = useTranslations('Header')
+
   return (
     <div
       className="flex flex-col lg:flex-row items-center justify-between
           lg:pt-8 lg:pb-24"
     >
       <div className="text-center xl:text-left order-2 lg:order-none">
-        <span className="text-xl">Frontend Developer</span>
+        <span className="text-xl">{t('role')}</span>
         <h1 className="h1 mb-6">
-          Hello I&apos;m <br />{' '}
-          <span className="text-accent">{APP_CONFIG.developerName}</span>
+          {t('hello')} <br />{' '}
+          <span className="text-accent">{tHeader('name')}</span>
         </h1>
         <p className="max-w-[500px] mb-9 text-muted-foreground">
-          I&apos;m frontend developer focused on building responsive,
-          accessible, and modern web interfaces. I work with technologies like
-          HTML, CSS, JavaScript, TypeScript, React, Redux Toolkit, Next.js,
-          Node.js, Express.js, Sqlite, and Tailwind CSS. I&apos;m passionate
-          about clean code, good UI/UX, and constantly improving my skills
-          through practice and learning.
+          {t('description')}
         </p>
         <div className="flex flex-col lg:flex-row items-center gap-8">
           <Button
@@ -41,9 +39,9 @@ export const Summary = () => {
             }`}
             onClick={handleDownloadCV}
             disabled={downloadState === 'loading'}
-            aria-label="Download CV"
+            aria-label={t('downloadCV')}
           >
-            {getButtonContent(downloadState, progress)}
+            {getButtonContent(downloadState, progress, t('downloadCV'))}
           </Button>
 
           <div className="mb-8 lg:mb-0">

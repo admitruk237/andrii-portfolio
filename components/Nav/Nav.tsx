@@ -1,28 +1,28 @@
-'use client';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { navLinks } from '@/constants/navLinks';
+'use client'
+import { Link } from '@/i18n/routing'
+import { usePathname } from 'next/navigation'
+import { navLinks } from '@/constants/navLinks'
+import { useTranslations } from 'next-intl'
 
-const Nav = () => {
-  const pathname = usePathname();
+export const Nav = () => {
+  const pathname = usePathname()
+  const t = useTranslations('Nav')
+
   return (
     <nav className="flex gap-8">
       {navLinks.map((link, index) => {
+        const isCurrent = pathname === link.path || pathname === `/${link.path}`
         return (
           <Link
             href={link.path}
             key={index}
-            className={`${
-              link.path === pathname && 'text-accent border-b-2 border-accent'
-            }
+            className={`${isCurrent && 'text-accent border-b-2 border-accent'}
           capitalize font-medium hover:text-accent transition-all`}
           >
-            {link.name}
+            {t(link.name)}
           </Link>
-        );
+        )
       })}
     </nav>
-  );
-};
-
-export default Nav;
+  )
+}
