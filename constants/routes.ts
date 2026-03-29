@@ -1,4 +1,6 @@
-const navLinks = [
+import { NavLink } from '@/types'
+
+const ROUTES: NavLink[] = [
   {
     name: 'home',
     path: '/',
@@ -15,7 +17,7 @@ const navLinks = [
     name: 'contact',
     path: '/contact',
   },
-];
+]
 
-export { navLinks };
-export default navLinks;
+export { ROUTES }
+export default ROUTES

@@ -1,9 +1,10 @@
-const stats = [
+import { Stats } from '@/types'
+
+const stats: Stats[] = [
   {
     num: 11,
     text: 'Projects completed',
   },
-
   {
     num: 4,
     text: 'completed courses',
@@ -16,7 +17,7 @@ const stats = [
     num: 1000,
     text: 'Hours of learning ',
   },
-];
+]
 
-export { stats };
-export default stats;
+export { stats }
+export default stats

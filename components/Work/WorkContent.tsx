@@ -37,6 +37,9 @@ export const WorkContent = () => {
             <div className="w-full flex flex-col justify-between">
               <motion.div
                 layout
+                transition={{
+                  layout: { duration: 0.4, ease: 'easeInOut' },
+                }}
                 className="flex flex-col gap-[30px]"
               >
                 <ProjectInfo project={project} />

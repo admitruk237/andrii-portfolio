@@ -1,15 +1,6 @@
 import { about } from '@/constants'
 import { useTranslations } from 'next-intl'
 
-const INFO_KEY_MAP: Record<string, string> = {
-  Name: 'name',
-  Phone: 'phone',
-  Nationality: 'nationality',
-  Email: 'email',
-  GitHub: 'github',
-  Languages: 'languages',
-}
-
 export const AboutMe = () => {
   const t = useTranslations('Resume.about')
 
@@ -21,12 +12,12 @@ export const AboutMe = () => {
       </p>
       <ul className="grid grid-cols-1 lg:grid-cols-2 gap-y-6  mx-auto lg:mx-0">
         {about.info.map((item, index) => {
-          const key = INFO_KEY_MAP[item.fieldName]
-          const translatedLabel = key ? t(`info.${key}`) : item.fieldName
+          const key = item.key
+          const translatedLabel = t(`info.${key}`)
           const translatedValue =
             key === 'nationality' || key === 'languages'
               ? t(`info.${key}_val`)
-              : item.fieldValue
+              : item.value
 
           return (
             <li
@@ -34,9 +25,9 @@ export const AboutMe = () => {
               className="flex items-center justify-center lg:justify-start gap-4"
             >
               <span className="text-muted-foreground">{translatedLabel}</span>
-              {item.fieldName === 'GitHub' ? (
+              {key === 'github' ? (
                 <a
-                  href={item.fieldValue}
+                  href={item.value}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xl hover:text-accent transition-colors underline decoration-accent/30"

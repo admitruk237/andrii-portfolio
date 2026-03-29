@@ -54,35 +54,71 @@
       "description": "Jestem początkującym programistą frontendowym, który aktywnie doskonali swoje umiejętności poprzez praktyczne projekty. Moje portfolio obejmuje 12+ projektów o różnym stopniu złożoności, zbudowanych przy użyciu nowoczesnych technologii. Ostatnio zacząłem również zgłębiać backend w Node.js i Express. Możesz szczegółowo zapoznać się z moimi pracami w sekcji Portfolio, w tym z wersjami demo i repozytoriami GitHub.",
       "items": {
         "0": {
+          "duration": "Luty 2025 – Luty 2026",
           "projects": ["Freelance (System CRM)"],
-          "technologies": ["Praca nad systemem CRM dla małej firmy w ramach zespołu"]
+          "technologies": [
+            "Praca nad systemem CRM dla małej firmy w ramach zespołu"
+          ]
         },
         "1": {
-          "projects": ["To-Do API (typu Trello)"],
+          "duration": "Luty 2026 – Obecnie",
+          "projects": ["To-Do API (Trello-like)"],
           "technologies": ["Podstawy architektury backendu"]
         },
-        "2": { "projects": ["Moje Portfolio"] },
-        "3": { "projects": ["Aplikacja z cytatami"] },
-        "4": { "projects": ["Autoryzacja z Firebase"] },
-        "5": { "projects": ["Get Task Driver"] },
-        "6": { "projects": ["Aplikacja biblioteka książek", "News Reactify"] },
-        "7": { "projects": ["ShoppeStore (Projekt zespołowy)"] },
-        "8": { "projects": ["GoCorona", "Finance", "Farm Vest", "Home Pro", "INTERIA"] }
+        "2": {
+          "duration": "Sierp 2025 – Obecnie",
+          "projects": ["Moje Portfolio"]
+        },
+        "3": {
+          "duration": "Lip 2025 – Sierp 2025",
+          "projects": ["Aplikacja z cytatami"]
+        },
+        "4": {
+          "duration": "Maj 2025",
+          "projects": ["Autoryzacja z Firebase"]
+        },
+        "5": {
+          "duration": "Stycz 2025 – Maj 2025",
+          "projects": ["Get Task Driver"]
+        },
+        "6": {
+          "duration": "Czerw 2024 – Stycz 2025",
+          "projects": ["Aplikacja biblioteka książek", "News Reactify"]
+        },
+        "7": {
+          "duration": "Stycz 2024 – Kwie 2024",
+          "projects": ["ShoppeStore (Projekt zespołowy)"]
+        },
+        "8": {
+          "duration": "Wrz 2023 – Grudz 2023",
+          "projects": [
+            "GoCorona",
+            "Finance",
+            "Farm Vest",
+            "Home Pro",
+            "INTERIA"
+          ]
+        }
       }
     },
     "education": {
       "title": "Moja edukacja",
+      "certificate": "Zobacz certyfikat",
       "items": {
         "0": {
+          "duration": "2025",
           "institution": "Platforma kursów online",
-          "degree": "The Ultimate React Course: React, Next.js, Redux i więcej"
+          "degree": "The Ultimate React Course: React, Next.js, Redux & More",
+          "certificate": "https://www.udemy.com/certificate/UC-623331d7-fee3-4e0f-99ec-62c8c23a5edb/"
         },
         "1": {
-          "institution": "Frontend deweloper samouk",
-          "degree": "Samodzielna nauka – dokumentacja, tutoriale na YouTube, projekty praktyczne, uzupełnione mentoringiem od doświadczonego dewelopera"
+          "duration": "2024",
+          "institution": "Fullstack Developer-samouk",
+          "degree": "Niezależna nauka – dokumentacja, tutoriale na YouTube, projekty praktyczne, uzupełnione mentoringiem doświadczonego programisty"
         },
         "2": {
-          "institution": "Winnycki Instytut Handlowo-Ekonomiczny Kijowskiego Narodowego Uniwersytetu Handlu i Ekonomii",
+          "duration": "2011-2017",
+          "institution": "Winnicki Instytut Handlowo-Ekonomiczny KNTEU",
           "degree": "Magister Zarządzania Organizacjami Handlowymi"
         }
       }
@@ -121,7 +157,7 @@
       "0": {
         "title": "Portfolio Andrzeja",
         "category": "Aplikacje Next.js",
-        "description": "Osobista witryna portfolio zaprojektowana, aby zaprezentować moje umiejętności, projekty i podejście do projektowania. Posiada nowoczesny, responsywny układ, płynne animacje i intuicyjną strukturę. Zbudowana z użyciem Next.js, React 19 i TypeScript, stylizowana za pomocą Tailwind CSS, Radix UI i Framer Motion. Ten projekt podkreśla moją zdolność do dostarczania dopracowanych, gotowych do wydania aplikacji."
+        "description": "Osobista witryna portfolio zbudowana z użyciem Next.js 16, React 19 i TypeScript 5.9. Stylizowana za pomocą Tailwind CSS 4, Radix UI i Framer Motion. Funkcje obejmują internacjonalizację z next-intl, walidację formularzy przez Zod i React Hook Form oraz powiadomienia sonner. Ten projekt podkreśla moją zdolność до dostarczania nowoczesnych, szybких i skalowalnych aplikacji."
       },
       "1": {
         "title": "News Reactfy",
@@ -167,6 +203,11 @@
         "title": "Finance",
         "category": "Landing Pages i proste strony",
         "description": "Strona docelowa usług finansowych z profesjonalnym i minimalistycznym projektem interfejsu użytkownika. Posiada responsywny układ, płynną nawigację i czystą prezentację wizualną. Zbudowana z HTML, CSS, Sass i JavaScript, stylizowana przy użyciu metodologii BEM i zaprojektowana w Figma. Projekt kładzie nacisk na dbający o szczegóły design i dopracowaną realizację frontend."
+      },
+      "10": {
+        "title": "INTERIA",
+        "category": "Landing Pages & Simple Websites",
+        "description": "Profesjonalna i minimalistyczna strona landingowa dla usług finansowych. Charakteryzuje się responsywnym układem, płynną nawigacją i czystą prezentacją wizualną. Zbudowana przy użyciu HTML, CSS, Sass i JavaScript, stylizowana zgodnie з metodologią BEM i zaprojektowana w Figma. Projekt kładzie nacisk na dbałość o szczegóły i dopracowane wykonanie frontendowe."
       }
     }
   }

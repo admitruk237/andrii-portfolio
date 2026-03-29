@@ -1,4 +1,13 @@
-import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs } from 'react-icons/fa'
+import React from 'react'
+import { SkillsMetadata } from '@/types'
+import {
+  FaHtml5,
+  FaCss3,
+  FaJs,
+  FaReact,
+  FaFigma,
+  FaNodeJs,
+} from 'react-icons/fa'
 import {
   SiTypescript,
   SiRedux,
@@ -8,8 +17,7 @@ import {
   SiSqlite,
 } from 'react-icons/si'
 
-const skills = {
-  title: 'My skills',
+const skills: SkillsMetadata = {
   skillList: [
     {
       icon: <FaHtml5 />,
