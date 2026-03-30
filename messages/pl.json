@@ -22,14 +22,14 @@
     "hours": "Godzin nauki"
   },
   "Contact": {
-    "title": "Pracujмо разом",
+    "title": "Rozpocznijmy współpracę",
     "description": "Cieszę się, że mogę usłyszeć o Twoim projekcie! Podziel się szczegółami poniżej i zacznijmy współpracę, aby stworzyć coś niesamowitego.",
     "firstname": "Imię",
     "lastname": "Nazwisko",
     "email": "Adres e-mail",
     "phone": "Numer telefonu",
     "message": "Wpisz swoją wiadomość tutaj",
-    "send": "Wyślij wiadтmość",
+    "send": "Wyślij wiadomość",
     "copy": "Kopiuj",
     "phone_label": "Telefon",
     "email_label": "Email",

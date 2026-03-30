@@ -29,17 +29,19 @@ export const Education = () => {
                 {translatedDegree}.
               </h3>
 
-              <div className="relative h-full w-full">
+              <div className="h-full w-full">
                 <p className="text-muted-foreground">{translatedInstitution}</p>
                 {translatedCertificate && (
-                  <a
-                    href={translatedCertificate}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent hover:text-accent/80 absolute bottom-0 right-0"
-                  >
-                    {t('certificate')}
-                  </a>
+                  <div className="flex justify-center sm:justify-end items-end h-full pb-6">
+                    <a
+                      href={translatedCertificate}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-accent hover:text-accent/80 text-sm sm:text-base"
+                    >
+                      {t('certificate')}
+                    </a>
+                  </div>
                 )}
               </div>
             </li>
