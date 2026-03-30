@@ -1,12 +1,11 @@
 'use client'
 
-import Image from 'next/image'
-import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperType } from 'swiper'
 import 'swiper/css'
 import WorkSliderBtns from '@/components/WorkSliderBtns/WorkSliderBtns'
+import { ProjectMedia } from './ProjectMedia'
 
 import { useTranslations } from 'next-intl'
 import { Project } from '@/types'
@@ -19,6 +18,12 @@ type Props = {
 export const ProjectSlider = ({ projects, onSlideChange }: Props) => {
   const t = useTranslations('Work')
   const [swiper, setSwiper] = useState<SwiperType | null>(null)
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  const handleSlideChange = (swiper: SwiperType) => {
+    setActiveIndex(swiper.activeIndex)
+    onSlideChange(swiper)
+  }
 
   return (
     <div className="w-full lg:w-[70%] mx-auto">
@@ -28,7 +33,7 @@ export const ProjectSlider = ({ projects, onSlideChange }: Props) => {
         className="h-auto mb-3"
         autoHeight={true}
         grabCursor={true}
-        onSlideChange={onSlideChange}
+        onSlideChange={handleSlideChange}
         onSwiper={setSwiper}
       >
         {projects.map((project, index) => {
@@ -38,6 +43,8 @@ export const ProjectSlider = ({ projects, onSlideChange }: Props) => {
           const displayNum = (parseInt(project.id) + 1)
             .toString()
             .padStart(2, '0')
+
+          const isActive = index === activeIndex
 
           return (
             <SwiperSlide
@@ -57,32 +64,13 @@ export const ProjectSlider = ({ projects, onSlideChange }: Props) => {
                   </div>
                 </div>
                 <div className="w-full relative group aspect-[1105/500] bg-primary/20 rounded-lg overflow-hidden shadow-xl border border-white/5">
-                  <div className="absolute inset-0 bg-black/10 z-10 group-hover:bg-black/0 transition-all duration-500" />
-                  {project.video ? (
-                    <video
-                      src={project.video}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      className="w-full h-full object-cover"
-                    />
-                  ) : project.image ? (
-                    <Image
-                      src={project.image}
-                      width={1918}
-                      height={864}
-                      className="w-full h-full object-cover"
-                      alt={`${displayTitle} project image`}
-                      priority
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-accent/5 flex items-center justify-center">
-                      <p className="text-muted-foreground">
-                        No Preview Available
-                      </p>
-                    </div>
-                  )}
+                  <div className="absolute inset-0 bg-black/10 z-30 group-hover:bg-black/0 transition-all duration-500" />
+                  <ProjectMedia
+                    video={project.video}
+                    image={project.image}
+                    isActive={isActive}
+                    title={displayTitle}
+                  />
                 </div>
               </div>
             </SwiperSlide>

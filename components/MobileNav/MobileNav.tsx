@@ -42,7 +42,7 @@ export const MobileNav = () => {
             </Link>
           </SheetTitle>
         </SheetHeader>
-        <nav className="flex flex-col justify-center items-center gap-8">
+        <nav className="flex flex-col justify-center items-center gap-8 pb-20">
           {ROUTES.map((link, index) => {
             const isCurrent =
               pathname === link.path || pathname === `/${link.path}`
