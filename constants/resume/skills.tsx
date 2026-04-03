@@ -7,6 +7,9 @@ import {
   FaReact,
   FaFigma,
   FaNodeJs,
+  FaRoute,
+  FaProjectDiagram,
+  FaChartLine,
 } from 'react-icons/fa'
 import {
   SiTypescript,
@@ -15,6 +18,8 @@ import {
   SiNextdotjs,
   SiExpress,
   SiSqlite,
+  SiReactquery,
+  SiShadcnui,
 } from 'react-icons/si'
 
 const skills: SkillsMetadata = {
@@ -40,10 +45,6 @@ const skills: SkillsMetadata = {
       name: 'typescript',
     },
     {
-      icon: <SiRedux />,
-      name: 'RTK',
-    },
-    {
       icon: <SiNextdotjs />,
       name: 'next.js',
     },
@@ -52,8 +53,28 @@ const skills: SkillsMetadata = {
       name: 'tailwind.css',
     },
     {
-      icon: <FaFigma />,
-      name: 'figma',
+      icon: <SiRedux />,
+      name: 'Redux Toolkit',
+    },
+    {
+      icon: <SiReactquery />,
+      name: 'TanStack Query',
+    },
+    {
+      icon: <FaRoute />,
+      name: 'TanStack Router',
+    },
+    {
+      icon: <SiShadcnui />,
+      name: 'Shadcn UI',
+    },
+    {
+      icon: <FaChartLine />,
+      name: 'Recharts',
+    },
+    {
+      icon: <FaProjectDiagram />,
+      name: 'FSD Architecture',
     },
     {
       icon: <FaNodeJs />,
@@ -66,6 +87,10 @@ const skills: SkillsMetadata = {
     {
       icon: <SiSqlite />,
       name: 'sqlite',
+    },
+    {
+      icon: <FaFigma />,
+      name: 'figma',
     },
   ],
 }
