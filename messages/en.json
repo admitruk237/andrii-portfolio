@@ -55,9 +55,9 @@
       "items": {
         "0": {
           "duration": "Feb 2025 – Feb 2026",
-          "projects": ["Freelance (CRM System)"],
+          "projects": ["House CRM (Commercial Project)"],
           "technologies": [
-            "Worked on a CRM system for a small business as part of a team"
+            "Development of a CRM system for a real estate rental business as part of a team"
           ]
         },
         "1": {
@@ -125,7 +125,7 @@
     },
     "about": {
       "title": "About me",
-      "description": "Motivated junior frontend developer with hands-on experience building modern, responsive web applications using React, TypeScript, Redux Toolkit, Next.js, and Tailwind CSS.\n\nI focus on writing clean, maintainable code and follow core engineering principles such as DRY, SOLID, and KISS. I have experience working both independently and in a team environment, including commercial freelance work on a CRM system.\n\nRecently, I started expanding into backend development using Node.js and Express, where I built a REST API for a Trello-like task management system (boards, columns, cards) using SQLite.\n\nI’m a fast learner with strong attention to detail and a growth mindset, continuously improving my skills and aiming to become a full-stack developer.",
+      "description": "Motivated junior frontend developer with hands-on experience building modern, responsive web applications using React, TypeScript, Redux Toolkit, Next.js, and Tailwind CSS.\n\nI focus on writing clean, maintainable code and follow core engineering principles such as DRY, SOLID, and KISS. I have experience working both independently and in a team environment, including commercial work on the large-scale House CRM system.\n\nRecently, I've also mastered NestJS for building robust server-side solutions and developed a REST API for a Trello-like task management system (boards, columns, cards) using SQLite.\n\nI’m a fast learner with strong attention to detail and a growth mindset, continuously improving my skills and aiming to become a full-stack developer.",
       "info": {
         "name": "Name",
         "phone": "Phone",
@@ -155,56 +155,61 @@
     },
     "projects": {
       "0": {
+        "title": "House CRM",
+        "category": "Commercial Team Project",
+        "description": "A commercial team project for real estate management, developed alongside experienced developers. Working within the FSD (Feature-Sliced Design) architecture allowed me to master professional standards for building scalable applications within a monorepo. I was responsible for the frontend implementation using Next.js 16, RTK Query for state management, and TanStack Table for advanced data handling. The system features visual analytics (Recharts), automated PDF documentation, and a modern UI built with Shadcn UI and Framer Motion. The codebase adheres to strict quality standards (ESLint 9, Husky, lint-staged) and is verified with Vitest and Playwright. While I am not the owner, the repository owner (https://github.com/San88Francisco) officially confirms my participation and can provide recommendations. Live preview: https://houses-crm.vercel.app (Login: user@example.com / Password: string)."
+      },
+      "1": {
         "title": "Andrii Portfolio",
         "category": "Next.js Applications",
         "description": "A personal portfolio website built with Next.js 16, React 19, and TypeScript 5.9. Styled with Tailwind CSS 4, Radix UI, and Framer Motion. Features include internationalization with next-intl, form validation via Zod and React Hook Form, and toast notifications with Sonner. This project demonstrates my ability to build clean, modern, and production-ready applications."
       },
-      "1": {
+      "2": {
         "title": "News Reactfy",
         "category": "React Applications",
         "description": "A feature-rich news application built with React and TypeScript. Users can browse articles, filter by category, search, and switch between light and dark modes. The project uses Redux Toolkit for state management, Axios for API calls, and custom hooks for advanced logic. It demonstrates practical experience in scalable and interactive React applications."
       },
-      "2": {
+      "3": {
         "title": "Quotes App",
         "category": "Next.js Applications",
         "description": "A quote management application built with Next.js and TypeScript. Users can search, add, edit, and delete quotes through a REST API. The UI is styled with Tailwind CSS and ShadCN UI, with error handling via React Toastify. Unit tests are implemented using Jest, ensuring reliability and maintainability."
       },
-      "3": {
+      "4": {
         "title": "Get Task Driver",
         "category": "React Applications",
         "description": "A Trello-like task management app built with React, TypeScript, and Redux. Users can create lists, add tasks, set deadlines, mark completion, and manage multiple boards. The UI uses Material UI and Framer Motion for smooth interactions. Authentication is handled with JWT, with unit tests and Storybook snapshots for quality assurance."
       },
-      "4": {
+      "5": {
         "title": "Book Library App",
         "category": "React Applications",
         "description": "An online book library application with search and filtering functionality. It was first built with classic Redux and later refactored to Redux Toolkit for better structure. The backend is a simple Express server, with Axios handling data requests and Toastify showing notifications. This project demonstrates both legacy and modern state management approaches."
       },
-      "5": {
+      "6": {
         "title": "Shop store",
         "category": "E-commerce & Collaborative",
         "description": "A collaborative e-commerce jewelry shop built entirely with HTML, CSS, and JavaScript. The project includes a fully custom shopping cart powered by LocalStorage and responsive UI elements. I contributed to UI implementation, form handling, and planning of app structure. It demonstrates teamwork, GitHub collaboration, and development without frameworks."
       },
-      "6": {
+      "7": {
         "title": "Home Pro",
         "category": "Landing Pages & Simple Websites",
         "description": "A responsive landing page for a home service company designed in Figma. It includes scroll-triggered animations, a content slider, and an accordion component. Built with HTML, CSS, and JavaScript, styled using BEM methodology. This project highlights clean responsive layout and interactive UI development."
       },
-      "7": {
+      "8": {
         "title": "Farm Vest",
         "category": "Landing Pages & Simple Websites",
         "description": "A responsive landing page showcasing agricultural investment opportunities. It features engaging animations, parallax effects, and a modern UI design. Developed with HTML, CSS, Sass, and JavaScript, styled with BEM methodology. The project demonstrates smooth interactions and attention to visual details."
       },
-      "8": {
+      "9": {
         "title": "GoCorona",
         "category": "Landing Pages & Simple Websites",
         "description": "A health awareness landing page with a responsive design and modern layout. It includes animations, smooth navigation, and interactive elements for user engagement. The project was built with HTML, CSS, Sass, and JavaScript, structured with BEM and automated using Gulp. It demonstrates solid knowledge of UI design and frontend fundamentals."
       },
-      "9": {
+      "10": {
         "title": "Finance",
         "category": "Landing Pages & Simple Websites",
         "description": "A financial services landing page with a professional and minimal UI design. It features responsive layout, smooth navigation, and clean visual presentation. Built with HTML, CSS, Sass, and JavaScript, styled using BEM methodology and designed in Figma. The project emphasizes detail-oriented design and polished frontend delivery."
       },
-      "10": {
+      "11": {
         "title": "INTERIA",
         "category": "Landing Pages & Simple Websites",
         "description": "A financial services landing page with a professional and minimal UI design. It features responsive layout, smooth navigation, and clean visual presentation. Built with HTML, CSS, Sass, and JavaScript, styled using BEM methodology and designed in Figma. The project emphasizes detail-oriented design and polished frontend delivery."

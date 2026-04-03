@@ -55,9 +55,9 @@
       "items": {
         "0": {
           "duration": "Luty 2025 – Luty 2026",
-          "projects": ["Freelance (System CRM)"],
+          "projects": ["House CRM (Projekt Komercyjny)"],
           "technologies": [
-            "Praca nad systemem CRM dla małej firmy w ramach zespołu"
+            "Rozwój systemu CRM dla sektora wynajmu nieruchomości w ramach zespołu"
           ]
         },
         "1": {
@@ -125,7 +125,7 @@
     },
     "about": {
       "title": "O mnie",
-      "description": "Zmotywowany junior frontend developer z praktycznym doświadczeniem w budowaniu nowoczesnych, responsywnych aplikacji internetowych przy użyciu React, TypeScript, Redux Toolkit, Next.js i Tailwind CSS.\n\nSkupiam się na pisaniu czystego, łatwego w utrzymaniu kodu i przestrzegam podstawowych zasad inżynieryjnych, takich jak DRY, SOLID i KISS. Mam doświadczenie w pracy zarówno samodzielnej, jak i w zespole, w tym komercyjną pracę freelancerską nad systemem CRM.\n\nNiedawno zacząłem rozwijać się w kierunku backendu przy użyciu Node.js i Express, gdzie zbudowałem REST API dla systemu zarządzania zadaniami typu Trello (tablice, kolumny, karty) z wykorzystaniem SQLite.\n\nSzybko się uczę, przywiązuję dużą wagę do szczegółów i mam nastawienie na rozwój, dążąc do zostania full-stack deweloperem.",
+      "description": "Zmotywowany junior frontend developer z praktycznym doświadczeniem w budowaniu nowoczesnych, responsywnych aplikacji internetowych przy użyciu React, TypeScript, Redux Toolkit, Next.js i Tailwind CSS.\n\nSkupiam się na pisaniu czystego, łatwego w utrzymaniu kodu i przestrzegam podstawowych zasad inżynieryjnych, takich jak DRY, SOLID i KISS. Mam doświadczenie w pracy zarówno samodzielnej, jak i w zespole, w tym komercyjną pracę nad skalowalnym systemem House CRM.\n\nNiedawno opanowałem również NestJS do tworzenia niezawodnych rozwiązań serwerowych i zbudowałem REST API dla systemu zarządzania zadaniami typu Trello (tablice, kolumny, karty) z wykorzystaniem SQLite.\n\nSzybko się uczę, przywiązuję dużą wagę do szczegółów i mam nastawienie na rozwój, dążąc do zostania full-stack deweloperem.",
       "info": {
         "name": "Imię",
         "phone": "Telefon",
@@ -155,59 +155,64 @@
     },
     "projects": {
       "0": {
+        "title": "House CRM",
+        "category": "Komercyjny Projekt Zespołowy",
+        "description": "Komercyjny projekt zespołowy dla branży nieruchomości, opracowany wspólnie з doświadczonymi programistami. Praca w ramach architektury FSD (Feature-Sliced Design) pozwoliła mi na opanowanie profesjonalnych standardów budowania skalowalnych aplikacji w monorepo. Odpowiadałem за implementację części frontendowej przy użyciu Next.js 16, RTK Query do zarządzania stanem oraz TanStack Table do zaawansowanej pracy z danymi. System oferuje wizualną analitykę (Recharts), automatyczną generację dokumentów PDF oraz nowoczesny interfejs oparty na Shadcn UI i Framer Motion. Kod jest zgodny z rygorystycznymi standardami (ESLint 9, Husky, lint-staged) oraz w pełni przetestowany przez Vitest i Playwright. Chociaż nie jestem właścicielem, GitHub owner (https://github.com/San88Francisco) oficjalnie potwierdza mój udział i chętnie udzieli rekomendacji. Demo na żywo: https://houses-crm.vercel.app (Login: user@example.com / Password: string)."
+      },
+      "1": {
         "title": "Portfolio Andrzeja",
         "category": "Aplikacje Next.js",
         "description": "Osobista witryna portfolio zbudowana z użyciem Next.js 16, React 19 i TypeScript 5.9. Stylizowana za pomocą Tailwind CSS 4, Radix UI i Framer Motion. Funkcje obejmują internacjonalizację z next-intl, walidację formularzy przez Zod i React Hook Form oraz powiadomienia sonner. Ten projekt podkreśla moją zdolność до dostarczania nowoczesnych, szybких i skalowalnych aplikacji."
       },
-      "1": {
+      "2": {
         "title": "News Reactfy",
         "category": "Aplikacje React",
         "description": "Bogata w funkcje aplikacja informacyjna zbudowana z React i TypeScript. Użytkownicy mogą przeglądać artykuły, filtrować według kategorii, szukać i przełączać się między trybem jasnym a ciemnym. Projekt wykorzystuje Redux Toolkit do zarządzania stanem, Axios do połączeń z API i niestandardowe haki do zaawansowanej logiki. Demonstruje praktyczne doświadczenie w tworzeniu skalowalnych i interaktywnych aplikacji React."
       },
-      "2": {
+      "3": {
         "title": "Quotes App",
         "category": "Aplikacje Next.js",
         "description": "Aplikacja do zarządzania cytatami zbudowana z Next.js i TypeScript. Użytkownicy mogą wyszukiwać, dodawać, edytować i usuwać cytaty za pośrednictwem interfejsu REST API. Interfejs jest stylizowany za pomocą Tailwind CSS i ShadCN UI, z obsługą błędów przez React Toastify. Testy jednostkowe są zaimplementowane przy użyciu Jest, co zapewnia niezawodność i łatwość konserwacji."
       },
-      "3": {
+      "4": {
         "title": "Get Task Driver",
         "category": "Aplikacje React",
         "description": "Aplikacja do zarządzania zadaniami typu Trello zbudowana z React, TypeScript i Redux. Użytkownicy mogą tworzyć listy, dodawać zadania, ustawiać terminy, oznaczać ukończenie i zarządzać wieloma tablicami. Interfejs wykorzystuje Material UI i Framer Motion dla płynnych interakcji. Autoryzacja jest obsługiwana za pomocą JWT, wraz z testami jednostkowymi i migawkami Storybook dla zapewnienia jakości."
       },
-      "4": {
+      "5": {
         "title": "Book Library App",
         "category": "Aplikacje React",
         "description": "Aplikacja biblioteka książek online z funkcjonalnością wyszukiwania i filtrowania. Została najpierw zbudowana z klasycznym Redux, а później zrefaktoryzowana do Redux Toolkit dla lepszej struktury. Backend to prosty serwer Express, z Axios obsługującym żądania danych i Toastify pokazującym powiadomienia. Ten projekt demonstruje zarówno starsze, jak i nowoczesne podejścia do zarządzania stanem."
       },
-      "5": {
+      "6": {
         "title": "Shop store",
         "category": "E-commerce i projekty wspólne",
         "description": "Wspólny projekt sklepu jubilerskiego e-commerce zbudowany całkowicie w HTML, CSS i JavaScript. Projekt zawiera w pełni niestandardowy koszyk napędzany przez LocalStorage i responsywne elementy interfejsu użytkownika. Przyczyniłem się do wdrożenia interfejsu użytkownika, obsługi formularzy i planowania struktury aplikacji. Demonstruje pracę zespołową, współpracę na GitHub i rozwój bez frameworków."
       },
-      "6": {
+      "7": {
         "title": "Home Pro",
         "category": "Landing Pages i proste strony",
         "description": "Responsywna strona docelowa dla firmy świadczącej usługi domowe zaprojektowana w Figma. Zawiera animacje wyzwalane przewijaniem, suwak treści i komponent akordeon. Zbudowana z HTML, CSS i JavaScript, stylizowana przy użyciu metodologii BEM. Ten projekt podkreśla czysty responsywny układ i interaktywny rozwój interfejsu użytkownika."
       },
-      "7": {
+      "8": {
         "title": "Farm Vest",
         "category": "Landing Pages i proste strony",
         "description": "Responsywna strona docelowa prezentująca możliwości inwestycji rolniczych. Zawiera angażujące animacje, efekty paralaksy i nowoczesny design interfejsu użytkownika. Opracowana przy użyciu HTML, CSS, Sass i JavaScript, stylizowana zgodnie z metodologią BEM. Projekt demonstruje płynne interakcje i dbałość o wizualne szczegóły."
       },
-      "8": {
+      "9": {
         "title": "GoCorona",
         "category": "Landing Pages i proste strony",
         "description": "Strona docelowa dotycząca świadomości zdrowotnej z responsywnym designem i nowoczesnym układem. Zawiera animacje, płynną nawigację i interaktywne elementy angażujące użytkownika. Projekt został zbudowany z HTML, CSS, Sass i JavaScript, ustrukturyzowany za pomocą BEM i zautomatyzowany przy użyciu Gulp. Demonstruje solidną wiedzę na temat projektowania interfejsu użytkownika i podstaw frontend."
       },
-      "9": {
+      "10": {
         "title": "Finance",
         "category": "Landing Pages i proste strony",
         "description": "Strona docelowa usług finansowych z profesjonalnym i minimalistycznym projektem interfejsu użytkownika. Posiada responsywny układ, płynną nawigację i czystą prezentację wizualną. Zbudowana z HTML, CSS, Sass i JavaScript, stylizowana przy użyciu metodologii BEM i zaprojektowana w Figma. Projekt kładzie nacisk na dbający o szczegóły design i dopracowaną realizację frontend."
       },
-      "10": {
+      "11": {
         "title": "INTERIA",
         "category": "Landing Pages & Simple Websites",
-        "description": "Profesjonalna i minimalistyczna strona landingowa dla usług finansowych. Charakteryzuje się responsywnym układem, płynną nawigacją i czystą prezentacją wizualną. Zbudowana przy użyciu HTML, CSS, Sass i JavaScript, stylizowana zgodnie з metodologią BEM i zaprojektowana w Figma. Projekt kładzie nacisk na dbałość o szczegóły i dopracowane wykonanie frontendowe."
+        "description": "Profesjonalna i minimalistyczna strona landingowa dla usług finansowych. Charakteryzuje się responsywnym układem, płynną nawigację i czystą prezentację wizualną. Zbudowana przy użyciu HTML, CSS, Sass i JavaScript, stylizowana zgodnie з metodologią BEM i zaprojektowana w Figma. Projekt kładzie nacisk na dbałość o szczegóły i dopracowane wykonanie frontendowe."
       }
     }
   }

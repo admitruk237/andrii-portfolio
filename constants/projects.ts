@@ -5,6 +5,32 @@ const projects: Project[] = [
     id: '0',
     stack: [
       { name: 'Next.js 16' },
+      { name: 'Redux Toolkit' },
+      { name: 'TypeScript' },
+      { name: 'RTK Query' },
+      { name: 'FSD Architecture' },
+      { name: 'TanStack Table' },
+      { name: 'Shadcn UI' },
+      { name: 'Recharts' },
+      { name: 'Framer Motion' },
+      { name: 'React PDF' },
+      { name: 'React Hook Form' },
+      { name: 'Lucide React' },
+      { name: 'Yup / Zod' },
+      { name: 'Storybook' },
+      { name: 'Vitest' },
+      { name: 'Playwright' },
+      { name: 'ESLint 9' },
+      { name: 'NestJS' },
+    ],
+    video: '/assets/work/video/houseCRM.webm',
+    github: 'https://github.com/San88Francisco/HousesCRM',
+    live: 'https://houses-crm.vercel.app',
+  },
+  {
+    id: '1',
+    stack: [
+      { name: 'Next.js 16' },
       { name: 'React 19' },
       { name: 'Typescript 5.9' },
       { name: 'Tailwind CSS 4' },
@@ -21,7 +47,7 @@ const projects: Project[] = [
     live: 'https://andrii-portfolio-one.vercel.app/',
   },
   {
-    id: '1',
+    id: '2',
     stack: [
       { name: 'React' },
       { name: 'Redux Toolkit' },
@@ -37,7 +63,7 @@ const projects: Project[] = [
     live: 'https://news-reactfy.vercel.app/',
   },
   {
-    id: '2',
+    id: '3',
     stack: [
       { name: 'Next.js' },
       { name: 'TypeScript' },
@@ -48,13 +74,14 @@ const projects: Project[] = [
       { name: 'React Toastify' },
       { name: 'Clean Architecture' },
       { name: 'DRY' },
+      { name: 'OpenAPI' },
     ],
     image: '/assets/work/img/quotes.png',
     github: 'https://github.com/admitruk237/Quotes-app',
     live: '',
   },
   {
-    id: '3',
+    id: '4',
     stack: [
       { name: 'React' },
       { name: 'TypeScript' },
@@ -71,7 +98,7 @@ const projects: Project[] = [
     live: '',
   },
   {
-    id: '4',
+    id: '5',
     stack: [
       { name: 'React' },
       { name: 'Redux' },
@@ -89,7 +116,7 @@ const projects: Project[] = [
     live: '',
   },
   {
-    id: '5',
+    id: '6',
     stack: [
       { name: 'Html 5' },
       { name: 'Css 3' },
@@ -106,7 +133,7 @@ const projects: Project[] = [
     live: 'https://shoppestore.netlify.app/',
   },
   {
-    id: '6',
+    id: '7',
     stack: [
       { name: 'Html 5' },
       { name: 'Css 3' },
@@ -122,7 +149,7 @@ const projects: Project[] = [
     live: 'https://admitruk237.github.io/Home-Pro/',
   },
   {
-    id: '7',
+    id: '8',
     stack: [
       { name: 'Html 5' },
       { name: 'Css 3' },
@@ -139,7 +166,7 @@ const projects: Project[] = [
     live: 'https://admitruk237.github.io/Farm-Vest/',
   },
   {
-    id: '8',
+    id: '9',
     stack: [
       { name: 'Html 5' },
       { name: 'Css 3' },
@@ -155,7 +182,7 @@ const projects: Project[] = [
     live: 'https://go-corona-umber.vercel.app/',
   },
   {
-    id: '9',
+    id: '10',
     stack: [
       { name: 'Html 5' },
       { name: 'Css 3' },
@@ -170,7 +197,7 @@ const projects: Project[] = [
     live: 'https://admitruk237.github.io/Finance-site/',
   },
   {
-    id: '10',
+    id: '11',
     stack: [
       { name: 'Html 5' },
       { name: 'Css 3' },
