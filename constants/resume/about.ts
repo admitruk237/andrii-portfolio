@@ -6,7 +6,7 @@ const about: AboutMetadata = {
     { key: 'nationality', value: 'Ukrainian' },
     { key: 'email', value: 'admitruk237@gmail.com' },
     { key: 'github', value: 'https://github.com/admitruk237' },
-    { key: 'languages', value: 'Ukrainian, Polish (B2), English (B1/B2)' },
+    { key: 'languages', value: 'Ukrainian, Polish (B2), English (B1)' },
   ],
 }
 
