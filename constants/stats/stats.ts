@@ -2,20 +2,23 @@ import { Stats } from '@/types'
 
 const stats: Stats[] = [
   {
-    num: 11,
+    num: 12,
     text: 'Projects completed',
   },
   {
-    num: 4,
-    text: 'completed courses',
+    num: 1.5,
+    text: 'Years of experience',
+    decimals: 1,
   },
   {
-    num: 400,
+    num: 700,
     text: 'Code commits',
+    suffix: '+',
   },
   {
     num: 1000,
     text: 'Hours of learning ',
+    suffix: '+',
   },
 ]
 

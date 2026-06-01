@@ -12,12 +12,12 @@
   "Summary": {
     "role": "Frontend Developer",
     "hello": "Hello I'm ",
-    "description": "I'm frontend developer focused on building responsive, accessible, and modern web interfaces. I work with technologies like HTML, CSS, JavaScript, TypeScript, React, Redux Toolkit, Next.js, Node.js, Express.js, Sqlite, and Tailwind CSS. I'm passionate about clean code, good UI/UX, and constantly improving my skills through practice and learning.",
+    "description": "I'm a frontend developer with hands-on commercial experience building responsive, accessible, and modern web interfaces. I work daily with React, Next.js, TypeScript, Redux Toolkit, and Tailwind CSS, and have delivered production applications for the online gaming industry and a long-term CRM platform. I care about clean, maintainable code, solid architecture (FSD, SOLID, DRY), and great UI/UX.",
     "downloadCV": "Download CV"
   },
   "Stats": {
     "projects": "Projects completed",
-    "courses": "completed courses",
+    "experience": "Years of experience",
     "commits": "Code commits",
     "hours": "Hours of learning"
   },
@@ -51,52 +51,27 @@
     },
     "experience": {
       "title": "My experience",
-      "description": "I’m a junior frontend developer actively honing my skills through hands-on projects. My portfolio includes 12+ projects of varying complexity, built with modern technologies. Recently, I’ve also started expanding into backend development using Node.js and Express. You can explore my work in detail in the Work section, including demos and GitHub repositories.",
+      "description": "I'm a frontend developer with commercial experience delivering production-grade, responsive web applications. My background spans interactive products for the online gaming industry, a long-term CRM platform, and 12+ self-directed projects built with modern technologies. You can explore my work in detail in the Work section, including live demos and GitHub repositories.",
       "items": {
         "0": {
-          "duration": "Feb 2025 – Feb 2026",
-          "projects": ["House CRM (Commercial Project)"],
+          "duration": "Jan 2026 – Present",
+          "projects": ["Evoverse — Frontend Developer"],
           "technologies": [
-            "Development of a CRM system for a real estate rental business as part of a team"
+            "Interactive web apps for the online gaming industry — high-performance, real-time interfaces; collaboration with designers, backend & QA"
           ]
         },
         "1": {
-          "duration": "Feb 2026 – Present",
-          "projects": ["To-Do API (Trello-like)"],
-          "technologies": ["Backend architecture basics"]
+          "duration": "Mar 2025 – Dec 2025",
+          "projects": ["Freelance — CRM Project"],
+          "technologies": [
+            "Front-end of a long-term CRM web app for a small business, working in a team under senior developer guidance (agile workflow, GitHub code reviews) — data-heavy interfaces (charts, tables, filters), forms & validation"
+          ]
         },
         "2": {
-          "duration": "Aug 2025 – Present",
-          "projects": ["My Portfolio"]
-        },
-        "3": {
-          "duration": "Jul 2025 – Aug 2025",
-          "projects": ["Quotes App"]
-        },
-        "4": {
-          "duration": "May 2025",
-          "projects": ["Auth with Firebase"]
-        },
-        "5": {
-          "duration": "Jan 2025 – May 2025",
-          "projects": ["Get Task Driver"]
-        },
-        "6": {
-          "duration": "Jun 2024 – Jan 2025",
-          "projects": ["Book Library App", "News Reactify"]
-        },
-        "7": {
-          "duration": "Jan 2024 – Apr 2024",
-          "projects": ["ShoppeStore (Team Project)"]
-        },
-        "8": {
-          "duration": "Sep 2023 – Dec 2023",
-          "projects": [
-            "GoCorona",
-            "Finance",
-            "Farm Vest",
-            "Home Pro",
-            "INTERIA"
+          "duration": "Dec 2023 – Present",
+          "projects": ["Self-Directed Projects"],
+          "technologies": [
+            "Independent development of varied web apps — news app, quote manager, portfolio, Trello-like task manager, e-commerce & landing pages"
           ]
         }
       }
@@ -106,18 +81,18 @@
       "certificate": "View certificate",
       "items": {
         "0": {
-          "duration": "2025",
+          "duration": "Oct 2024 – Feb 2025",
           "institution": "Online Course Platform",
           "degree": "The Ultimate React Course: React, Next.js, Redux & More",
           "certificate": "https://www.udemy.com/certificate/UC-623331d7-fee3-4e0f-99ec-62c8c23a5edb/"
         },
         "1": {
-          "duration": "2024",
+          "duration": "Jul 2023 – Sep 2024",
           "institution": "Self-taught Frontend Developer",
           "degree": "Independent study – documentation, YouTube tutorials, practice projects, supplemented with mentoring from an experienced developer"
         },
         "2": {
-          "duration": "2011-2017",
+          "duration": "Nov 2011 – Dec 2017",
           "institution": "Vinnytsia Institute of Trade and Economics of Kyiv National University of Trade and Economics",
           "degree": "Master’s Degree in Management of Trade Organizations"
         }
@@ -125,7 +100,7 @@
     },
     "about": {
       "title": "About me",
-      "description": "Motivated junior frontend developer with hands-on experience building modern, responsive web applications using React, TypeScript, Redux Toolkit, Next.js, and Tailwind CSS.\n\nI focus on writing clean, maintainable code and follow core engineering principles such as DRY, SOLID, and KISS. I have experience working both independently and in a team environment, including commercial work on the large-scale House CRM system.\n\nRecently, I've also mastered NestJS for building robust server-side solutions and developed a REST API for a Trello-like task management system (boards, columns, cards) using SQLite.\n\nI’m a fast learner with strong attention to detail and a growth mindset, continuously improving my skills and aiming to become a full-stack developer.",
+      "description": "Frontend developer with commercial experience building modern, responsive web applications using React, Next.js, TypeScript, Redux Toolkit, and Tailwind CSS.\n\nI write clean, maintainable code and follow proven engineering principles such as SOLID, DRY, and Clean Architecture, applying Feature-Sliced Design (FSD) on large-scale codebases. I'm comfortable working both independently and in a team, including commercial work on production CRM systems and interactive products for the online gaming industry.\n\nI also have working knowledge of backend fundamentals with Node.js and Express, and have built a REST API for a Trello-like task management system (boards, columns, cards).\n\nI'm a fast learner with strong attention to detail and a growth mindset, continuously sharpening my skills toward becoming a full-stack developer.",
       "info": {
         "name": "Name",
         "phone": "Phone",
@@ -134,7 +109,7 @@
         "github": "GitHub",
         "languages": "Languages",
         "nationality_val": "Ukrainian",
-        "languages_val": "Ukrainian, Polish (B2), English (B1/B2)"
+        "languages_val": "Ukrainian, Polish (B2), English (B1)"
       }
     },
     "skills": {

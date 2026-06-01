@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl'
 
 const STAT_KEY_MAP: Record<string, string> = {
   'Projects completed': 'projects',
-  'completed courses': 'courses',
+  'Years of experience': 'experience',
   'Code commits': 'commits',
   'Hours of learning ': 'hours',
 }
@@ -31,7 +31,8 @@ export const Stats = () => {
                   end={item.num}
                   duration={5}
                   delay={2}
-                  suffix={item.num === 1000 || item.num === 400 ? '+' : ''}
+                  decimals={item.decimals ?? 0}
+                  suffix={item.suffix ?? ''}
                   className="text-4xl  lg:text-6xl font-extrabold"
                 />
                 <p

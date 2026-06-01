@@ -4,86 +4,38 @@ const experience: ExperienceMetadata = {
   items: [
     {
       technologies: [
-        'React.js',
+        'React',
+        'Next.js',
         'TypeScript',
+        'Tailwind CSS',
+        'Redux Toolkit',
         'REST API',
+        'Real-time features',
+      ],
+    },
+    {
+      technologies: [
+        'Next.js',
+        'TypeScript',
+        'Tailwind CSS',
+        'Shadcn UI',
+        'Radix UI',
+        'Recharts',
+        'React Hook Form',
+        'Yup',
+        'Redux Toolkit',
         'Git',
-        'Team collaboration',
       ],
     },
     {
       technologies: [
-        'Node.js',
-        'Express.js',
-        'SQLite',
-        'REST API',
-        'CRUD operations',
-        'Backend architecture basics',
-      ],
-    },
-    {
-      technologies: [
-        'Next.js',
-        'App Router',
-        'TypeScript',
-        'Tailwind CSS',
-        'Shadcn UI',
-        'Framer Motion',
-      ],
-    },
-    {
-      technologies: [
+        'React',
         'Next.js',
         'TypeScript',
-        'App Router',
-        'REST API',
+        'Redux Toolkit',
         'Tailwind CSS',
-        'Shadcn UI',
-      ],
-    },
-    {
-      technologies: [
-        'React.js',
-        'Redux Toolkit',
-        'RTK Query',
         'REST API',
-        'React Router DOM',
-        'TypeScript',
-        'Tailwind CSS',
-        'Firebase',
-        'JWT',
       ],
-    },
-    {
-      technologies: [
-        'React.js',
-        'Redux Toolkit',
-        'RTK Query',
-        'REST API',
-        'React Router DOM',
-        'TypeScript',
-        'Material UI',
-        'Framer Motion',
-        'JWT',
-        'Unit Testing',
-        'Storybook',
-      ],
-    },
-    {
-      technologies: [
-        'React.js',
-        'Redux Toolkit',
-        'RTK Query',
-        'REST API',
-        'React Router DOM',
-        'TypeScript',
-      ],
-    },
-    {
-      technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
-    },
-    {
-      technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
     },
   ],
 }
