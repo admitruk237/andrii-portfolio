@@ -1,8 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import { Link, usePathname } from '@/i18n/routing'
+import { useTranslations } from 'next-intl'
 import { CiMenuFries } from 'react-icons/ci'
+import { ROUTES } from '@/constants'
+import { Link, usePathname } from '@/i18n/routing'
+import { cn, isActiveRoute } from '@/lib/utils'
+import { Logo } from '../Logo/Logo'
 import {
   Sheet,
   SheetContent,
@@ -10,55 +14,50 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '../ui/sheet'
-import clsx from 'clsx'
-import { useTranslations } from 'next-intl'
-import { ROUTES } from '@/constants/routes'
 
 export const MobileNav = () => {
   const pathname = usePathname()
-  const [open, setOpen] = useState(false)
-  const tNav = useTranslations('Nav')
+  const [isOpen, setIsOpen] = useState(false)
+  const t = useTranslations('Nav')
   const tHeader = useTranslations('Header')
+  const close = () => setIsOpen(false)
 
   return (
     <Sheet
-      open={open}
-      onOpenChange={setOpen}
+      open={isOpen}
+      onOpenChange={setIsOpen}
     >
-      <SheetTrigger className="flex justify-center items-center">
+      <SheetTrigger
+        aria-label={tHeader('openMenu')}
+        className="flex justify-center items-center"
+      >
         <CiMenuFries className="text-[32px] text-accent" />
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent closeLabel={tHeader('closeMenu')}>
         <SheetHeader>
-          <SheetTitle className="mt-32  text-center text-2xl">
-            <Link
-              href="/"
-              onClick={() => setOpen(false)}
-            >
-              <h1 className="text-4xl mb-20 text-foreground font-semibold">
-                {tHeader('name')}
-                <span className="text-accent-hover">.</span>
-              </h1>
-            </Link>
+          <SheetTitle className="mt-32 text-center text-2xl">
+            <Logo
+              className="mb-20 text-foreground"
+              onClick={close}
+            />
           </SheetTitle>
         </SheetHeader>
         <nav className="flex flex-col justify-center items-center gap-8 pb-20">
-          {ROUTES.map((link, index) => {
-            const isCurrent =
-              pathname === link.path || pathname === `/${link.path}`
+          {ROUTES.map(({ labelKey, path }) => {
+            const isCurrent = isActiveRoute(pathname, path)
 
             return (
               <Link
-                href={link.path}
-                key={index}
-                onClick={() => setOpen(false)}
+                href={path}
+                key={path}
+                onClick={close}
                 aria-current={isCurrent ? 'page' : undefined}
-                className={clsx(
+                className={cn(
                   'text-xl capitalize hover:text-accent transition-all',
                   isCurrent && 'text-accent border-b-2 border-accent',
                 )}
               >
-                {tNav(link.name)}
+                {t(labelKey)}
               </Link>
             )
           })}

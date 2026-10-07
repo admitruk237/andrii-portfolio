@@ -1,7 +1,9 @@
 {
   "Header": {
     "name": "Andrii",
-    "hireMe": "Hire me"
+    "hireMe": "Hire me",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "Nav": {
     "home": "home",
@@ -9,11 +11,18 @@
     "work": "work",
     "contact": "contact"
   },
+  "Home": {
+    "aboutSection": "About section",
+    "statsSection": "Statistics section"
+  },
   "Summary": {
     "role": "Frontend Developer",
     "hello": "Hello I'm ",
-    "description": "I'm a frontend developer with hands-on commercial experience building responsive, accessible, and modern web interfaces. I work daily with React, Next.js, TypeScript, Redux Toolkit, and Tailwind CSS, and have delivered production applications for the online gaming industry and a long-term CRM platform. I care about clean, maintainable code, solid architecture (FSD, SOLID, DRY), and great UI/UX.",
-    "downloadCV": "Download CV"
+    "description": "Frontend Developer with nearly 2 years of commercial experience building production web applications with React, Next.js and TypeScript. I've developed around 10 web-based casino games and back-office tools from scratch at an iGaming company and built analytics dashboards for a real estate CRM that the business uses in production. I work with Zustand, TanStack Query, Redux Toolkit and Tailwind CSS, follow Feature-Sliced Design, and use AI coding tools (Cursor, Claude Code) every day.",
+    "downloadCV": "Download CV",
+    "downloading": "Downloading CV",
+    "downloaded": "CV downloaded",
+    "downloadFailed": "Download failed"
   },
   "Stats": {
     "projects": "Projects completed",
@@ -30,10 +39,17 @@
     "phone": "Phone number",
     "message": "Type your message here",
     "send": "Send message",
+    "sending": "Sending message",
+    "sent": "Message sent successfully! I'll get back to you soon.",
+    "sendFailed": "Failed to send message: {reason}",
+    "unknownError": "Unknown error",
     "copy": "Copy",
-    "phone_label": "Phone",
-    "email_label": "Email",
-    "location_label": "Location",
+    "copied": "Copied to clipboard!",
+    "labels": {
+      "phone": "Phone",
+      "email": "Email",
+      "location": "Location"
+    },
     "errors": {
       "firstname": "First name must be at least 2 characters",
       "lastname": "Last name must be at least 2 characters",
@@ -41,6 +57,11 @@
       "phone": "Please enter a valid phone number",
       "message": "Message must be at least 10 characters"
     }
+  },
+  "Error": {
+    "title": "Something went wrong",
+    "description": "We apologize for the inconvenience. Please refresh the page or try again later.",
+    "refresh": "Refresh Page"
   },
   "Resume": {
     "tabs": {
@@ -51,28 +72,19 @@
     },
     "experience": {
       "title": "My experience",
-      "description": "I'm a frontend developer with commercial experience delivering production-grade, responsive web applications. My background spans interactive products for the online gaming industry, a long-term CRM platform, and 12+ self-directed projects built with modern technologies. You can explore my work in detail in the Work section, including live demos and GitHub repositories.",
+      "description": "Nearly 2 years of commercial frontend experience: web-based casino games and back-office tools at an iGaming company, and analytics dashboards for a real estate CRM used in production. My team and personal projects, with live demos and GitHub repositories, are in the Work section.",
       "items": {
-        "0": {
-          "duration": "Jan 2026 – Present",
-          "projects": ["Evoverse — Frontend Developer"],
-          "technologies": [
-            "Interactive web apps for the online gaming industry — high-performance, real-time interfaces; collaboration with designers, backend & QA"
-          ]
+        "evoverse": {
+          "duration": "Dec 2025 – Present",
+          "position": "Frontend Developer",
+          "company": "Evoverse",
+          "description": "I develop web-based casino games and internal back-office tools from scratch — around 10 games delivered so far, each in about two weeks including testing and fixes. I build interactive 2D and 3D game interfaces with React Pixi (PixiJS) and Three.js, keep game state in Zustand and server data in TanStack Query, and integrate REST APIs and real-time features. I own each game from first commit to release in a team of 8: 4 frontend developers, 2 backend developers, a designer and a manager."
         },
-        "1": {
-          "duration": "Mar 2025 – Dec 2025",
-          "projects": ["Freelance — CRM Project"],
-          "technologies": [
-            "Front-end of a long-term CRM web app for a small business, working in a team under senior developer guidance (agile workflow, GitHub code reviews) — data-heavy interfaces (charts, tables, filters), forms & validation"
-          ]
-        },
-        "2": {
-          "duration": "Dec 2023 – Present",
-          "projects": ["Self-Directed Projects"],
-          "technologies": [
-            "Independent development of varied web apps — news app, quote manager, portfolio, Trello-like task manager, e-commerce & landing pages"
-          ]
+        "houseCrm": {
+          "duration": "Feb 2025 – Nov 2025",
+          "position": "Frontend Developer",
+          "company": "Freelance (House CRM)",
+          "description": "I developed the front end of a production CRM for a real estate business that manages a large property portfolio across the city. I built analytics dashboards with charts, tables and filters that track income and payback for each property and tenant across 15 years of data, plus forms with validation. I worked in a small team under senior developer guidance with an agile workflow and GitHub code reviews; the business uses the system today and the team still maintains it."
         }
       }
     },
@@ -80,45 +92,61 @@
       "title": "My education",
       "certificate": "View certificate",
       "items": {
-        "0": {
+        "reactCourse": {
           "duration": "Oct 2024 – Feb 2025",
-          "institution": "Online Course Platform",
-          "degree": "The Ultimate React Course: React, Next.js, Redux & More",
-          "certificate": "https://www.udemy.com/certificate/UC-623331d7-fee3-4e0f-99ec-62c8c23a5edb/"
+          "institution": "Udemy",
+          "degree": "The Ultimate React Course: React, Next.js, Redux & More"
         },
-        "1": {
+        "selfStudy": {
           "duration": "Jul 2023 – Sep 2024",
-          "institution": "Self-taught Frontend Developer",
-          "degree": "Independent study – documentation, YouTube tutorials, practice projects, supplemented with mentoring from an experienced developer"
+          "institution": "Self-study in frontend development",
+          "degree": "Documentation, practice projects and mentoring from an experienced developer"
         },
-        "2": {
+        "masters": {
           "duration": "Nov 2011 – Dec 2017",
-          "institution": "Vinnytsia Institute of Trade and Economics of Kyiv National University of Trade and Economics",
-          "degree": "Master’s Degree in Management of Trade Organizations"
+          "institution": "Vinnytsia Institute of Trade and Economics, Kyiv National University of Trade and Economics",
+          "degree": "Master's Degree in Management of Trade Organizations"
         }
       }
     },
     "about": {
       "title": "About me",
-      "description": "Frontend developer with commercial experience building modern, responsive web applications using React, Next.js, TypeScript, Redux Toolkit, and Tailwind CSS.\n\nI write clean, maintainable code and follow proven engineering principles such as SOLID, DRY, and Clean Architecture, applying Feature-Sliced Design (FSD) on large-scale codebases. I'm comfortable working both independently and in a team, including commercial work on production CRM systems and interactive products for the online gaming industry.\n\nI also have working knowledge of backend fundamentals with Node.js and Express, and have built a REST API for a Trello-like task management system (boards, columns, cards).\n\nI'm a fast learner with strong attention to detail and a growth mindset, continuously sharpening my skills toward becoming a full-stack developer.",
+      "description": "Frontend Developer with nearly 2 years of commercial experience building production web applications with React, Next.js and TypeScript.\n\nAt an iGaming company I develop web-based casino games and back-office tools from scratch, including 2D and 3D game interfaces with PixiJS and Three.js. Before that I built analytics dashboards for a real estate CRM that the business still uses in production.\n\nI follow Feature-Sliced Design, Clean Architecture and SOLID, test my code with Jest, React Testing Library and Vitest, and use AI developer tools — Cursor, Claude Code and OpenAI Codex — in my daily workflow. I also have basic backend knowledge: REST APIs, WebSockets (Socket.IO), JWT, Node.js and Express.\n\nI'm open to remote work and relocation.",
       "info": {
         "name": "Name",
         "phone": "Phone",
-        "nationality": "Nationality",
         "email": "Email",
-        "github": "GitHub",
+        "location": "Location",
+        "nationality": "Nationality",
         "languages": "Languages",
-        "nationality_val": "Ukrainian",
-        "languages_val": "Ukrainian, Polish (B2), English (B1)"
+        "github": "GitHub",
+        "linkedin": "LinkedIn"
+      },
+      "values": {
+        "location": "Krosno, Poland",
+        "nationality": "Ukrainian",
+        "languages": "Ukrainian, Polish (B2), English (B1)"
       }
     },
     "skills": {
       "title": "My skills",
-      "description": "Here are the technologies I use to build modern web applications."
+      "description": "Technologies and tools I use to build production web applications.",
+      "categories": {
+        "languages": "Languages",
+        "frameworks": "Frameworks and libraries",
+        "styling": "UI and styling",
+        "backend": "APIs and backend (basic)",
+        "testing": "Testing",
+        "architecture": "Architecture",
+        "tools": "Tools",
+        "ai": "AI developer tools"
+      }
     }
   },
   "Work": {
     "categories": {
+      "internship": "Internship Team Project",
+      "commercial": "Commercial Team Project",
       "next": "Next.js Applications",
       "react": "React Applications",
       "ecommerce": "E-commerce & Collaborative",
@@ -128,66 +156,63 @@
       "live": "Live project",
       "github": "Github repository"
     },
+    "slider": {
+      "previous": "Previous project",
+      "next": "Next project"
+    },
+    "thumbnailAlt": "{title} project thumbnail",
     "projects": {
-      "0": {
-        "title": "House CRM",
-        "category": "Commercial Team Project",
-        "description": "A commercial team project for real estate management, developed alongside experienced developers. Working within the FSD (Feature-Sliced Design) architecture allowed me to master professional standards for building scalable applications within a monorepo. I was responsible for the frontend implementation using Next.js 16, RTK Query for state management, and TanStack Table for advanced data handling. The system features visual analytics (Recharts), automated PDF documentation, and a modern UI built with Shadcn UI and Framer Motion. The codebase adheres to strict quality standards (ESLint 9, Husky, lint-staged) and is verified with Vitest and Playwright. While I am not the owner, the repository owner (https://github.com/San88Francisco) officially confirms my participation and can provide recommendations. Live preview: https://houses-crm.vercel.app (Login: user@example.com / Password: string)."
+      "megaWin": {
+        "title": "Mega Win",
+        "description": "A joint project I built with a colleague during my internship at Evoverse, the company where I work now. Mega Win is a bet platform with roulette, keno, plinko and dice games, a leaderboard and rewards. The repository lives in the company's GitHub organization, but it is a non-commercial learning project, so I can show it publicly. Built with Next.js 16, React 19 and TypeScript on Feature-Sliced Design, with layer boundaries enforced by eslint-plugin-boundaries. Game state lives in Zustand and server data in TanStack Query with Axios and automatic token refresh. Forms use React Hook Form and Zod, the UI is built with Tailwind CSS 4, shadcn/ui and Motion, and the code is covered by Jest and React Testing Library tests with Husky and lint-staged checks."
       },
-      "1": {
+      "houseCrm": {
+        "title": "House CRM",
+        "description": "A commercial team project for real estate management, developed alongside experienced developers. Working within the FSD (Feature-Sliced Design) architecture allowed me to master professional standards for building scalable applications within a monorepo. I was responsible for the frontend implementation using Next.js 16, RTK Query for state management, and TanStack Table for advanced data handling. The system features visual analytics (Recharts) that track income and payback for each property and tenant across 15 years of data, automated PDF documentation, and a modern UI built with Shadcn UI and Framer Motion. The codebase adheres to strict quality standards (ESLint 9, Husky, lint-staged) and is verified with Vitest and Playwright. While I am not the owner, the repository owner (https://github.com/San88Francisco) officially confirms my participation and can provide recommendations. Live preview: https://houses-crm.vercel.app (Login: user@example.com / Password: string)."
+      },
+      "portfolio": {
         "title": "Andrii Portfolio",
-        "category": "Next.js Applications",
         "description": "A personal portfolio website built with Next.js 16, React 19, and TypeScript 5.9. Styled with Tailwind CSS 4, Radix UI, and Framer Motion. Features include internationalization with next-intl, form validation via Zod and React Hook Form, and toast notifications with Sonner. This project demonstrates my ability to build clean, modern, and production-ready applications."
       },
-      "2": {
+      "newsReactfy": {
         "title": "News Reactfy",
-        "category": "React Applications",
         "description": "A feature-rich news application built with React and TypeScript. Users can browse articles, filter by category, search, and switch between light and dark modes. The project uses Redux Toolkit for state management, Axios for API calls, and custom hooks for advanced logic. It demonstrates practical experience in scalable and interactive React applications."
       },
-      "3": {
+      "quotesApp": {
         "title": "Quotes App",
-        "category": "Next.js Applications",
         "description": "A quote management application built with Next.js and TypeScript. Users can search, add, edit, and delete quotes through a REST API. The UI is styled with Tailwind CSS and ShadCN UI, with error handling via React Toastify. Unit tests are implemented using Jest, ensuring reliability and maintainability."
       },
-      "4": {
+      "getTaskDriver": {
         "title": "Get Task Driver",
-        "category": "React Applications",
         "description": "A Trello-like task management app built with React, TypeScript, and Redux. Users can create lists, add tasks, set deadlines, mark completion, and manage multiple boards. The UI uses Material UI and Framer Motion for smooth interactions. Authentication is handled with JWT, with unit tests and Storybook snapshots for quality assurance."
       },
-      "5": {
+      "bookLibrary": {
         "title": "Book Library App",
-        "category": "React Applications",
         "description": "An online book library application with search and filtering functionality. It was first built with classic Redux and later refactored to Redux Toolkit for better structure. The backend is a simple Express server, with Axios handling data requests and Toastify showing notifications. This project demonstrates both legacy and modern state management approaches."
       },
-      "6": {
+      "shopStore": {
         "title": "Shop store",
-        "category": "E-commerce & Collaborative",
         "description": "A collaborative e-commerce jewelry shop built entirely with HTML, CSS, and JavaScript. The project includes a fully custom shopping cart powered by LocalStorage and responsive UI elements. I contributed to UI implementation, form handling, and planning of app structure. It demonstrates teamwork, GitHub collaboration, and development without frameworks."
       },
-      "7": {
+      "homePro": {
         "title": "Home Pro",
-        "category": "Landing Pages & Simple Websites",
         "description": "A responsive landing page for a home service company designed in Figma. It includes scroll-triggered animations, a content slider, and an accordion component. Built with HTML, CSS, and JavaScript, styled using BEM methodology. This project highlights clean responsive layout and interactive UI development."
       },
-      "8": {
+      "farmVest": {
         "title": "Farm Vest",
-        "category": "Landing Pages & Simple Websites",
         "description": "A responsive landing page showcasing agricultural investment opportunities. It features engaging animations, parallax effects, and a modern UI design. Developed with HTML, CSS, Sass, and JavaScript, styled with BEM methodology. The project demonstrates smooth interactions and attention to visual details."
       },
-      "9": {
+      "goCorona": {
         "title": "GoCorona",
-        "category": "Landing Pages & Simple Websites",
         "description": "A health awareness landing page with a responsive design and modern layout. It includes animations, smooth navigation, and interactive elements for user engagement. The project was built with HTML, CSS, Sass, and JavaScript, structured with BEM and automated using Gulp. It demonstrates solid knowledge of UI design and frontend fundamentals."
       },
-      "10": {
+      "finance": {
         "title": "Finance",
-        "category": "Landing Pages & Simple Websites",
         "description": "A financial services landing page with a professional and minimal UI design. It features responsive layout, smooth navigation, and clean visual presentation. Built with HTML, CSS, Sass, and JavaScript, styled using BEM methodology and designed in Figma. The project emphasizes detail-oriented design and polished frontend delivery."
       },
-      "11": {
+      "interia": {
         "title": "INTERIA",
-        "category": "Landing Pages & Simple Websites",
-        "description": "A financial services landing page with a professional and minimal UI design. It features responsive layout, smooth navigation, and clean visual presentation. Built with HTML, CSS, Sass, and JavaScript, styled using BEM methodology and designed in Figma. The project emphasizes detail-oriented design and polished frontend delivery."
+        "description": "A landing page for an interior design studio with a clean, minimal UI. It features a responsive layout, smooth navigation, and a polished visual presentation. Built with HTML, CSS, Sass, and JavaScript, styled using BEM methodology and designed in Figma. The project emphasizes detail-oriented design and careful frontend delivery."
       }
     }
   }

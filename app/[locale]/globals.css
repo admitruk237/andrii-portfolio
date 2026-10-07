@@ -12,6 +12,8 @@
   --color-primary: var(--primary);
   --color-accent: #00ff99;
   --color-accent-hover: #00e187;
+  --color-success: #22c55e;
+  --color-sun: #eab308;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-primary: var(--font-jetbrainsMono);

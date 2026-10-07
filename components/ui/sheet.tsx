@@ -3,9 +3,9 @@
 import * as SheetPrimitive from '@radix-ui/react-dialog'
 import { cn } from '@/lib/utils'
 import { IoMdClose } from 'react-icons/io'
-import { ComponentPropsWithoutRef, ReactNode } from 'react'
+import { ComponentProps, ComponentPropsWithoutRef, ReactNode } from 'react'
 
-function Sheet({ ...props }) {
+function Sheet({ ...props }: ComponentProps<typeof SheetPrimitive.Root>) {
   return (
     <SheetPrimitive.Root
       data-slot="sheet"
@@ -14,7 +14,7 @@ function Sheet({ ...props }) {
   )
 }
 
-function SheetTrigger({ ...props }) {
+function SheetTrigger({ ...props }: ComponentProps<typeof SheetPrimitive.Trigger>) {
   return (
     <SheetPrimitive.Trigger
       data-slot="sheet-trigger"
@@ -23,7 +23,7 @@ function SheetTrigger({ ...props }) {
   )
 }
 
-function SheetClose({ ...props }) {
+function SheetClose({ ...props }: ComponentProps<typeof SheetPrimitive.Close>) {
   return (
     <SheetPrimitive.Close
       data-slot="sheet-close"
@@ -32,7 +32,7 @@ function SheetClose({ ...props }) {
   )
 }
 
-function SheetPortal({ ...props }) {
+function SheetPortal({ ...props }: ComponentProps<typeof SheetPrimitive.Portal>) {
   return (
     <SheetPrimitive.Portal
       data-slot="sheet-portal"
@@ -66,12 +66,14 @@ interface SheetContentProps extends ComponentPropsWithoutRef<
   className?: string
   children?: ReactNode
   side?: 'top' | 'right' | 'bottom' | 'left'
+  closeLabel: string
 }
 
 function SheetContent({
   className,
   children,
   side = 'right',
+  closeLabel,
   ...props
 }: SheetContentProps) {
   return (
@@ -96,7 +98,7 @@ function SheetContent({
         {children}
         <SheetPrimitive.Close className="absolute right-8 top-8 transition-opacity outline-none">
           <IoMdClose className="text-3xl text-accent" />
-          <span className="sr-only">Close</span>
+          <span className="sr-only">{closeLabel}</span>
         </SheetPrimitive.Close>
       </SheetPrimitive.Content>
     </SheetPortal>
@@ -119,7 +121,7 @@ function SheetHeader({ className, ...props }: SheetHeaderProps) {
   )
 }
 
-function SheetFooter({ className, ...props }) {
+function SheetFooter({ className, ...props }: ComponentProps<'div'>) {
   return (
     <div
       data-slot="sheet-footer"
@@ -129,7 +131,7 @@ function SheetFooter({ className, ...props }) {
   )
 }
 
-function SheetTitle({ className, ...props }) {
+function SheetTitle({ className, ...props }: ComponentProps<typeof SheetPrimitive.Title>) {
   return (
     <SheetPrimitive.Title
       data-slot="sheet-title"
@@ -139,7 +141,10 @@ function SheetTitle({ className, ...props }) {
   )
 }
 
-function SheetDescription({ className, ...props }) {
+function SheetDescription({
+  className,
+  ...props
+}: ComponentProps<typeof SheetPrimitive.Description>) {
   return (
     <SheetPrimitive.Description
       data-slot="sheet-description"

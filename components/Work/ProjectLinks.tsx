@@ -1,15 +1,35 @@
-import Link from 'next/link'
-import { BsArrowUpRight, BsGithub } from 'react-icons/bs'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
 import { useTranslations } from 'next-intl'
+import type { IconType } from 'react-icons'
+import { BsArrowUpRight, BsGithub } from 'react-icons/bs'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
+
+type LinkButtonProps = {
+  href: string
+  label: string
+  icon: IconType
+}
+
+const ProjectLinkButton = ({ href, label, icon: Icon }: LinkButtonProps) => (
+  <Tooltip>
+    <TooltipTrigger asChild>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={label}
+        className="w-[70px] h-[70px] rounded-full bg-card flex justify-center items-center group hover:bg-accent/10 transition-all duration-300"
+      >
+        <Icon className="text-foreground text-3xl group-hover:text-accent transition-all duration-300" />
+      </a>
+    </TooltipTrigger>
+    <TooltipContent>
+      <p>{label}</p>
+    </TooltipContent>
+  </Tooltip>
+)
 
 type Props = {
-  liveUrl: string
+  liveUrl?: string
   githubUrl: string
 }
 
@@ -18,46 +38,18 @@ export const ProjectLinks = ({ liveUrl, githubUrl }: Props) => {
 
   return (
     <div className="flex items-center gap-4 my-2 lg:w-[70%] mx-auto w-full">
-      {liveUrl !== '' && (
-        <Link
+      {liveUrl && (
+        <ProjectLinkButton
           href={liveUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <TooltipProvider delayDuration={100}>
-            <Tooltip>
-              <TooltipTrigger
-                className="cursor-pointer w-[70px] h-[70px] rounded-full bg-card flex justify-center items-center group
-                                       hover:bg-accent/10 transition-all duration-300"
-              >
-                <BsArrowUpRight className="text-foreground text-3xl group-hover:text-accent transition-all duration-300" />
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{t('live')}</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        </Link>
+          label={t('live')}
+          icon={BsArrowUpRight}
+        />
       )}
-      <Link
+      <ProjectLinkButton
         href={githubUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <TooltipProvider delayDuration={100}>
-          <Tooltip>
-            <TooltipTrigger
-              className="cursor-pointer w-[70px] h-[70px] rounded-full bg-card flex justify-center items-center group
-                                     hover:bg-accent/10 transition-all duration-300"
-            >
-              <BsGithub className=" text-foreground text-3xl group-hover:text-accent transition-all duration-300" />
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>{t('github')}</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-      </Link>
+        label={t('github')}
+        icon={BsGithub}
+      />
     </div>
   )
 }

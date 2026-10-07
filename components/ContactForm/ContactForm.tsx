@@ -1,42 +1,53 @@
 'use client'
 
-import { useContactForm } from '@/hooks'
-import { type ContactFormData } from '@/lib/validation/contactSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useMemo, type HTMLInputTypeAttribute } from 'react'
 import { useForm } from 'react-hook-form'
-import { Button, Input, Textarea, LoadingDots } from '../ui'
 import { useTranslations } from 'next-intl'
-import { z } from 'zod'
+import { useContactForm } from '@/hooks'
+import {
+  createContactSchema,
+  type ContactField,
+  type ContactFormData,
+} from '@/lib/validation/contactSchema'
+import { cn } from '@/lib/utils'
+import { Button, Input, LoadingDots, Textarea } from '../ui'
+
+const EMPTY_FORM: ContactFormData = {
+  firstname: '',
+  lastname: '',
+  email: '',
+  phone: '',
+  message: '',
+}
+
+const INPUT_FIELDS: { name: ContactField; type: HTMLInputTypeAttribute }[] = [
+  { name: 'firstname', type: 'text' },
+  { name: 'lastname', type: 'text' },
+  { name: 'email', type: 'email' },
+  { name: 'phone', type: 'tel' },
+]
+
+const FieldError = ({ message }: { message?: string }) =>
+  message ? (
+    <span className="text-destructive text-sm px-1">{message}</span>
+  ) : null
 
 export const ContactForm = () => {
   const t = useTranslations('Contact')
   const { isSubmitting, submitForm } = useContactForm()
 
-  const dynamicSchema = z.object({
-    firstname: z
-      .string()
-      .min(2, { message: t('errors.firstname') })
-      .trim(),
-    lastname: z
-      .string()
-      .min(2, { message: t('errors.lastname') })
-      .trim(),
-    email: z
-      .string()
-      .email({ message: t('errors.email') })
-      .trim(),
-    phone: z
-      .string()
-      .min(10, { message: t('errors.phone') })
-      .regex(/^[\+]?[0-9\s\-\(\)]{10,}$/, {
-        message: t('errors.phone'),
-      })
-      .trim(),
-    message: z
-      .string()
-      .min(10, { message: t('errors.message') })
-      .trim(),
-  })
+  const schema = useMemo(
+    () =>
+      createContactSchema({
+        firstname: t('errors.firstname'),
+        lastname: t('errors.lastname'),
+        email: t('errors.email'),
+        phone: t('errors.phone'),
+        message: t('errors.message'),
+      }),
+    [t],
+  )
 
   const {
     register,
@@ -44,21 +55,13 @@ export const ContactForm = () => {
     reset,
     formState: { errors },
   } = useForm<ContactFormData>({
-    resolver: zodResolver(dynamicSchema),
-    defaultValues: {
-      firstname: '',
-      lastname: '',
-      email: '',
-      phone: '',
-      message: '',
-    },
+    resolver: zodResolver(schema),
+    defaultValues: EMPTY_FORM,
   })
 
   const onSubmit = async (data: ContactFormData) => {
-    try {
-      await submitForm(data)
-      reset()
-    } catch (error) {}
+    const isSent = await submitForm(data)
+    if (isSent) reset()
   }
 
   return (
@@ -71,84 +74,41 @@ export const ContactForm = () => {
         <p className="text-muted-foreground">{t('description')}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="flex flex-col gap-2">
-            <Input
-              type="text"
-              placeholder={t('firstname')}
-              {...register('firstname')}
-              className={errors.firstname ? 'border-red-500' : ''}
-            />
-            {errors.firstname && (
-              <span className="text-red-500 text-sm px-1">
-                {errors.firstname.message}
-              </span>
-            )}
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <Input
-              type="text"
-              placeholder={t('lastname')}
-              {...register('lastname')}
-              className={errors.lastname ? 'border-red-500' : ''}
-            />
-            {errors.lastname && (
-              <span className="text-red-500 text-sm px-1">
-                {errors.lastname.message}
-              </span>
-            )}
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <Input
-              type="email"
-              placeholder={t('email')}
-              {...register('email')}
-              className={errors.email ? 'border-red-500' : ''}
-            />
-            {errors.email && (
-              <span className="text-red-500 text-sm px-1">
-                {errors.email.message}
-              </span>
-            )}
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <Input
-              type="tel"
-              placeholder={t('phone')}
-              {...register('phone')}
-              className={errors.phone ? 'border-red-500' : ''}
-            />
-            {errors.phone && (
-              <span className="text-red-500 text-sm px-1">
-                {errors.phone.message}
-              </span>
-            )}
-          </div>
+          {INPUT_FIELDS.map(({ name, type }) => (
+            <div
+              key={name}
+              className="flex flex-col gap-2"
+            >
+              <Input
+                type={type}
+                placeholder={t(name)}
+                aria-invalid={Boolean(errors[name])}
+                {...register(name)}
+                className={cn(errors[name] && 'border-destructive')}
+              />
+              <FieldError message={errors[name]?.message} />
+            </div>
+          ))}
         </div>
 
         <div className="flex flex-col gap-2">
           <Textarea
             placeholder={t('message')}
+            aria-invalid={Boolean(errors.message)}
             {...register('message')}
-            className={errors.message ? 'border-red-500' : ''}
+            className={cn(errors.message && 'border-destructive')}
           />
-          {errors.message && (
-            <span className="text-red-500 text-sm px-1">
-              {errors.message.message}
-            </span>
-          )}
+          <FieldError message={errors.message?.message} />
         </div>
 
         <Button
           variant="default"
           size="md"
-          className="sm:max-w-40 w-full"
+          className="w-full sm:w-auto sm:min-w-40"
           type="submit"
           disabled={isSubmitting}
         >
-          {isSubmitting ? <LoadingDots /> : t('send')}
+          {isSubmitting ? <LoadingDots label={t('sending')} /> : t('send')}
         </Button>
       </form>
     </div>

@@ -1,44 +1,25 @@
-'use client';
-import Link from 'next/link';
-import {
-  FaGithub,
-  FaLinkedinIn,
-  FaFacebook,
-  FaInstagram,
-  FaTelegram,
-} from 'react-icons/fa';
+import { SOCIAL_LINKS } from '@/constants'
 
 type Props = {
-  containerStyles?: string;
-  iconStyles?: string;
-};
+  containerStyles?: string
+  iconStyles?: string
+}
 
-const socials = [
-  { icon: <FaGithub />, path: 'https://github.com/admitruk237' },
-  {
-    icon: <FaLinkedinIn />,
-    path: 'https://www.linkedin.com/in/andr11-dmytruk/',
-  },
-  { icon: <FaFacebook />, path: 'https://www.facebook.com/share/18xKDJ3szf/' },
-  {
-    icon: <FaInstagram />,
-    path: 'https://www.instagram.com/dmytruk_andrii_/?utm_source=qr&igsh=ZmZrcHN3dXQyemt1',
-  },
-  { icon: <FaTelegram />, path: 'https://t.me/Dmytruk_Andrii' },
-];
+const Social = ({ containerStyles, iconStyles }: Props) => (
+  <div className={containerStyles}>
+    {SOCIAL_LINKS.map(({ name, icon: Icon, href }) => (
+      <a
+        key={name}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={name}
+        className={iconStyles}
+      >
+        <Icon />
+      </a>
+    ))}
+  </div>
+)
 
-const Social = ({ containerStyles, iconStyles }: Props) => {
-  return (
-    <div className={containerStyles}>
-      {socials.map((item, index) => {
-        return (
-          <Link key={index} href={item.path} className={iconStyles}>
-            {item.icon}
-          </Link>
-        );
-      })}
-    </div>
-  );
-};
-
-export default Social;
+export default Social

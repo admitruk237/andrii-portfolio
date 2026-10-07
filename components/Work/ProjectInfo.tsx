@@ -1,6 +1,9 @@
 import { useTranslations } from 'next-intl'
-import { Project } from '@/types'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
+import type { Project } from '@/types'
+
+const INFO_SWAP_OFFSET_PX = 10
+const INFO_SWAP_DURATION_S = 0.2
 
 type Props = {
   project: Project
@@ -8,35 +11,36 @@ type Props = {
 
 export const ProjectInfo = ({ project }: Props) => {
   const t = useTranslations('Work')
-  const index = project.id
-  const displayDescription = t(`projects.${index}.description`)
+  const lastStackIndex = project.stack.length - 1
 
   return (
     <div className="flex flex-col gap-[30px] lg:w-[70%] mx-auto w-full min-h-[160px]">
       <AnimatePresence mode="wait">
         <motion.div
           key={project.id}
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: INFO_SWAP_OFFSET_PX }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.2 }}
+          exit={{ opacity: 0, y: -INFO_SWAP_OFFSET_PX }}
+          transition={{ duration: INFO_SWAP_DURATION_S }}
           className="flex flex-col gap-[30px]"
         >
-          <p className="text-muted-foreground">{displayDescription}</p>
+          <p className="text-muted-foreground">
+            {t(`projects.${project.id}.description`)}
+          </p>
           <ul className="flex gap-4 flex-wrap">
-            {project.stack.map((item, index) => (
+            {project.stack.map((technology, index) => (
               <li
-                key={index}
+                key={technology}
                 className="text-accent"
               >
-                {item.name}
-                {index !== project.stack.length - 1 ? ',' : '.'}
+                {technology}
+                {index === lastStackIndex ? '.' : ','}
               </li>
             ))}
           </ul>
         </motion.div>
       </AnimatePresence>
-      <div className="border border-muted-foreground/20"></div>
+      <div className="border border-muted-foreground/20" />
     </div>
   )
 }

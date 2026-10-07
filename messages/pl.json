@@ -1,7 +1,9 @@
 {
   "Header": {
     "name": "Andrzej",
-    "hireMe": "Zatrudnij mnie"
+    "hireMe": "Zatrudnij mnie",
+    "openMenu": "Otwórz menu",
+    "closeMenu": "Zamknij menu"
   },
   "Nav": {
     "home": "główna",
@@ -9,11 +11,18 @@
     "work": "projekty",
     "contact": "kontakt"
   },
+  "Home": {
+    "aboutSection": "Sekcja o mnie",
+    "statsSection": "Sekcja statystyk"
+  },
   "Summary": {
-    "role": "Frontend deweloper",
+    "role": "Frontend Developer",
     "hello": "Cześć, jestem ",
-    "description": "Jestem programistą frontendowym z komercyjnym doświadczeniem w budowaniu responsywnych, dostępnych i nowoczesnych interfejsów internetowych. Na co dzień pracuję z React, Next.js, TypeScript, Redux Toolkit i Tailwind CSS, a także dostarczyłem aplikacje produkcyjne dla branży gier online oraz długoterminowej platformy CRM. Zależy mi na czystym, łatwym w utrzymaniu kodzie, solidnej architekturze (FSD, SOLID, DRY) i dobrym UI/UX.",
-    "downloadCV": "Pobierz CV"
+    "description": "Frontend Developer z prawie 2-letnim komercyjnym doświadczeniem w tworzeniu produkcyjnych aplikacji webowych w React, Next.js i TypeScript. W firmie iGaming od zera stworzyłem około 10 przeglądarkowych gier kasynowych oraz narzędzia back-office, a wcześniej zbudowałem dashboardy analityczne dla CRM nieruchomości, z którego firma korzysta produkcyjnie. Pracuję z Zustand, TanStack Query, Redux Toolkit i Tailwind CSS, stosuję Feature-Sliced Design i na co dzień korzystam z narzędzi AI do programowania (Cursor, Claude Code).",
+    "downloadCV": "Pobierz CV",
+    "downloading": "Pobieranie CV",
+    "downloaded": "CV pobrane",
+    "downloadFailed": "Nie udało się pobrać"
   },
   "Stats": {
     "projects": "Projektów ukończonych",
@@ -30,10 +39,17 @@
     "phone": "Numer telefonu",
     "message": "Wpisz swoją wiadomość tutaj",
     "send": "Wyślij wiadomość",
+    "sending": "Wysyłanie wiadomości",
+    "sent": "Wiadomość wysłana! Wkrótce odpowiem.",
+    "sendFailed": "Nie udało się wysłać wiadomości: {reason}",
+    "unknownError": "Nieznany błąd",
     "copy": "Kopiuj",
-    "phone_label": "Telefon",
-    "email_label": "Email",
-    "location_label": "Lokalizacja",
+    "copied": "Skopiowano do schowka!",
+    "labels": {
+      "phone": "Telefon",
+      "email": "Email",
+      "location": "Lokalizacja"
+    },
     "errors": {
       "firstname": "Imię musi mieć co najmniej 2 znaki",
       "lastname": "Nazwisko musi mieć co najmniej 2 znaki",
@@ -41,6 +57,11 @@
       "phone": "Wprowadź poprawny numer telefonu",
       "message": "Wiadomość musi mieć co najmniej 10 znaków"
     }
+  },
+  "Error": {
+    "title": "Coś poszło nie tak",
+    "description": "Przepraszamy za utrudnienia. Odśwież stronę lub spróbuj ponownie później.",
+    "refresh": "Odśwież stronę"
   },
   "Resume": {
     "tabs": {
@@ -51,28 +72,19 @@
     },
     "experience": {
       "title": "Moje doświadczenie",
-      "description": "Jestem programistą frontendowym z komercyjnym doświadczeniem w dostarczaniu produkcyjnych, responsywnych aplikacji internetowych. Moje doświadczenie obejmuje interaktywne produkty dla branży gier online, długoterminową platformę CRM oraz 12+ samodzielnych projektów zbudowanych przy użyciu nowoczesnych technologii. Szczegółowo zapoznasz się z moimi pracami w sekcji Portfolio, w tym z wersjami demo i repozytoriami GitHub.",
+      "description": "Prawie 2 lata komercyjnego doświadczenia we frontendzie: przeglądarkowe gry kasynowe i narzędzia back-office w firmie iGaming oraz dashboardy analityczne dla produkcyjnego CRM nieruchomości. Projekty zespołowe i własne, z wersjami demo i repozytoriami GitHub, znajdziesz w sekcji Projekty.",
       "items": {
-        "0": {
-          "duration": "Sty 2026 – Obecnie",
-          "projects": ["Evoverse — Frontend Developer"],
-          "technologies": [
-            "Interaktywne aplikacje webowe dla branży gier online — wydajne interfejsy czasu rzeczywistego; współpraca z projektantami, backendem i QA"
-          ]
+        "evoverse": {
+          "duration": "Gru 2025 – Obecnie",
+          "position": "Frontend Developer",
+          "company": "Evoverse",
+          "description": "Tworzę od zera przeglądarkowe gry kasynowe i wewnętrzne narzędzia back-office — dotąd około 10 gier, każda w mniej więcej dwa tygodnie razem z testami i poprawkami. Buduję interaktywne interfejsy gier 2D i 3D w React Pixi (PixiJS) i Three.js, stan gry trzymam w Zustand, a dane serwerowe w TanStack Query, integruję REST API i funkcje czasu rzeczywistego. Prowadzę każdą grę od pierwszego commita do wydania w 8-osobowym zespole: 4 frontend developerów, 2 backend developerów, projektant i manager."
         },
-        "1": {
-          "duration": "Mar 2025 – Gru 2025",
-          "projects": ["Freelance — Projekt CRM"],
-          "technologies": [
-            "Front-end długoterminowej aplikacji CRM dla małej firmy, praca w zespole pod okiem seniora (metodyka agile, code review na GitHub) — interfejsy z dużą ilością danych (wykresy, tabele, filtry), formularze i walidacja"
-          ]
-        },
-        "2": {
-          "duration": "Gru 2023 – Obecnie",
-          "projects": ["Projekty samodzielne"],
-          "technologies": [
-            "Samodzielny rozwój różnorodnych aplikacji webowych — aplikacja informacyjna, menedżer cytatów, portfolio, menedżer zadań typu Trello, e-commerce i landing pages"
-          ]
+        "houseCrm": {
+          "duration": "Lut 2025 – Lis 2025",
+          "position": "Frontend Developer",
+          "company": "Freelance (House CRM)",
+          "description": "Tworzyłem frontend produkcyjnego CRM dla firmy z branży nieruchomości, która zarządza dużym portfelem obiektów w całym mieście. Zbudowałem dashboardy analityczne z wykresami, tabelami i filtrami, które śledzą przychód i zwrot z inwestycji dla każdego obiektu i najemcy na podstawie 15 lat danych, a także formularze z walidacją. Pracowałem w małym zespole pod okiem seniora, w procesie agile z code review na GitHub; firma korzysta z systemu do dziś, a zespół nadal go rozwija."
         }
       }
     },
@@ -80,114 +92,127 @@
       "title": "Moja edukacja",
       "certificate": "Zobacz certyfikat",
       "items": {
-        "0": {
+        "reactCourse": {
           "duration": "Paź 2024 – Lut 2025",
-          "institution": "Platforma kursów online",
-          "degree": "The Ultimate React Course: React, Next.js, Redux & More",
-          "certificate": "https://www.udemy.com/certificate/UC-623331d7-fee3-4e0f-99ec-62c8c23a5edb/"
+          "institution": "Udemy",
+          "degree": "The Ultimate React Course: React, Next.js, Redux & More"
         },
-        "1": {
+        "selfStudy": {
           "duration": "Lip 2023 – Wrz 2024",
-          "institution": "Frontend Developer-samouk",
-          "degree": "Niezależna nauka – dokumentacja, tutoriale na YouTube, projekty praktyczne, uzupełnione mentoringiem doświadczonego programisty"
+          "institution": "Samodzielna nauka frontendu",
+          "degree": "Dokumentacja, projekty praktyczne i mentoring doświadczonego programisty"
         },
-        "2": {
+        "masters": {
           "duration": "Lis 2011 – Gru 2017",
-          "institution": "Winnicki Instytut Handlowo-Ekonomiczny KNTEU",
+          "institution": "Winnicki Instytut Handlowo-Ekonomiczny Kijowskiego Narodowego Uniwersytetu Handlowo-Ekonomicznego",
           "degree": "Magister Zarządzania Organizacjami Handlowymi"
         }
       }
     },
     "about": {
       "title": "O mnie",
-      "description": "Programista frontendowy z komercyjnym doświadczeniem w budowaniu nowoczesnych, responsywnych aplikacji internetowych przy użyciu React, Next.js, TypeScript, Redux Toolkit i Tailwind CSS.\n\nPiszę czysty, łatwy w utrzymaniu kod i przestrzegam sprawdzonych zasad inżynieryjnych, takich jak SOLID, DRY i Clean Architecture, stosując Feature-Sliced Design (FSD) w dużych bazach kodu. Swobodnie pracuję zarówno samodzielnie, jak i w zespole, w tym komercyjnie nad produkcyjnymi systemami CRM oraz interaktywnymi produktami dla branży gier online.\n\nMam również praktyczną znajomość podstaw backendu w Node.js i Express oraz zbudowałem REST API dla systemu zarządzania zadaniami typu Trello (tablice, kolumny, karty).\n\nSzybko się uczę, przywiązuję dużą wagę do szczegółów i mam nastawienie na rozwój, dążąc do zostania full-stack deweloperem.",
+      "description": "Frontend Developer z prawie 2-letnim komercyjnym doświadczeniem w tworzeniu produkcyjnych aplikacji webowych w React, Next.js i TypeScript.\n\nW firmie iGaming tworzę od zera przeglądarkowe gry kasynowe i narzędzia back-office, w tym interfejsy gier 2D i 3D w PixiJS i Three.js. Wcześniej zbudowałem dashboardy analityczne dla CRM nieruchomości, z którego firma nadal korzysta produkcyjnie.\n\nStosuję Feature-Sliced Design, Clean Architecture i SOLID, testuję kod za pomocą Jest, React Testing Library i Vitest, a na co dzień korzystam z narzędzi AI — Cursor, Claude Code i OpenAI Codex. Mam też podstawową wiedzę backendową: REST API, WebSockets (Socket.IO), JWT, Node.js i Express.\n\nJestem otwarty na pracę zdalną i relokację.",
       "info": {
         "name": "Imię",
         "phone": "Telefon",
-        "nationality": "Narodowość",
         "email": "Email",
-        "github": "GitHub",
+        "location": "Lokalizacja",
+        "nationality": "Narodowość",
         "languages": "Języki",
-        "nationality_val": "Ukrainiec",
-        "languages_val": "Ukraiński, Polski (B2), Angielski (B1)"
+        "github": "GitHub",
+        "linkedin": "LinkedIn"
+      },
+      "values": {
+        "location": "Krosno, Polska",
+        "nationality": "Ukrainiec",
+        "languages": "Ukraiński, polski (B2), angielski (B1)"
       }
     },
     "skills": {
       "title": "Moje umiejętności",
-      "description": "Oto technologie, których używam do budowania nowoczesnych aplikacji internetowych."
+      "description": "Technologie i narzędzia, z których korzystam przy tworzeniu produkcyjnych aplikacji webowych.",
+      "categories": {
+        "languages": "Języki",
+        "frameworks": "Frameworki i biblioteki",
+        "styling": "UI i stylowanie",
+        "backend": "API i backend (podstawy)",
+        "testing": "Testowanie",
+        "architecture": "Architektura",
+        "tools": "Narzędzia",
+        "ai": "Narzędzia AI dla programistów"
+      }
     }
   },
   "Work": {
     "categories": {
+      "internship": "Projekt zespołowy na stażu",
+      "commercial": "Komercyjny projekt zespołowy",
       "next": "Aplikacje Next.js",
       "react": "Aplikacje React",
       "ecommerce": "E-commerce i projekty wspólne",
-      "landing": "Landing Pages i proste strony"
+      "landing": "Landing pages i proste strony"
     },
     "links": {
       "live": "Projekt na żywo",
       "github": "Repozytorium Github"
     },
+    "slider": {
+      "previous": "Poprzedni projekt",
+      "next": "Następny projekt"
+    },
+    "thumbnailAlt": "Podgląd projektu {title}",
     "projects": {
-      "0": {
+      "megaWin": {
+        "title": "Mega Win",
+        "description": "Wspólny projekt, który zbudowałem z kolegą podczas stażu w Evoverse — firmie, w której obecnie pracuję. Mega Win to platforma zakładów z grami ruletka, keno, plinko i kości, tabelą liderów i nagrodami. Repozytorium znajduje się w organizacji firmy na GitHubie, ale to niekomercyjny projekt szkoleniowy, więc mogę go publicznie pokazywać. Zbudowany w Next.js 16, React 19 i TypeScript zgodnie z Feature-Sliced Design, a granice warstw pilnuje eslint-plugin-boundaries. Stan gier przechowuje Zustand, a dane serwerowe TanStack Query z Axios i automatycznym odświeżaniem tokena. Formularze oparte są na React Hook Form i Zod, interfejs na Tailwind CSS 4, shadcn/ui i Motion, a kod pokrywają testy Jest i React Testing Library z kontrolą Husky i lint-staged."
+      },
+      "houseCrm": {
         "title": "House CRM",
-        "category": "Komercyjny Projekt Zespołowy",
-        "description": "Komercyjny projekt zespołowy dla branży nieruchomości, opracowany wspólnie з doświadczonymi programistami. Praca w ramach architektury FSD (Feature-Sliced Design) pozwoliła mi na opanowanie profesjonalnych standardów budowania skalowalnych aplikacji w monorepo. Odpowiadałem за implementację części frontendowej przy użyciu Next.js 16, RTK Query do zarządzania stanem oraz TanStack Table do zaawansowanej pracy z danymi. System oferuje wizualną analitykę (Recharts), automatyczną generację dokumentów PDF oraz nowoczesny interfejs oparty na Shadcn UI i Framer Motion. Kod jest zgodny z rygorystycznymi standardami (ESLint 9, Husky, lint-staged) oraz w pełni przetestowany przez Vitest i Playwright. Chociaż nie jestem właścicielem, GitHub owner (https://github.com/San88Francisco) oficjalnie potwierdza mój udział i chętnie udzieli rekomendacji. Demo na żywo: https://houses-crm.vercel.app (Login: user@example.com / Password: string)."
+        "description": "Komercyjny projekt zespołowy dla branży nieruchomości, opracowany wspólnie z doświadczonymi programistami. Praca w ramach architektury FSD (Feature-Sliced Design) pozwoliła mi opanować profesjonalne standardy budowania skalowalnych aplikacji w monorepo. Odpowiadałem za implementację części frontendowej przy użyciu Next.js 16, RTK Query do zarządzania stanem oraz TanStack Table do zaawansowanej pracy z danymi. System oferuje wizualną analitykę (Recharts), która śledzi przychód i zwrot z inwestycji dla każdego obiektu i najemcy na podstawie 15 lat danych, automatyczną generację dokumentów PDF oraz nowoczesny interfejs oparty na Shadcn UI i Framer Motion. Kod jest zgodny z rygorystycznymi standardami (ESLint 9, Husky, lint-staged) oraz przetestowany przez Vitest i Playwright. Chociaż nie jestem właścicielem, właściciel repozytorium (https://github.com/San88Francisco) oficjalnie potwierdza mój udział i chętnie udzieli rekomendacji. Demo na żywo: https://houses-crm.vercel.app (Login: user@example.com / Password: string)."
       },
-      "1": {
+      "portfolio": {
         "title": "Portfolio Andrzeja",
-        "category": "Aplikacje Next.js",
-        "description": "Osobista witryna portfolio zbudowana z użyciem Next.js 16, React 19 i TypeScript 5.9. Stylizowana za pomocą Tailwind CSS 4, Radix UI i Framer Motion. Funkcje obejmują internacjonalizację z next-intl, walidację formularzy przez Zod i React Hook Form oraz powiadomienia sonner. Ten projekt podkreśla moją zdolność до dostarczania nowoczesnych, szybких i skalowalnych aplikacji."
+        "description": "Osobista witryna portfolio zbudowana z użyciem Next.js 16, React 19 i TypeScript 5.9. Stylizowana za pomocą Tailwind CSS 4, Radix UI i Framer Motion. Funkcje obejmują internacjonalizację z next-intl, walidację formularzy przez Zod i React Hook Form oraz powiadomienia Sonner. Ten projekt podkreśla moją zdolność do dostarczania nowoczesnych, szybkich i skalowalnych aplikacji."
       },
-      "2": {
+      "newsReactfy": {
         "title": "News Reactfy",
-        "category": "Aplikacje React",
-        "description": "Bogata w funkcje aplikacja informacyjna zbudowana z React i TypeScript. Użytkownicy mogą przeglądać artykuły, filtrować według kategorii, szukać i przełączać się między trybem jasnym a ciemnym. Projekt wykorzystuje Redux Toolkit do zarządzania stanem, Axios do połączeń z API i niestandardowe haki do zaawansowanej logiki. Demonstruje praktyczne doświadczenie w tworzeniu skalowalnych i interaktywnych aplikacji React."
+        "description": "Bogata w funkcje aplikacja informacyjna zbudowana z React i TypeScript. Użytkownicy mogą przeglądać artykuły, filtrować według kategorii, szukać i przełączać się między trybem jasnym a ciemnym. Projekt wykorzystuje Redux Toolkit do zarządzania stanem, Axios do połączeń z API i własne hooki do zaawansowanej logiki. Demonstruje praktyczne doświadczenie w tworzeniu skalowalnych i interaktywnych aplikacji React."
       },
-      "3": {
+      "quotesApp": {
         "title": "Quotes App",
-        "category": "Aplikacje Next.js",
-        "description": "Aplikacja do zarządzania cytatami zbudowana z Next.js i TypeScript. Użytkownicy mogą wyszukiwać, dodawać, edytować i usuwać cytaty za pośrednictwem interfejsu REST API. Interfejs jest stylizowany za pomocą Tailwind CSS i ShadCN UI, z obsługą błędów przez React Toastify. Testy jednostkowe są zaimplementowane przy użyciu Jest, co zapewnia niezawodność i łatwość konserwacji."
+        "description": "Aplikacja do zarządzania cytatami zbudowana z Next.js i TypeScript. Użytkownicy mogą wyszukiwać, dodawać, edytować i usuwać cytaty za pośrednictwem REST API. Interfejs jest stylizowany za pomocą Tailwind CSS i ShadCN UI, z obsługą błędów przez React Toastify. Testy jednostkowe są zaimplementowane przy użyciu Jest, co zapewnia niezawodność i łatwość utrzymania."
       },
-      "4": {
+      "getTaskDriver": {
         "title": "Get Task Driver",
-        "category": "Aplikacje React",
         "description": "Aplikacja do zarządzania zadaniami typu Trello zbudowana z React, TypeScript i Redux. Użytkownicy mogą tworzyć listy, dodawać zadania, ustawiać terminy, oznaczać ukończenie i zarządzać wieloma tablicami. Interfejs wykorzystuje Material UI i Framer Motion dla płynnych interakcji. Autoryzacja jest obsługiwana za pomocą JWT, wraz z testami jednostkowymi i migawkami Storybook dla zapewnienia jakości."
       },
-      "5": {
+      "bookLibrary": {
         "title": "Book Library App",
-        "category": "Aplikacje React",
-        "description": "Aplikacja biblioteka książek online z funkcjonalnością wyszukiwania i filtrowania. Została najpierw zbudowana z klasycznym Redux, а później zrefaktoryzowana do Redux Toolkit dla lepszej struktury. Backend to prosty serwer Express, z Axios obsługującym żądania danych i Toastify pokazującym powiadomienia. Ten projekt demonstruje zarówno starsze, jak i nowoczesne podejścia do zarządzania stanem."
+        "description": "Aplikacja biblioteka książek online z funkcjonalnością wyszukiwania i filtrowania. Została najpierw zbudowana z klasycznym Redux, a później zrefaktoryzowana do Redux Toolkit dla lepszej struktury. Backend to prosty serwer Express, z Axios obsługującym żądania danych i Toastify pokazującym powiadomienia. Ten projekt demonstruje zarówno starsze, jak i nowoczesne podejścia do zarządzania stanem."
       },
-      "6": {
+      "shopStore": {
         "title": "Shop store",
-        "category": "E-commerce i projekty wspólne",
-        "description": "Wspólny projekt sklepu jubilerskiego e-commerce zbudowany całkowicie w HTML, CSS i JavaScript. Projekt zawiera w pełni niestandardowy koszyk napędzany przez LocalStorage i responsywne elementy interfejsu użytkownika. Przyczyniłem się do wdrożenia interfejsu użytkownika, obsługi formularzy i planowania struktury aplikacji. Demonstruje pracę zespołową, współpracę na GitHub i rozwój bez frameworków."
+        "description": "Wspólny projekt sklepu jubilerskiego e-commerce zbudowany całkowicie w HTML, CSS i JavaScript. Projekt zawiera w pełni niestandardowy koszyk oparty na LocalStorage i responsywne elementy interfejsu użytkownika. Przyczyniłem się do wdrożenia interfejsu użytkownika, obsługi formularzy i planowania struktury aplikacji. Demonstruje pracę zespołową, współpracę na GitHub i rozwój bez frameworków."
       },
-      "7": {
+      "homePro": {
         "title": "Home Pro",
-        "category": "Landing Pages i proste strony",
         "description": "Responsywna strona docelowa dla firmy świadczącej usługi domowe zaprojektowana w Figma. Zawiera animacje wyzwalane przewijaniem, suwak treści i komponent akordeon. Zbudowana z HTML, CSS i JavaScript, stylizowana przy użyciu metodologii BEM. Ten projekt podkreśla czysty responsywny układ i interaktywny rozwój interfejsu użytkownika."
       },
-      "8": {
+      "farmVest": {
         "title": "Farm Vest",
-        "category": "Landing Pages i proste strony",
         "description": "Responsywna strona docelowa prezentująca możliwości inwestycji rolniczych. Zawiera angażujące animacje, efekty paralaksy i nowoczesny design interfejsu użytkownika. Opracowana przy użyciu HTML, CSS, Sass i JavaScript, stylizowana zgodnie z metodologią BEM. Projekt demonstruje płynne interakcje i dbałość o wizualne szczegóły."
       },
-      "9": {
+      "goCorona": {
         "title": "GoCorona",
-        "category": "Landing Pages i proste strony",
-        "description": "Strona docelowa dotycząca świadomości zdrowotnej z responsywnym designem i nowoczesnym układem. Zawiera animacje, płynną nawigację i interaktywne elementy angażujące użytkownika. Projekt został zbudowany z HTML, CSS, Sass i JavaScript, ustrukturyzowany za pomocą BEM i zautomatyzowany przy użyciu Gulp. Demonstruje solidną wiedzę na temat projektowania interfejsu użytkownika i podstaw frontend."
+        "description": "Strona docelowa dotycząca świadomości zdrowotnej z responsywnym designem i nowoczesnym układem. Zawiera animacje, płynną nawigację i interaktywne elementy angażujące użytkownika. Projekt został zbudowany z HTML, CSS, Sass i JavaScript, ustrukturyzowany za pomocą BEM i zautomatyzowany przy użyciu Gulp. Demonstruje solidną wiedzę na temat projektowania interfejsu użytkownika i podstaw frontendu."
       },
-      "10": {
+      "finance": {
         "title": "Finance",
-        "category": "Landing Pages i proste strony",
-        "description": "Strona docelowa usług finansowych z profesjonalnym i minimalistycznym projektem interfejsu użytkownika. Posiada responsywny układ, płynną nawigację i czystą prezentację wizualną. Zbudowana z HTML, CSS, Sass i JavaScript, stylizowana przy użyciu metodologii BEM i zaprojektowana w Figma. Projekt kładzie nacisk na dbający o szczegóły design i dopracowaną realizację frontend."
+        "description": "Strona docelowa usług finansowych z profesjonalnym i minimalistycznym projektem interfejsu użytkownika. Posiada responsywny układ, płynną nawigację i czystą prezentację wizualną. Zbudowana z HTML, CSS, Sass i JavaScript, stylizowana przy użyciu metodologii BEM i zaprojektowana w Figma. Projekt kładzie nacisk na dbałość o szczegóły i dopracowaną realizację frontendu."
       },
-      "11": {
+      "interia": {
         "title": "INTERIA",
-        "category": "Landing Pages & Simple Websites",
-        "description": "Profesjonalna i minimalistyczna strona landingowa dla usług finansowych. Charakteryzuje się responsywnym układem, płynną nawigację i czystą prezentację wizualną. Zbudowana przy użyciu HTML, CSS, Sass i JavaScript, stylizowana zgodnie з metodologią BEM i zaprojektowana w Figma. Projekt kładzie nacisk na dbałość o szczegóły i dopracowane wykonanie frontendowe."
+        "description": "Strona landingowa dla studia projektowania wnętrz z czystym, minimalistycznym interfejsem. Charakteryzuje się responsywnym układem, płynną nawigacją i dopracowaną prezentacją wizualną. Zbudowana przy użyciu HTML, CSS, Sass i JavaScript, stylizowana zgodnie z metodologią BEM i zaprojektowana w Figma. Projekt kładzie nacisk na dbałość o szczegóły i dopracowane wykonanie frontendowe."
       }
     }
   }

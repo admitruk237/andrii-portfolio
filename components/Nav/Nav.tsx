@@ -1,7 +1,9 @@
 'use client'
-import { Link, usePathname } from '@/i18n/routing'
-import { ROUTES } from '@/constants/routes'
+
 import { useTranslations } from 'next-intl'
+import { ROUTES } from '@/constants'
+import { Link, usePathname } from '@/i18n/routing'
+import { cn, isActiveRoute } from '@/lib/utils'
 
 export const Nav = () => {
   const pathname = usePathname()
@@ -9,16 +11,20 @@ export const Nav = () => {
 
   return (
     <nav className="flex gap-8">
-      {ROUTES.map((link, index) => {
-        const isCurrent = pathname === link.path || pathname === `/${link.path}`
+      {ROUTES.map(({ labelKey, path }) => {
+        const isCurrent = isActiveRoute(pathname, path)
+
         return (
           <Link
-            href={link.path}
-            key={index}
-            className={`${isCurrent && 'text-accent border-b-2 border-accent'}
-          capitalize font-medium hover:text-accent transition-all`}
+            href={path}
+            key={path}
+            aria-current={isCurrent ? 'page' : undefined}
+            className={cn(
+              'capitalize font-medium hover:text-accent transition-all',
+              isCurrent && 'text-accent border-b-2 border-accent',
+            )}
           >
-            {t(link.name)}
+            {t(labelKey)}
           </Link>
         )
       })}

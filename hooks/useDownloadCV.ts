@@ -1,61 +1,77 @@
 'use client'
 
-import { useState, useCallback } from 'react'
-import type { UseDownloadCVReturn, DownloadState } from '@/types'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import {
+  CV_DOWNLOAD_DURATION_MS,
+  CV_FILE,
+  CV_PROGRESS_TICK_MS,
+  CV_STATUS_RESET_MS,
+} from '@/constants'
+import type { DownloadState } from '@/types'
 
-const useDownloadCV = (): UseDownloadCVReturn => {
+const MAX_PROGRESS = 100
+const PROGRESS_STEP =
+  MAX_PROGRESS / (CV_DOWNLOAD_DURATION_MS / CV_PROGRESS_TICK_MS)
+
+type UseDownloadCVReturn = {
+  downloadState: DownloadState
+  progress: number
+  handleDownloadCV: () => void
+}
+
+const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+
+const triggerFileDownload = (href: string, fileName: string) => {
+  const link = document.createElement('a')
+  link.href = href
+  link.download = fileName
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}
+
+export const useDownloadCV = (): UseDownloadCVReturn => {
   const [downloadState, setDownloadState] = useState<DownloadState>('idle')
-  const [progress, setProgress] = useState<number>(0)
+  const [progress, setProgress] = useState(0)
+  const progressTimer = useRef<ReturnType<typeof setInterval>>(undefined)
+  const resetTimer = useRef<ReturnType<typeof setTimeout>>(undefined)
+
+  useEffect(
+    () => () => {
+      clearInterval(progressTimer.current)
+      clearTimeout(resetTimer.current)
+    },
+    [],
+  )
+
+  const scheduleReset = useCallback(() => {
+    resetTimer.current = setTimeout(() => {
+      setDownloadState('idle')
+      setProgress(0)
+    }, CV_STATUS_RESET_MS)
+  }, [])
 
   const handleDownloadCV = useCallback(async (): Promise<void> => {
     setDownloadState('loading')
     setProgress(0)
 
+    progressTimer.current = setInterval(() => {
+      setProgress((previous) => Math.min(previous + PROGRESS_STEP, MAX_PROGRESS))
+    }, CV_PROGRESS_TICK_MS)
+
     try {
-      const duration = 2000
-      const interval = 50
-      const steps = duration / interval
-      const progressStep = 100 / steps
-
-      const progressInterval = setInterval(() => {
-        setProgress((prev: number) => {
-          const newProgress = prev + progressStep
-          if (newProgress >= 100) {
-            clearInterval(progressInterval)
-            return 100
-          }
-          return newProgress
-        })
-      }, interval)
-
-      await new Promise((resolve) => setTimeout(resolve, duration))
-
-      const link = document.createElement('a')
-      link.href = '/cv/Andrii_Dmytruk.pdf'
-      link.download = 'Andrii_Dmytruk.pdf'
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
-
+      await wait(CV_DOWNLOAD_DURATION_MS)
+      triggerFileDownload(CV_FILE.href, CV_FILE.fileName)
       setDownloadState('success')
-
-      setTimeout(() => {
-        setDownloadState('idle')
-        setProgress(0)
-      }, 2000)
     } catch (error) {
       console.error('Download error:', error)
       setDownloadState('error')
       setProgress(0)
-
-      setTimeout(() => {
-        setDownloadState('idle')
-      }, 2000)
+    } finally {
+      clearInterval(progressTimer.current)
+      scheduleReset()
     }
-  }, [])
+  }, [scheduleReset])
 
   return { downloadState, progress, handleDownloadCV }
 }
-
-export default useDownloadCV
-export { useDownloadCV }

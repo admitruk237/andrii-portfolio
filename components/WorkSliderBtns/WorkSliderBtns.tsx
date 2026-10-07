@@ -1,35 +1,34 @@
 'use client'
 
-import { useSwiper } from 'swiper/react'
 import type { Swiper as SwiperType } from 'swiper'
+import { useTranslations } from 'next-intl'
 import { PiCaretLeftBold, PiCaretRightBold } from 'react-icons/pi'
 
+const BUTTON_CLASS_NAME =
+  'bg-accent hover:bg-accent-hover text-primary text-sm lg:text-xl w-[30px] h-[30px] lg:w-[44px] lg:h-[44px] flex justify-center items-center transition-all cursor-pointer'
+
 type Props = {
-  containerStyles?: string
-  btnStyles?: string
-  iconsStyles?: string
-  swiper?: SwiperType | null
+  swiper: SwiperType | null
 }
 
-const WorkSliderBtns = ({ swiper: externalSwiper }: Props) => {
-  const internalSwiper = useSwiper()
-  const swiper = externalSwiper || internalSwiper
-
-  const btnStyles =
-    'bg-accent hover:bg-accent-hover text-primary text-sm lg:text-xl w-[30px] h-[30px] lg:w-[44px] lg:h-[44px] flex justify-center items-center transition-all cursor-pointer'
+const WorkSliderBtns = ({ swiper }: Props) => {
+  const t = useTranslations('Work.slider')
 
   return (
     <div className="flex gap-2 justify-end w-full">
       <button
-        className={btnStyles}
-        onClick={() => swiper.slidePrev()}
+        type="button"
+        aria-label={t('previous')}
+        className={BUTTON_CLASS_NAME}
+        onClick={() => swiper?.slidePrev()}
       >
         <PiCaretLeftBold />
       </button>
-
       <button
-        className={btnStyles}
-        onClick={() => swiper.slideNext()}
+        type="button"
+        aria-label={t('next')}
+        className={BUTTON_CLASS_NAME}
+        onClick={() => swiper?.slideNext()}
       >
         <PiCaretRightBold />
       </button>

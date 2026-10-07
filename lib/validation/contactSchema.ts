@@ -1,29 +1,37 @@
 import { z } from 'zod'
 
-export const contactSchema = z.object({
-  firstname: z
-    .string()
-    .min(2, { message: 'First name must be at least 2 characters' })
-    .trim(),
-  lastname: z
-    .string()
-    .min(2, { message: 'Last name must be at least 2 characters' })
-    .trim(),
-  email: z
-    .string()
-    .email({ message: 'Please enter a valid email address' })
-    .trim(),
-  phone: z
-    .string()
-    .min(10, { message: 'Please enter a valid phone number' })
-    .regex(/^[\+]?[0-9\s\-\(\)]{10,}$/, {
-      message: 'Please enter a valid phone number',
-    })
-    .trim(),
-  message: z
-    .string()
-    .min(10, { message: 'Message must be at least 10 characters' })
-    .trim(),
-})
+const NAME_MIN_LENGTH = 2
+const PHONE_MIN_LENGTH = 10
+const MESSAGE_MIN_LENGTH = 10
+const PHONE_PATTERN = /^[+]?[0-9\s\-()]{10,}$/
 
-export type ContactFormData = z.infer<typeof contactSchema>
+export type ContactErrorMessages = Record<
+  'firstname' | 'lastname' | 'email' | 'phone' | 'message',
+  string
+>
+
+export const createContactSchema = (messages: ContactErrorMessages) =>
+  z.object({
+    firstname: z
+      .string()
+      .trim()
+      .min(NAME_MIN_LENGTH, { message: messages.firstname }),
+    lastname: z
+      .string()
+      .trim()
+      .min(NAME_MIN_LENGTH, { message: messages.lastname }),
+    email: z.string().trim().email({ message: messages.email }),
+    phone: z
+      .string()
+      .trim()
+      .min(PHONE_MIN_LENGTH, { message: messages.phone })
+      .regex(PHONE_PATTERN, { message: messages.phone }),
+    message: z
+      .string()
+      .trim()
+      .min(MESSAGE_MIN_LENGTH, { message: messages.message }),
+  })
+
+export type ContactFormData = z.infer<ReturnType<typeof createContactSchema>>
+
+export type ContactField = keyof ContactFormData

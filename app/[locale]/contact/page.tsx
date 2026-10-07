@@ -1,28 +1,18 @@
-'use client'
-
+import { PageFadeIn } from '@/components/common/PageFadeIn'
 import { ContactForm } from '@/components/ContactForm/ContactForm'
 import { ContactInfo } from '@/components/ContactInfo/ContactInfo'
-import { motion } from 'framer-motion'
 
-const Contact = () => {
-  return (
-    <section className="sm:py-6 p-2">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: 1,
-          transition: { delay: 1, duration: 0.4, ease: 'easeIn' },
-        }}
-      >
-        <div className="container mx-auto">
-          <div className="flex flex-col lg:flex-row gap-[30px] xl:px-20 lg:px-10 px-0">
-            <ContactForm />
-            <ContactInfo />
-          </div>
+const Contact = () => (
+  <section className="sm:py-6 p-2">
+    <PageFadeIn>
+      <div className="container mx-auto">
+        <div className="flex flex-col lg:flex-row gap-[30px] xl:px-20 lg:px-10 px-0">
+          <ContactForm />
+          <ContactInfo />
         </div>
-      </motion.div>
-    </section>
-  )
-}
+      </div>
+    </PageFadeIn>
+  </section>
+)
 
 export default Contact

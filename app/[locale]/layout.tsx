@@ -6,8 +6,9 @@ import StairTransition from '@/components/StairTransition/StairTransition'
 import ErrorBoundary from '@/components/common/ErrorBoundary'
 import { Toaster } from '@/components/ui'
 import { APP_CONFIG } from '@/config/email'
+import { DEFAULT_THEME, THEME_COOKIE } from '@/config/theme'
 import { ReactNode } from 'react'
-import { NextIntlClientProvider } from 'next-intl'
+import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
@@ -43,13 +44,13 @@ export default async function RootLayout({
 }) {
   const { locale } = await params
 
-  if (!routing.locales.includes(locale as any)) {
+  if (!hasLocale(routing.locales, locale)) {
     notFound()
   }
 
   const messages = await getMessages()
   const cookieStore = await cookies()
-  const theme = cookieStore.get('theme')?.value || 'dark'
+  const theme = cookieStore.get(THEME_COOKIE.name)?.value ?? DEFAULT_THEME
 
   return (
     <html

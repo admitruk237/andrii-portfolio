@@ -1,57 +1,57 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useCallback, useSyncExternalStore } from 'react'
+import { useTranslations } from 'next-intl'
 import { toast } from 'sonner'
-
-type ContactItem = {
-  type: 'phone' | 'email' | 'location'
-  description: string
-}
+import { MAPS_SEARCH_URL, MOBILE_MEDIA_QUERY } from '@/constants'
+import type { ContactItem, ContactType } from '@/types'
 
 type UseContactActionReturn = {
   isMobile: boolean
   handleContactAction: (item: ContactItem) => void
 }
 
-export const useContactAction = (): UseContactActionReturn => {
-  const [isMobile, setIsMobile] = useState<boolean>(false)
+const subscribeToViewport = (onChange: () => void) => {
+  const mediaQuery = window.matchMedia(MOBILE_MEDIA_QUERY)
+  mediaQuery.addEventListener('change', onChange)
+  return () => mediaQuery.removeEventListener('change', onChange)
+}
 
-  useEffect(() => {
-    const checkScreen = (): void => setIsMobile(window.innerWidth < 768)
-    checkScreen()
-    window.addEventListener('resize', checkScreen)
-    return () => window.removeEventListener('resize', checkScreen)
-  }, [])
+const getIsMobile = () => window.matchMedia(MOBILE_MEDIA_QUERY).matches
+
+const getIsMobileOnServer = () => false
+
+const NATIVE_ACTIONS: Record<ContactType, (value: string) => void> = {
+  phone: (value) => {
+    window.location.href = `tel:${value}`
+  },
+  email: (value) => {
+    window.location.href = `mailto:${value}`
+  },
+  location: (value) => {
+    window.open(`${MAPS_SEARCH_URL}${encodeURIComponent(value)}`, '_blank')
+  },
+}
+
+export const useContactAction = (): UseContactActionReturn => {
+  const t = useTranslations('Contact')
+  const isMobile = useSyncExternalStore(
+    subscribeToViewport,
+    getIsMobile,
+    getIsMobileOnServer,
+  )
 
   const handleContactAction = useCallback(
-    (item: ContactItem): void => {
-      const desc = item.description
-
+    ({ type, value }: ContactItem): void => {
       if (isMobile) {
-        switch (item.type) {
-          case 'phone':
-            window.location.href = `tel:${desc}`
-            return
-          case 'email':
-            window.location.href = `mailto:${desc}`
-            return
-          case 'location':
-            window.open(
-              `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                desc,
-              )}`,
-              '_blank',
-            )
-            return
-          default:
-            break
-        }
+        NATIVE_ACTIONS[type](value)
+        return
       }
 
-      navigator.clipboard.writeText(desc)
-      toast.success('Copied to clipboard!')
+      navigator.clipboard.writeText(value)
+      toast.success(t('copied'))
     },
-    [isMobile],
+    [isMobile, t],
   )
 
   return { isMobile, handleContactAction }

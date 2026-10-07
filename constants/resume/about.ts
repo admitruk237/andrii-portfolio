@@ -1,14 +1,23 @@
-import { AboutMetadata } from '@/types'
-const about: AboutMetadata = {
-  info: [
-    { key: 'name', value: 'Andrii Dmytruk' },
-    { key: 'phone', value: '(+48) 516 626 351' },
-    { key: 'nationality', value: 'Ukrainian' },
-    { key: 'email', value: 'admitruk237@gmail.com' },
-    { key: 'github', value: 'https://github.com/admitruk237' },
-    { key: 'languages', value: 'Ukrainian, Polish (B2), English (B1)' },
-  ],
-}
+import type { AboutInfoItem } from '@/types'
+import { PROFILE } from '../profile'
 
-export { about }
-export default about
+export const ABOUT_INFO: AboutInfoItem[] = [
+  { kind: 'text', labelKey: 'name', value: PROFILE.fullName },
+  { kind: 'text', labelKey: 'phone', value: PROFILE.phone },
+  { kind: 'text', labelKey: 'email', value: PROFILE.email },
+  { kind: 'translated', labelKey: 'location' },
+  { kind: 'translated', labelKey: 'nationality' },
+  { kind: 'translated', labelKey: 'languages' },
+  {
+    kind: 'link',
+    labelKey: 'github',
+    text: PROFILE.githubUsername,
+    href: PROFILE.githubUrl,
+  },
+  {
+    kind: 'link',
+    labelKey: 'linkedin',
+    text: PROFILE.linkedinUsername,
+    href: PROFILE.linkedinUrl,
+  },
+]

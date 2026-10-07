@@ -1,6 +1,6 @@
 'use client'
 
-import { useLocale } from 'next-intl'
+import { useLocale, type Locale } from 'next-intl'
 import { routing, usePathname, useRouter } from '@/i18n/routing'
 import {
   Select,
@@ -19,7 +19,7 @@ export default function LanguageSwitcher() {
   const params = useParams()
   const [isPending, startTransition] = useTransition()
 
-  function onSelectChange(nextLocale: string) {
+  function onSelectChange(nextLocale: Locale) {
     startTransition(() => {
       router.replace(
         // @ts-expect-error -- TypeScript will validate that only known locales are passed to `next-intl`
@@ -43,9 +43,9 @@ export default function LanguageSwitcher() {
           <SelectItem
             key={l}
             value={l}
-            className="capitalize focus:bg-accent focus:text-primary cursor-pointer hover:bg-accent/10"
+            className="focus:bg-accent focus:text-primary cursor-pointer hover:bg-accent/10"
           >
-            {l === 'ua' ? 'UA' : l === 'en' ? 'EN' : 'PL'}
+            {l.toUpperCase()}
           </SelectItem>
         ))}
       </SelectContent>
