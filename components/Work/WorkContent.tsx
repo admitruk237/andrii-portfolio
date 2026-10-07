@@ -2,56 +2,46 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import type { Swiper as SwiperType } from 'swiper'
-import { ProjectInfo, ProjectLinks, ProjectSlider } from '@/components/Work'
-import { projects } from '@/constants/projects'
-import { Project } from '@/types'
+import { PageFadeIn } from '@/components/common/PageFadeIn'
+import { PROJECTS } from '@/constants'
+import { ProjectInfo } from './ProjectInfo'
+import { ProjectLinks } from './ProjectLinks'
+import { ProjectSlider } from './ProjectSlider'
+
+const INFO_LAYOUT_TRANSITION = {
+  layout: { duration: 0.4, ease: 'easeInOut' },
+} as const
 
 export const WorkContent = () => {
-  const [project, setProject] = useState<Project>(projects[0] as Project)
-
-  const handleSlideChange = (swiper: SwiperType) => {
-    const currentIndex = swiper.activeIndex
-    setProject(projects[currentIndex] as Project)
-  }
+  const [activeIndex, setActiveIndex] = useState(0)
+  const activeProject = PROJECTS[activeIndex]
 
   return (
     <section className="min-h-[80vh] flex flex-col justify-center py-3">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: 1,
-          transition: {
-            delay: 1,
-            duration: 0.4,
-            ease: 'easeIn',
-          },
-        }}
-      >
+      <PageFadeIn>
         <div className="container mx-auto">
           <div className="flex flex-col gap-5 lg:gap-7">
             <ProjectSlider
-              projects={projects as Project[]}
-              onSlideChange={handleSlideChange}
+              projects={PROJECTS}
+              activeIndex={activeIndex}
+              onActiveIndexChange={setActiveIndex}
             />
             <div className="w-full flex flex-col justify-between">
               <motion.div
                 layout
-                transition={{
-                  layout: { duration: 0.4, ease: 'easeInOut' },
-                }}
+                transition={INFO_LAYOUT_TRANSITION}
                 className="flex flex-col gap-[30px]"
               >
-                <ProjectInfo project={project} />
+                <ProjectInfo project={activeProject} />
               </motion.div>
               <ProjectLinks
-                liveUrl={project.live}
-                githubUrl={project.github}
+                liveUrl={activeProject.liveUrl}
+                githubUrl={activeProject.githubUrl}
               />
             </div>
           </div>
         </div>
-      </motion.div>
+      </PageFadeIn>
     </section>
   )
 }

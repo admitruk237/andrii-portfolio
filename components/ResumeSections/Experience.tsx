@@ -1,5 +1,5 @@
-import { experience } from '@/constants'
 import { useTranslations } from 'next-intl'
+import { EXPERIENCE } from '@/constants'
 
 export const Experience = () => {
   const t = useTranslations('Resume.experience')
@@ -12,53 +12,30 @@ export const Experience = () => {
       </p>
 
       <ul className="grid grid-cols-1 xl:grid-cols-2 gap-[30px]">
-        {experience.items.map((item, index) => {
-          const translatedProjects = t.raw(`items.${index}.projects`)
-          const hasTechTranslation = t.has(`items.${index}.technologies`)
-          const translatedTechDesc = hasTechTranslation
-            ? t.raw(`items.${index}.technologies`)
-            : []
-          const translatedDuration = t(`items.${index}.duration`)
-
-          const allTech = [...translatedTechDesc, ...item.technologies]
-
-          return (
-            <li
-              key={index}
-              className="bg-card  py-6 px-10 rounded-xl flex flex-col justify-center
-                        items-center lg:items-start gap-1"
-            >
-              <span className="text-accent">{translatedDuration}</span>
-              <div className="flex gap-2 flex-wrap mb-3">
-                {translatedProjects.map((project: string, pIndex: number) => {
-                  return (
-                    <h3
-                      key={pIndex}
-                      className="text-xl   text-center lg:text-left"
-                    >
-                      {project}.
-                    </h3>
-                  )
-                })}
-              </div>
-
-              <div className="flex items-center gap-3 ">
-                <div className="flex flex-wrap gap-2">
-                  {allTech.map((tech: string, tIndex: number) => {
-                    return (
-                      <p
-                        key={tIndex}
-                        className="text-muted-foreground"
-                      >
-                        {tech}
-                      </p>
-                    )
-                  })}
-                </div>
-              </div>
-            </li>
-          )
-        })}
+        {EXPERIENCE.map(({ id, technologies }) => (
+          <li
+            key={id}
+            className="bg-card py-6 px-10 rounded-xl flex flex-col items-center lg:items-start gap-3"
+          >
+            <span className="text-accent">{t(`items.${id}.duration`)}</span>
+            <h3 className="text-xl text-center lg:text-left">
+              {t(`items.${id}.position`)}, {t(`items.${id}.company`)}
+            </h3>
+            <p className="text-muted-foreground">
+              {t(`items.${id}.description`)}
+            </p>
+            <ul className="flex flex-wrap justify-center lg:justify-start gap-x-3 gap-y-1">
+              {technologies.map((technology) => (
+                <li
+                  key={technology}
+                  className="text-accent text-sm"
+                >
+                  {technology}
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
       </ul>
     </div>
   )

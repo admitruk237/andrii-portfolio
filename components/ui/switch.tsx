@@ -9,7 +9,10 @@ import { cn } from '@/lib/utils'
 
 import { motion, AnimatePresence } from 'framer-motion'
 
-function Switch({ className = '', ...props }) {
+function Switch({
+  className = '',
+  ...props
+}: React.ComponentProps<typeof SwitchPrimitive.Root>) {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
 
@@ -52,7 +55,7 @@ function Switch({ className = '', ...props }) {
             {isDark ? (
               <LuMoon className="h-3 w-3 text-accent" />
             ) : (
-              <LuSun className="h-3 w-3 text-yellow-500" />
+              <LuSun className="h-3 w-3 text-sun" />
             )}
           </motion.div>
         </AnimatePresence>

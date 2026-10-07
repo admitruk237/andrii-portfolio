@@ -1,29 +1,33 @@
-import { reverseIndex } from '@/constants/stairs/reverseIndex';
-import { stairAnimation } from '@/constants/stairs/stairAnimation';
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
+import {
+  PAGE_REVEAL_DURATION_S,
+  STAIR_ANIMATION,
+  STAIR_STEP_DELAY_S,
+  STAIRS_COUNT,
+} from '@/constants'
 
-const Stairs = () => {
-  return (
-    <>
-      {[...Array(6)].map((_, index) => {
-        return (
-          <motion.div
-            key={index}
-            variants={stairAnimation}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            transition={{
-              duration: 0.4,
-              ease: 'easeInOut',
-              delay: reverseIndex(index) * 0.1,
-            }}
-            className="h-full w-full bg-secondary relative"
-          />
-        );
-      })}
-    </>
-  );
-};
+const STAIR_INDEXES = Array.from({ length: STAIRS_COUNT }, (_, index) => index)
 
-export default Stairs;
+const reverseIndex = (index: number): number => STAIRS_COUNT - index - 1
+
+const Stairs = () => (
+  <>
+    {STAIR_INDEXES.map((index) => (
+      <motion.div
+        key={index}
+        variants={STAIR_ANIMATION}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition={{
+          duration: PAGE_REVEAL_DURATION_S,
+          ease: 'easeInOut',
+          delay: reverseIndex(index) * STAIR_STEP_DELAY_S,
+        }}
+        className="h-full w-full bg-secondary relative"
+      />
+    ))}
+  </>
+)
+
+export default Stairs

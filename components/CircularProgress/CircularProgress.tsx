@@ -1,7 +1,12 @@
 'use client';
 
 import { memo } from 'react';
-import type { CircularProgressProps } from '@/types';
+
+type CircularProgressProps = {
+  progress: number;
+  size?: number;
+  strokeWidth?: number;
+};
 
 const CircularProgress = memo<CircularProgressProps>(
   ({ progress, size = 32, strokeWidth = 2 }) => {

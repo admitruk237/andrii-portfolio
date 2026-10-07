@@ -1,3 +1,5 @@
+import { PROFILE } from '@/constants/profile'
+
 export const EMAIL_CONFIG = {
   serviceID: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_9c1rc86',
   templateID: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_555f1fw',
@@ -6,5 +8,5 @@ export const EMAIL_CONFIG = {
 
 export const APP_CONFIG = {
   name: process.env.NEXT_PUBLIC_APP_NAME || 'Andrii Portfolio',
-  developerName: process.env.NEXT_PUBLIC_DEVELOPER_NAME || 'Andrii Dmytruk',
+  developerName: process.env.NEXT_PUBLIC_DEVELOPER_NAME || PROFILE.fullName,
 };

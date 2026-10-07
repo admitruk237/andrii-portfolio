@@ -1,23 +1,12 @@
-import { NavLink } from '@/types'
+import type { NavLink } from '@/types'
 
-const ROUTES: NavLink[] = [
-  {
-    name: 'home',
-    path: '/',
-  },
-  {
-    name: 'resume',
-    path: '/resume',
-  },
-  {
-    name: 'work',
-    path: '/work',
-  },
-  {
-    name: 'contact',
-    path: '/contact',
-  },
+export const HOME_PATH = '/'
+
+export const CONTACT_PATH = '/contact'
+
+export const ROUTES: NavLink[] = [
+  { labelKey: 'home', path: HOME_PATH },
+  { labelKey: 'resume', path: '/resume' },
+  { labelKey: 'work', path: '/work' },
+  { labelKey: 'contact', path: CONTACT_PATH },
 ]
-
-export { ROUTES }
-export default ROUTES

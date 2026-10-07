@@ -3,7 +3,7 @@
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
 
 import { cn } from '@/lib/utils'
-import { ComponentPropsWithoutRef } from 'react'
+import { ComponentProps, ComponentPropsWithoutRef } from 'react'
 
 interface PropsTooltipProvider extends ComponentPropsWithoutRef<
   typeof TooltipPrimitive.Provider
@@ -24,7 +24,7 @@ function TooltipProvider({
   )
 }
 
-function Tooltip({ ...props }) {
+function Tooltip({ ...props }: ComponentProps<typeof TooltipPrimitive.Root>) {
   return (
     <TooltipProvider>
       <TooltipPrimitive.Root
@@ -35,7 +35,7 @@ function Tooltip({ ...props }) {
   )
 }
 
-function TooltipTrigger({ ...props }) {
+function TooltipTrigger({ ...props }: ComponentProps<typeof TooltipPrimitive.Trigger>) {
   return (
     <TooltipPrimitive.Trigger
       data-slot="tooltip-trigger"

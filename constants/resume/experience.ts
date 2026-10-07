@@ -1,44 +1,36 @@
-import { ExperienceMetadata } from '@/types'
+import type { ExperienceItem } from '@/types'
 
-const experience: ExperienceMetadata = {
-  items: [
-    {
-      technologies: [
-        'React',
-        'Next.js',
-        'TypeScript',
-        'Tailwind CSS',
-        'Redux Toolkit',
-        'REST API',
-        'Real-time features',
-      ],
-    },
-    {
-      technologies: [
-        'Next.js',
-        'TypeScript',
-        'Tailwind CSS',
-        'Shadcn UI',
-        'Radix UI',
-        'Recharts',
-        'React Hook Form',
-        'Yup',
-        'Redux Toolkit',
-        'Git',
-      ],
-    },
-    {
-      technologies: [
-        'React',
-        'Next.js',
-        'TypeScript',
-        'Redux Toolkit',
-        'Tailwind CSS',
-        'REST API',
-      ],
-    },
-  ],
-}
-
-export { experience }
-export default experience
+export const EXPERIENCE: ExperienceItem[] = [
+  {
+    id: 'evoverse',
+    technologies: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'PixiJS',
+      'Three.js',
+      'Zustand',
+      'TanStack Query',
+      'REST API',
+      'WebSockets',
+    ],
+  },
+  {
+    id: 'houseCrm',
+    technologies: [
+      'Next.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'shadcn/ui',
+      'Radix UI',
+      'Recharts',
+      'TanStack Table',
+      'React Hook Form',
+      'Yup',
+      'Redux Toolkit',
+      'RTK Query',
+      'FSD',
+    ],
+  },
+]
